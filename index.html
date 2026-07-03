@@ -28,7 +28,7 @@
     --ease:cubic-bezier(.2,.9,.2,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  html{scroll-behavior:smooth;scroll-padding-top:104px}
   body{background:var(--paper);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.55;overflow-x:hidden}
   ::selection{background:var(--blue);color:#fff}
   a{color:inherit}
@@ -37,8 +37,8 @@
   .wrap{max-width:1240px;margin:0 auto;padding:0 28px;position:relative}
   .eyebrow{font-family:var(--fm);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--blue)}
   .mono{font-family:var(--fm)}
-  h1,h2{font-weight:800;letter-spacing:-.03em;line-height:1.02}
-  h2{font-size:clamp(36px,4.8vw,64px)}
+  h1,h2{font-weight:800;letter-spacing:-.03em;line-height:1.0}
+  h2{font-size:clamp(38px,5.8vw,80px)}
   h2 .b{color:var(--blue)}
   .lead{font-size:clamp(16px,1.5vw,19px);color:var(--ink-3);line-height:1.6;max-width:56ch}
   section{padding:clamp(84px,11vw,150px) 0;position:relative}
@@ -57,18 +57,25 @@
   /* mono annotation */
   .anno{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
   /* giant ghost numerals */
-  .gnum{position:absolute;top:8px;right:0;font-family:var(--fb);font-weight:800;font-size:clamp(110px,16vw,220px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(15,17,21,.10);pointer-events:none;user-select:none;z-index:0}
+  .gnum{position:absolute;top:-10px;right:-1.5vw;font-family:var(--fb);font-weight:800;font-size:clamp(160px,26vw,380px);line-height:.78;color:transparent;-webkit-text-stroke:1.5px rgba(15,17,21,.12);pointer-events:none;user-select:none;z-index:0}
   .dark .gnum{-webkit-text-stroke:1.5px rgba(255,255,255,.10)}
   section>.wrap{z-index:1}
 
   /* ===== masked line reveal + rise reveal ===== */
-  .ln{display:block;overflow:hidden}
-  .ln-i{display:block;transform:translateY(112%);transition:transform 340ms var(--ease)}
-  .in .ln-i{transform:none}
-  .ln:nth-child(2) .ln-i{transition-delay:70ms}
-  .ln:nth-child(3) .ln-i{transition-delay:140ms}
+  .ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+  .ln-i{display:block;transform:translateY(114%);transition:transform 380ms var(--ease)}
+  .in .ln-i,.on .ln-i,.booted #hero .ln-i{transform:none}
+  .ln:nth-child(2) .ln-i{transition-delay:80ms}
+  .ln:nth-child(3) .ln-i{transition-delay:160ms}
   .rv{opacity:0;transform:translateY(12px);transition:opacity 220ms var(--ease),transform 220ms var(--ease)}
   .rv.on{opacity:1;transform:none}
+  h2 .ln{padding-bottom:.1em;margin-bottom:-.1em}
+  /* ===== giant outlined marquee dividers ===== */
+  .gm{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.2vw 0;background:var(--paper);user-select:none}
+  .gm .gm-in{display:flex;width:max-content;animation:tick 30s linear infinite}
+  .gm span{font-weight:800;font-size:clamp(56px,8.5vw,120px);line-height:1;letter-spacing:-.02em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(15,17,21,.3);padding-right:.6em}
+  .gm span b{color:var(--blue);-webkit-text-stroke:0;font-weight:800}
+  @supports not (-webkit-text-stroke:1px #000){.gm span{color:rgba(15,17,21,.14)}}
 
   /* ===== hover grammar ===== */
   .u{position:relative;text-decoration:none}
@@ -88,11 +95,11 @@
   .btn.ghost:hover{color:var(--blue-deep)}
   .mag{display:inline-block;will-change:transform}
 
-  /* ===== ticker band ===== */
-  .band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:15px 0;background:var(--paper)}
+  /* ===== ticker band (ink ribbon) ===== */
+  .band{overflow:hidden;padding:14px 0;background:var(--ink)}
   .band .in2{display:flex;gap:0;width:max-content;animation:tick 26s linear infinite}
-  .band span{font-family:var(--fm);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;padding-right:12px}
-  .band b{color:var(--blue);font-weight:600;padding-right:12px}
+  .band span{font-family:var(--fm);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#E7ECF3;white-space:nowrap;padding-right:14px}
+  .band b{color:var(--blue-glow);font-weight:600;padding-right:14px}
   @keyframes tick{to{transform:translateX(-50%)}}
 
   /* ===== probe cursor ===== */
@@ -105,36 +112,44 @@
   body.probe, body.probe a, body.probe button, body.probe .tab, body.probe .switch{cursor:none}
   body.probe input, body.probe textarea{cursor:auto}
 
-  /* ===== NAV ===== */
-  #nav{position:fixed;top:0;left:0;right:0;z-index:50;height:68px;display:flex;align-items:center;background:transparent;transition:background 160ms var(--ease),box-shadow 160ms var(--ease)}
-  #nav.scrolled{background:rgba(255,255,255,.93);backdrop-filter:blur(8px);box-shadow:inset 0 -1px 0 var(--line)}
-  #nav .wrap{display:flex;align-items:center;gap:26px;width:100%}
-  .navbrand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-.01em;text-decoration:none}
-  .navbrand .disc{width:22px;height:22px;border-radius:50%;background:var(--ink);position:relative;flex:none}
+  /* ===== NAV — floating ink pill ===== */
+  #nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width:min(1180px,calc(100% - 32px));height:58px;display:flex;align-items:center;background:var(--ink);border-radius:999px;padding:0 10px 0 22px;box-shadow:0 12px 32px rgb(15 17 21/.18);transition:box-shadow 160ms var(--ease)}
+  #nav .navwrap{display:flex;align-items:center;gap:26px;width:100%}
+  .navbrand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:-.01em;text-decoration:none;color:#fff}
+  .navbrand .disc{width:20px;height:20px;border-radius:50%;background:#fff;position:relative;flex:none}
   .navbrand .disc::after{content:"";position:absolute;right:-4px;top:-2px;width:9px;height:9px;border-radius:50%;background:var(--blue)}
-  .navbrand b{color:var(--blue);font-weight:800}
-  .navlinks{margin-left:auto;display:flex;align-items:center;gap:24px}
-  .navlinks a:not(.pill){font-family:var(--fm);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
-  .navlinks .pill{background:var(--blue);color:#fff;border-radius:999px;padding:10px 20px;font-family:var(--fm);font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background 160ms var(--ease)}
+  .navbrand b{color:var(--blue-glow);font-weight:800}
+  .navlinks{margin-left:auto;display:flex;align-items:center;gap:22px}
+  .navlinks a:not(.pill){font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#C6CDD6;text-decoration:none;transition:color 160ms var(--ease)}
+  .navlinks a:not(.pill):hover{color:#fff}
+  .navlinks .pill{background:var(--blue);color:#fff;border-radius:999px;padding:11px 22px;font-family:var(--fm);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background 160ms var(--ease)}
   .navlinks .pill:hover{background:var(--blue-deep)}
-  @media(max-width:760px){.navlinks a:not(.pill){display:none}}
-  #pct{font-family:var(--fm);font-size:10px;color:var(--ink-3);letter-spacing:.1em;font-variant-numeric:tabular-nums}
+  @media(max-width:820px){.navlinks a:not(.pill){display:none}}
+  #pct{font-family:var(--fm);font-size:10px;color:#7E8794;letter-spacing:.1em;font-variant-numeric:tabular-nums}
   @media(max-width:900px){#pct{display:none}}
 
-  /* ===== HERO ===== */
-  #hero{min-height:100svh;display:flex;align-items:center;padding:130px 0 70px;border-bottom:1px solid var(--line);overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:57fr 43fr;gap:44px;align-items:center;width:100%}
-  @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:440px;margin:0 auto}}
-  .hero-copy h1{font-size:clamp(48px,7.4vw,102px);line-height:.96}
+  /* ===== HERO — typographic monument ===== */
+  #hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 40px;border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+  .hero-art{position:absolute;right:max(-30px,calc((100vw - 1240px)/2 - 90px));top:41%;transform:translateY(-50%);width:min(42vw,580px);z-index:0;pointer-events:auto}
+  @media(max-width:900px){.hero-art{position:relative;right:auto;top:auto;transform:none;width:min(80vw,420px);margin:0 auto 8px}}
+  .hero-copy{position:relative;z-index:1}
+  .hero-copy h1{font-size:clamp(52px,10.5vw,150px);line-height:.92;letter-spacing:-.035em}
   .hero-copy h1 .b{color:var(--blue)}
+  .hero-copy h1 .ghostline{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  @supports not (-webkit-text-stroke:1px #000){.hero-copy h1 .ghostline{color:var(--ink)}}
   .hero-meta{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-  .hero-copy .lead{margin-top:24px}
-  .hero-ctas{display:flex;align-items:center;gap:16px;margin-top:36px;flex-wrap:wrap}
-  .hero-foot{margin-top:56px;display:flex;align-items:center;gap:12px}
-  .hero-foot::before{content:"";width:28px;height:1px;background:var(--blue)}
-  .hero-art{position:relative}
+  .hero-sub{max-width:56ch;margin-top:34px}
+  .hero-ctas{display:flex;align-items:center;gap:16px;margin-top:32px;flex-wrap:wrap}
+  .hero-foot{margin-top:52px;display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+  .hero-foot .own{display:flex;align-items:center;gap:12px}
+  .hero-foot .own::before{content:"";width:28px;height:1px;background:var(--blue)}
+  .scrollhint{display:flex;align-items:center;gap:10px}
+  .scrollhint i{width:1px;height:26px;background:var(--ink-3);display:block;position:relative;overflow:hidden}
+  .scrollhint i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--blue);animation:shint 1.8s var(--ease) infinite}
+  @keyframes shint{60%{top:100%}100%{top:100%}}
   #net{width:100%;aspect-ratio:1/1;display:block}
-  .fig{display:flex;justify-content:space-between;margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+  .fig{display:flex;justify-content:space-between;gap:14px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px;flex-wrap:wrap}
+  .hero-art .fig{background:rgba(255,255,255,.7)}
 
   /* ===== POSITIONING ===== */
   #positioning .inner{max-width:820px;margin:0 auto}
@@ -291,6 +306,9 @@
   .booted [data-boot="1"]{transition-delay:60ms}.booted [data-boot="2"]{transition-delay:140ms}
   .booted [data-boot="3"]{transition-delay:220ms}.booted [data-boot="4"]{transition-delay:320ms}
   .booted [data-boot="5"]{transition-delay:420ms}.booted [data-boot="6"]{transition-delay:540ms}
+  /* the floating nav is centred with translateX — give it its own boot motion */
+  #nav[data-boot]{transform:translateX(-50%) translateY(-14px)}
+  .booted #nav[data-boot]{transform:translateX(-50%)}
 
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation-duration:1ms!important;animation-iteration-count:1!important;transition-duration:1ms!important}
@@ -314,14 +332,14 @@
   <pattern id="ht-blue" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#2F7BFF"/></pattern>
 </defs></svg>
 
-<nav id="nav">
-  <div class="wrap">
+<nav id="nav" data-boot="1">
+  <div class="navwrap">
     <a class="navbrand" href="#hero" data-cursor="HOME"><span class="disc"></span>Omniscient<b>&nbsp;AI</b></a>
     <div class="navlinks">
-      <a class="u" href="#method">Method</a>
-      <a class="u" href="#sovereignty">Sovereignty</a>
-      <a class="u" href="#shift">The shift</a>
-      <a class="u" href="#proof">Proof</a>
+      <a href="#method">Method</a>
+      <a href="#sovereignty">Sovereignty</a>
+      <a href="#shift">The shift</a>
+      <a href="#proof">Proof</a>
       <span id="pct">000%</span>
       <span class="mag"><a class="pill" href="#enquire" data-cursor="GO">Enquire →</a></span>
     </div>
@@ -330,31 +348,34 @@
 
 <!-- ============ HERO ============ -->
 <header id="hero">
-  <div class="wrap hero-grid">
+  <div class="hero-art" data-boot="2">
+    <canvas id="net" aria-label="Omniscient AI connectome — live network illustration"></canvas>
+    <div class="fig">
+      <span class="anno">Fig. 01 — the connectome · live</span>
+      <span class="anno" id="net-coord">x 000 · y 000</span>
+    </div>
+  </div>
+  <div class="wrap">
     <div class="hero-copy">
-      <div class="hero-meta" data-boot="1">
+      <div class="hero-meta" data-boot="2">
         <span class="eyebrow">Enterprise AI adoption</span>
         <span class="anno">37.8136°S&nbsp;&nbsp;144.9631°E · Melbourne</span>
       </div>
-      <h1 class="in" style="margin-top:20px" id="hero-h1">
-        <span class="ln"><span class="ln-i">We build the</span></span>
-        <span class="ln"><span class="ln-i"><span class="b">solution</span>.</span></span>
-        <span class="ln"><span class="ln-i">Not the slide deck.</span></span>
+      <h1 style="margin-top:22px" id="hero-h1">
+        <span class="ln"><span class="ln-i">We build</span></span>
+        <span class="ln"><span class="ln-i">the <span class="b">solution</span>.</span></span>
+        <span class="ln"><span class="ln-i ghostline">Not the slide deck.</span></span>
       </h1>
-      <p class="lead" data-boot="4">Australia's specialists in enterprise AI transformation. We drive real value, keep your data private, and turn variable cloud bills into a fixed cost — while lifting output in every department. Working systems your teams use every day.</p>
-      <div class="hero-ctas" data-boot="5">
-        <span class="mag"><a class="btn solid" href="#enquire" data-cursor="GO"><span>Enquire today →</span></a></span>
-        <a class="btn ghost u" href="#method">See the method →</a>
+      <div class="hero-sub">
+        <p class="lead" data-boot="4">Australia's specialists in enterprise AI transformation. We drive real value, keep your data private, and turn variable cloud bills into a fixed cost — while lifting output in every department. Working systems your teams use every day.</p>
+        <div class="hero-ctas" data-boot="5">
+          <span class="mag"><a class="btn solid" href="#enquire" data-cursor="GO"><span>Enquire today →</span></a></span>
+          <a class="btn ghost u" href="#method">See the method →</a>
+        </div>
       </div>
-      <div class="hero-foot anno" data-boot="6">We eat our own cooking</div>
-    </div>
-    <div class="hero-art" data-boot="2">
-      <span class="xmark" style="top:-4px;left:-4px"></span>
-      <span class="xmark" style="top:-4px;right:-4px"></span>
-      <canvas id="net" aria-label="Omniscient AI connectome — live network illustration"></canvas>
-      <div class="fig">
-        <span class="anno">Fig. 01 — the connectome · live</span>
-        <span class="anno" id="net-coord">x 000 · y 000</span>
+      <div class="hero-foot anno" data-boot="6">
+        <span class="own">We eat our own cooking</span>
+        <span class="scrollhint">Scroll <i></i></span>
       </div>
     </div>
   </div>
@@ -370,7 +391,7 @@
   <div class="gnum" aria-hidden="true">01</div>
   <div class="wrap inner">
     <div class="eyebrow rv">The wedge</div>
-    <h2 class="rv">Solutions. <span class="b">Not seminars.</span></h2>
+    <h2 class="rv"><span class="ln"><span class="ln-i">Solutions. <span class="b">Not seminars.</span></span></span></h2>
     <div class="manifesto">
       <p class="rv">Most "AI transformation" is a workshop, a slide deck, and an invoice. Your people get a certificate. Your work stays exactly as it was.</p>
       <p class="rv">We do the opposite. <b>We consult with your teams, learn how the work actually runs, and build the harness you use every day</b> — your regular tasks packaged as automations, running on systems you own.</p>
@@ -384,7 +405,7 @@
   <div class="gnum" aria-hidden="true">02</div>
   <div class="wrap">
     <div class="eyebrow rv">What we actually deliver</div>
-    <h2 class="rv" style="margin-top:16px">Four things. <span class="b">Measured.</span></h2>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Four things. <span class="b">Measured.</span></span></span></h2>
     <div class="pillar-grid">
       <div class="pillar rv" data-cursor="01">
         <svg class="tex" aria-hidden="true"><rect width="100%" height="100%" fill="url(#ht-blue)"/></svg>
@@ -419,7 +440,7 @@
   <div class="gnum" aria-hidden="true">03</div>
   <div class="wrap">
     <div class="eyebrow rv">The method</div>
-    <h2 class="rv" style="margin-top:16px">Consult. Build. <span class="b">Measure.</span></h2>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Consult. Build. <span class="b">Measure.</span></span></span></h2>
     <div class="method-grid">
       <div class="method-stick">
         <svg id="cm-method" viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -465,7 +486,7 @@
 <section id="harness" style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow rv">The harness</div>
-    <h2 class="rv" style="margin-top:16px">Your tasks. <span class="b">One system.</span></h2>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Your tasks. <span class="b">One system.</span></span></span></h2>
     <p class="lead rv" style="margin-top:18px">Pick a department. These are the kinds of tasks that scatter across a team's week — watch them assemble into one harness your people run with a tap.</p>
     <div class="tabrow rv" id="dept-tabs"></div>
     <div id="stage">
@@ -484,11 +505,16 @@
   </div>
 </section>
 
+<div class="gm" aria-hidden="true"><div class="gm-in">
+  <span>Sovereign<b>&nbsp;·&nbsp;</b></span><span>Sovereign<b>&nbsp;·&nbsp;</b></span><span>Sovereign<b>&nbsp;·&nbsp;</b></span><span>Sovereign<b>&nbsp;·&nbsp;</b></span>
+  <span>Sovereign<b>&nbsp;·&nbsp;</b></span><span>Sovereign<b>&nbsp;·&nbsp;</b></span><span>Sovereign<b>&nbsp;·&nbsp;</b></span><span>Sovereign<b>&nbsp;·&nbsp;</b></span>
+</div></div>
+
 <!-- ============ SOVEREIGNTY ============ -->
-<section id="sovereignty" style="padding-top:0">
+<section id="sovereignty" style="padding-top:clamp(56px,7vw,90px)">
   <div class="wrap">
     <div class="eyebrow rv">Sovereignty</div>
-    <h2 class="rv" style="margin-top:16px">Your data stops <span class="b">at the line.</span></h2>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Your data stops <span class="b">at the line.</span></span></span></h2>
     <p class="lead rv" style="margin-top:18px">Cloud AI tools ship your business out of the building by design. Our systems run on your premises behind one default-deny boundary — nothing crosses without a logged, human-approved exception. Flip the switch and watch the difference.</p>
     <div id="sov-canvas" class="dark">
       <div class="sov-label l">Your building</div>
@@ -519,12 +545,17 @@
   </div>
 </section>
 
+<div class="gm" aria-hidden="true"><div class="gm-in">
+  <span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span><span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span><span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span><span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span>
+  <span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span><span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span><span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span><span>Fixed&nbsp;cost<b>&nbsp;·&nbsp;</b></span>
+</div></div>
+
 <!-- ============ THE SHIFT ============ -->
 <section id="shift">
   <div class="gnum" aria-hidden="true">04</div>
   <div class="wrap">
     <div class="eyebrow rv">The shift</div>
-    <h2 class="rv" style="margin-top:16px">Variable spend → <span class="b">fixed cost.</span></h2>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Variable spend → <span class="b">fixed cost.</span></span></span></h2>
     <div class="shift-grid">
       <div class="rv">
         <div class="bignum">~<span id="pctnum">0</span><span class="pct">%</span></div>
@@ -570,7 +601,7 @@
   <div class="gnum" aria-hidden="true">05</div>
   <div class="wrap">
     <div class="eyebrow rv" style="color:var(--blue-glow)">Proof</div>
-    <h2 class="rv" style="margin-top:16px;color:#fff">We shipped it to <span class="b" style="color:var(--blue-glow)">ourselves</span> first.</h2>
+    <h2 class="rv" style="margin-top:16px;color:#fff"><span class="ln"><span class="ln-i">We shipped it to <span class="b" style="color:var(--blue-glow)">ourselves</span> first.</span></span></h2>
     <p class="lead rv" style="margin-top:18px">No theories tested on your business. Every pattern we install ran inside our own companies before it was ever offered to a client.</p>
     <div class="proof-grid">
       <div class="ptile rv">
@@ -593,7 +624,7 @@
   <div class="gnum" aria-hidden="true">06</div>
   <div class="wrap">
     <div class="eyebrow rv">Straight answers</div>
-    <h2 class="rv" style="margin-top:16px">You're going to ask. <span class="b">Good.</span></h2>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">You're going to ask. <span class="b">Good.</span></span></span></h2>
     <div class="qa-grid">
       <div class="qa rv">
         <div class="q">Is this a training program?</div>
@@ -619,7 +650,7 @@
 <section id="enquire">
   <div class="wrap">
     <div class="eyebrow rv">Enquire</div>
-    <h2 class="rv" style="margin-top:18px">Need a solution,<br>not a <span class="b">seminar?</span></h2>
+    <h2 class="rv" style="margin-top:18px;font-size:clamp(48px,8.6vw,118px)"><span class="ln"><span class="ln-i">Need a solution,</span></span><span class="ln"><span class="ln-i">not a <span class="b">seminar?</span></span></span></h2>
     <p class="lead rv" style="max-width:52ch">Enquire today if you need a solution, not a group training session. We'll consult with your teams, build the harness, and prove the value in numbers.</p>
     <span class="mag"><a class="btn solid rv" href="mailto:enquiries@omniscientai.io?subject=Enquiry%20—%20Enterprise%20AI%20adoption" data-cursor="GO"><span>Enquire today →</span></a></span>
     <a class="mail rv" href="mailto:enquiries@omniscientai.io">enquiries@omniscientai.io</a>
@@ -871,15 +902,19 @@
   }, {threshold:.05});
   nio.observe(cv);
   document.addEventListener("visibilitychange", function(){ if (document.hidden) stopNet(); else if (!reduced) { var r = cv.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) startNet(); } });
-  // cursor→design-space mapping + coordinate readout
+  // cursor→design-space mapping + coordinate readout. Listen on the whole hero,
+  // not the canvas: the headline layer overlaps the canvas and would otherwise
+  // swallow pointer events, killing the repulsion field under the text.
   var coordEl = document.getElementById("net-coord");
-  cv.addEventListener("pointermove", function(e){
+  var heroEl = document.getElementById("hero");
+  heroEl.addEventListener("pointermove", function(e){
     var r = cv.getBoundingClientRect();
+    if (!r.width) return;
     mouseN.x = (e.clientX - r.left) / r.width * S;
     mouseN.y = (e.clientY - r.top) / r.height * S;
-    if (coordEl) coordEl.textContent = "x " + String(Math.round(mouseN.x)).padStart(3,"0") + " · y " + String(Math.round(mouseN.y)).padStart(3,"0");
+    if (coordEl && mouseN.x > -200 && mouseN.x < S + 200) coordEl.textContent = "x " + String(Math.max(0, Math.min(999, Math.round(mouseN.x)))).padStart(3,"0") + " · y " + String(Math.max(0, Math.min(999, Math.round(mouseN.y)))).padStart(3,"0");
   }, {passive:true});
-  cv.addEventListener("pointerleave", function(){ mouseN.x = mouseN.y = -9999; });
+  heroEl.addEventListener("pointerleave", function(){ mouseN.x = mouseN.y = -9999; });
 
   /* ---------- method: light nodes as steps enter ---------- */
   var msvg = document.getElementById("cm-method");
@@ -946,7 +981,8 @@
       var p = SCATTER[i % SCATTER.length];
       var x = Math.max(8, Math.min(p[0]*W, W - c.offsetWidth - 8));
       var y = Math.max(8, Math.min(p[1]*H, H - c.offsetHeight - 8));
-      c.style.transform = "translate(" + x + "px," + y + "px)";
+      var rot = [-5, 4, -3, 6, -4, 3][i % 6]; // scattered = physical, slightly askew
+      c.style.transform = "translate(" + x + "px," + y + "px) rotate(" + rot + "deg)";
       c.style.transitionDelay = (i*30)+"ms";
       c.style.opacity = "0";
       requestAnimationFrame(function(){ requestAnimationFrame(function(){ c.style.opacity = "1"; }); });
@@ -977,7 +1013,8 @@
       if (myGen !== gen) return;
       chips.forEach(function(c, i){
         c.style.transitionDelay = (i*30)+"ms";
-        c.style.transform = "translate(" + (W/2 - 60) + "px," + (H/2 - 10) + "px)";
+        // gather + straighten: the harness squares everything away
+        c.style.transform = "translate(" + (W/2 - 60) + "px," + (H/2 - 10) + "px) rotate(0deg)";
         c.style.opacity = "0";
       });
       moduleName.textContent = currentDept.toUpperCase().replace(/\s/g,"") + ".HARNESS";
