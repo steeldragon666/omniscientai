@@ -1,0 +1,25 @@
+# Omniscient AI
+
+> Melbourne-based, vendor-neutral enterprise AI consultants serving all of Australia. One offer: the Omniscient Core — a sovereign, on-premises AI appliance (local open-weight models, agent workflows, open-source software estate, default-deny egress, tamper-evident audit ledger) delivered through a consult → build → measure engagement. Fixed-cost lease commercial model instead of per-seat/per-token pricing. "Solutions, not seminars."
+
+Key facts
+- Location: Melbourne, Victoria, Australia; deploys Australia-wide
+- Contact: enquiries@omniscientai.io
+- Positioning: working systems installed on the client's premises, measured against the client's own bills — not workshops or slideware
+- Data stance: on-premises, single-tenant, no inbound internet path; a single default-deny egress broker allows only consented model burst and signed update pulls; both can be disabled
+- Commercial model: 3-year appliance lease + Sovereignty Subscription (signed updates, patching, maintained AU compliance pack, support) + optional professional services
+- Typical illustrative economics (from the public value model, USD, editable): ~US$222K all-in over 3 years for a Business-tier appliance vs ~US$1.08M for 200 per-seat SaaS licences; ~19x cheaper per token vs metered frontier APIs; ~4x volume at equal spend — measured against actual client bills before any claim is made
+- Proof: the founders' own companies run on the same systems, including Carbon Project Australia (an Australian R&D Tax Incentive software business)
+
+## Pages
+- [Home](https://omniscientai.io/): positioning, method (consult → build → measure), Omniscient Pulse morning briefs, the second brain knowledge graph, sovereignty model, FAQ, enquiry form
+- [Appliance & pricing](https://omniscientai.io/appliance.html): the offer architecture, four tiers (Edge, Business, Enterprise, Regulated), commercial model, illustrative anchor numbers, what's in the box
+- [Security architecture](https://omniscientai.io/security.html): default-deny egress, agent action tiering (GREEN/BLUE/RED), no vendor standing access, signed pull-only updates, tamper-evident ledger, Essential Eight alignment
+- [Sovereign AI Melbourne](https://omniscientai.io/sovereign-ai-melbourne.html): what sovereign AI means, the three-question sovereignty test, who it's for (Australian mid-market), regulatory context
+- [R&D Tax Incentive](https://omniscientai.io/ai-rd-tax-incentive.html): when AI adoption can qualify under Division 355 ITAA 1997, rates and deadlines, how the appliance ledger produces contemporaneous evidence; general information, not tax advice
+- [Value model](https://omniscientai.io/assets/value-calculator.html): editable ROI/capacity model with published assumptions
+- [Privacy policy](https://omniscientai.io/privacy.html)
+
+## Collateral
+- [One-pager (PDF)](https://omniscientai.io/assets/Omniscient-AI-OnePager.pdf)
+- [Pamphlet (PDF)](https://omniscientai.io/assets/Omniscient-AI-Pamphlet.pdf)
