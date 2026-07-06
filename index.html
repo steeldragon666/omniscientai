@@ -61,6 +61,24 @@
       "uploadDate": "2026-07-04",
       "duration": "PT1M4S",
       "publisher": { "@id": "https://omniscientai.io/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is this a training program?", "acceptedAnswer": { "@type": "Answer", "text": "No. Training teaches your people to use tools and then leaves. We build the tools, install them on your premises, and automate the work itself. The deliverable is a running system, not a workshop." } },
+        { "@type": "Question", "name": "Where does our data go?", "acceptedAnswer": { "@type": "Answer", "text": "Nowhere, by default. The system is sovereign and on-premises behind a default-deny boundary. Nothing is sent to a third-party cloud unless you explicitly approve a consented, logged exception - and that path can be disabled outright." } },
+        { "@type": "Question", "name": "How real is the ~50% cost reduction?", "acceptedAnswer": { "@type": "Answer", "text": "It's what we typically see once the harness replaces scattered cloud and subscription spend with owned, fixed-cost compute. Your exact figure depends on your current stack - we measure it against your bills before we claim anything." } },
+        { "@type": "Question", "name": "How can you move faster than a big consultancy?", "acceptedAnswer": { "@type": "Answer", "text": "Because we built these systems for our own companies before offering them. The patterns are proven and the plumbing already exists, so we deploy from a running start instead of designing from a blank page." } }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://omniscientai.io/appliance.html#product",
+      "name": "Omniscient Core - Sovereign AI Appliance",
+      "brand": { "@type": "Brand", "name": "Omniscient AI" },
+      "url": "https://omniscientai.io/appliance.html",
+      "image": "https://omniscientai.io/assets/logo-horizontal-with-graphic.png",
+      "description": "On-premises sovereign AI appliance for Australian enterprise: local open-weight models, agent workflows, open-source software estate, default-deny egress boundary and tamper-evident audit ledger - on a 3-year lease with a Sovereignty Subscription."
     }
   ]
 }
@@ -420,6 +438,18 @@
   }
 </style>
 <noscript><style>.rv,[data-boot]{opacity:1;transform:none}.ln-i{transform:none}</style></noscript>
+<style id="enq-css">
+#enq-form{margin-top:34px;max-width:660px;display:flex;flex-direction:column;gap:14px}
+#enq-form .enq-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){#enq-form .enq-row{grid-template-columns:1fr}}
+#enq-form label{display:flex;flex-direction:column;gap:6px;font-family:var(--fm);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+#enq-form input,#enq-form select,#enq-form textarea{font-family:var(--fb);font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .2s;width:100%}
+#enq-form input:focus,#enq-form select:focus,#enq-form textarea:focus{border-color:var(--blue)}
+#enq-form button.btn{font-family:var(--fb);font-size:16px;font-weight:700;cursor:pointer;border:0}
+.enq-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.enq-status{font-family:var(--fm);font-size:13px;color:var(--ink-3);min-height:1em;margin:0}
+.enq-status.ok{color:#149A45}.enq-status.err{color:#C6383D}
+</style>
 </head>
 <body>
 
@@ -443,6 +473,7 @@
       <a href="#sovereignty">Sovereignty</a>
       <a href="#shift">The shift</a>
       <a href="#proof">Proof</a>
+      <a href="appliance.html">Appliance</a>
       <span id="pct">000%</span>
       <span class="mag"><a class="pill" href="#enquire" data-cursor="GO">Enquire →</a></span>
     </div>
@@ -757,7 +788,7 @@
     <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Variable spend → <span class="b">fixed cost.</span></span></span></h2>
     <div class="shift-grid">
       <div class="rv">
-        <div class="bignum">~<span id="pctnum">0</span><span class="pct">%</span></div>
+        <div class="bignum">~<span id="pctnum">50</span><span class="pct">%</span></div>
         <div class="bignum-sub">typical reduction in variable IT &amp; subscription spend once the harness is live</div>
         <p class="lead" style="margin-top:24px;font-size:15.5px">Per-seat and per-token pricing punishes success — the more useful AI gets, the more you pay. We replace scattered subscriptions with owned, fixed-cost compute. We measure it against your bills before we claim anything.</p>
         <a class="btn ghost u" style="margin-top:18px;padding-left:0" href="assets/value-calculator.html" data-cursor="OPEN">Model your shift →</a>
@@ -807,6 +838,8 @@
         <div class="k">Carbon Project Australia</div>
         <h3>R&amp;DTI software, run on the harness</h3>
         <p>Our own R&amp;D tax software business runs on these systems — evidence capture, document intelligence and agent workflows, live in production for real claims.</p>
+        <!-- TODO: uncomment once case-study figures are verified and its noindex removed -->
+        <!-- <a class="u" href="case-study-carbon-project.html" style="color:var(--blue-glow)">Read the measured case study →</a> -->
       </div>
       <div class="ptile rv">
         <div class="k">Our own operations</div>
@@ -851,8 +884,30 @@
     <div class="eyebrow rv">Enquire</div>
     <h2 class="rv" style="margin-top:18px;font-size:clamp(48px,8.6vw,118px)"><span class="ln"><span class="ln-i">Need a solution,</span></span><span class="ln"><span class="ln-i">not a <span class="b">seminar?</span></span></span></h2>
     <p class="lead rv" style="max-width:52ch">Enquire today if you need a solution, not a group training session. We'll consult with your teams, build the harness, and prove the value in numbers — on site in Melbourne or anywhere in Australia.</p>
-    <span class="mag"><a class="btn solid rv" href="mailto:enquiries@omniscientai.io?subject=Enquiry%20—%20Enterprise%20AI%20adoption" data-cursor="GO"><span>Enquire today →</span></a></span>
-    <a class="mail rv" href="mailto:enquiries@omniscientai.io">enquiries@omniscientai.io</a>
+    <form id="enq-form" class="rv" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST" novalidate>
+      <div class="enq-row">
+        <label>Name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Company<input type="text" name="company" autocomplete="organization"></label>
+      </div>
+      <div class="enq-row">
+        <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+        <label>I need<select name="interest">
+          <option>A sovereignty briefing</option>
+          <option>Appliance &amp; pricing</option>
+          <option>R&amp;DTI-documented adoption</option>
+          <option>Something else</option>
+        </select></label>
+      </div>
+      <label>What should we know?<textarea name="message" rows="4" placeholder="Team size, current AI stack, what you want automated…"></textarea></label>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="Enquiry — omniscientai.io">
+      <div class="enq-actions">
+        <button type="submit" class="btn solid" data-cursor="GO"><span>Send enquiry →</span></button>
+        <a id="enq-book" class="enq-book u" href="REPLACE_WITH_BOOKING_URL" hidden>Book a 30-min briefing →</a>
+        <a class="mail" href="mailto:enquiries@omniscientai.io">or email enquiries@omniscientai.io</a>
+      </div>
+      <p id="enq-status" class="enq-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -870,6 +925,10 @@
           <a class="u" href="#sovereignty">Sovereignty</a>
           <a class="u" href="#shift">The shift</a>
           <a class="u" href="#proof">Proof</a>
+          <a class="u" href="appliance.html">Appliance &amp; pricing</a>
+          <a class="u" href="security.html">Security architecture</a>
+          <a class="u" href="sovereign-ai-melbourne.html">Sovereign AI</a>
+          <a class="u" href="ai-rd-tax-incentive.html">R&amp;D Tax Incentive</a>
         </div>
         <div class="col">
           <span class="h">Collateral</span>
@@ -885,7 +944,7 @@
       </div>
     </div>
     <div class="foot-base">
-      <span>© Omniscient AI · Melbourne · vendor-neutral · Australian-sovereign</span>
+      <span>© Omniscient AI · Melbourne · vendor-neutral · Australian-sovereign · <a class="u" href="privacy.html">Privacy</a><!-- TODO: add ABN, e.g. · ABN 00 000 000 000 --></span>
       <span>omniscientai.io</span>
     </div>
   </div>
@@ -1504,6 +1563,29 @@
     film.addEventListener("pause", function(){ if (!film.ended) btn.classList.remove("hide"); });
     film.addEventListener("ended", function(){ btn.classList.add("hide"); });
   })();
+</script>
+<script>
+(function(){
+  var f=document.getElementById("enq-form");if(!f)return;
+  var st=document.getElementById("enq-status");
+  var book=document.getElementById("enq-book");
+  if(book&&book.getAttribute("href").indexOf("REPLACE_WITH")===-1){book.hidden=false;}
+  var configured=f.getAttribute("action").indexOf("REPLACE_WITH")===-1;
+  function mailtoFallback(){
+    var d=new FormData(f);
+    var body="Name: "+(d.get("name")||"")+"\nCompany: "+(d.get("company")||"")+"\nEmail: "+(d.get("email")||"")+"\nNeed: "+(d.get("interest")||"")+"\n\n"+(d.get("message")||"");
+    location.href="mailto:enquiries@omniscientai.io?subject="+encodeURIComponent("Enquiry — "+(d.get("company")||d.get("name")||"omniscientai.io"))+"&body="+encodeURIComponent(body);
+  }
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(f.reportValidity&&!f.reportValidity())return;
+    if(!configured){mailtoFallback();return;}
+    st.textContent="Sending…";st.className="enq-status";
+    fetch(f.getAttribute("action"),{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}})
+      .then(function(r){if(r.ok){st.textContent="Received. We'll reply within one business day.";st.className="enq-status ok";f.reset();}else{throw 0;}})
+      .catch(function(){st.textContent="Couldn't send — opening your email client instead.";st.className="enq-status err";mailtoFallback();});
+  });
+})();
 </script>
 </body>
 </html>

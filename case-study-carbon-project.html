@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- NOINDEX until the [MEASURE] figures below are replaced with verified numbers. Then delete the next line and add this page to sitemap.xml. -->
+<meta name="robots" content="noindex">
+<title>Case Study: Carbon Project Australia — R&amp;DTI Software on the Harness | Omniscient AI</title>
+<meta name="description" content="How Carbon Project Australia, an R&D tax software business, runs evidence capture, document intelligence and agent workflows on the Omniscient harness — with measured results.">
+<link rel="canonical" href="https://omniscientai.io/case-study-carbon-project.html">
+<meta property="og:title" content="Case Study: Carbon Project Australia on the Omniscient Harness">
+<meta property="og:description" content="Evidence capture, document intelligence and agent workflows — live in production for real R&DTI claims. The numbers, measured.">
+<meta property="og:image" content="https://omniscientai.io/assets/logo-horizontal-with-graphic.png">
+<meta property="og:url" content="https://omniscientai.io/case-study-carbon-project.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_AU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='46' cy='50' r='34' fill='%230F1115'/%3E%3Ccircle cx='78' cy='30' r='12' fill='%232F7BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F1115;--ink-2:#2A2F37;--ink-3:#5B6270;--blue:#2F7BFF;--blue-deep:#1C4FD6;--blue-bg:#2F7BFF14;--paper:#FFFFFF;--paper-2:#F4F6F9;--line:#E4E7EC;--fb:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--fm:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--fm);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--blue)}
+.mono{font-family:var(--fm)}
+a{color:var(--blue-deep)}
+.pnav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+.pnav .inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:22px;height:60px}
+.pnav .brand{font-weight:800;color:var(--ink);text-decoration:none}
+.pnav .brand b{color:var(--blue)}
+.pnav .lnk{margin-left:auto;display:flex;gap:18px;align-items:center}
+.pnav .lnk a{font-size:14px;color:var(--ink-2);text-decoration:none}
+.phead{padding:76px 0 26px}
+h1{font-size:clamp(34px,5.4vw,56px);line-height:1.06;letter-spacing:-.02em;margin-top:16px}
+h1 .b{color:var(--blue)}
+.lead{font-size:19px;color:var(--ink-2);max-width:62ch;margin-top:18px}
+section{padding:38px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(24px,3.4vw,32px);letter-spacing:-.015em;margin-top:10px}
+p{color:var(--ink-2)}
+.fig{font-family:var(--fm);font-size:11.5px;color:var(--ink-3);margin-top:14px}
+.grid{display:grid;gap:16px;margin-top:24px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}
+.card .k{font-family:var(--fm);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--fm);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3)}
+.measure{display:inline-block;font-family:var(--fm);font-size:11px;font-weight:700;letter-spacing:.08em;background:#FFF3CD;color:#7A5D00;border:1px dashed #D9B300;border-radius:6px;padding:3px 8px}
+.draftbar{background:#FFF8E1;border:1px solid #EAD48A;border-radius:12px;padding:14px 18px;font-size:14.5px;color:#6B5300;margin-top:26px}
+.cta{background:var(--ink);color:#fff;border-radius:18px;padding:36px;margin:52px 0;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.cta h2{color:#fff;margin:0}
+.cta p{color:#B9C0CC;margin-top:8px;max-width:52ch}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;font-size:14px;color:var(--ink-3)}
+footer a{color:var(--ink-2);text-decoration:none;margin-right:20px}
+</style>
+</head>
+<body>
+<nav class="pnav"><div class="inner">
+  <a class="brand" href="/">Omniscient<b>&nbsp;AI</b></a>
+  <div class="lnk"><a href="/appliance.html">Appliance</a><a href="/security.html">Security</a><a href="/#enquire">Enquire →</a></div>
+</div></nav>
+
+<main class="wrap">
+<header class="phead">
+  <div class="eyebrow">Case study · Proof, measured</div>
+  <h1>Carbon Project Australia:<br>an R&amp;DTI software business,<br>run on the <span class="b">harness.</span></h1>
+  <p class="lead">"We eat our own cooking" is easy to say. This is the receipt: Carbon Project Australia — our R&amp;D tax software business — runs its evidence capture, document intelligence and agent workflows on the same systems we install for clients, live in production for real claims. Below is what we deployed, how we measured it, and the numbers.</p>
+  <div class="draftbar"><strong>Publication note:</strong> every figure on this page is measured before it is published. Values marked <span class="measure">MEASURE</span> are pending final verification against our own ledgers and bills — the same standard we apply before claiming anything to a client.</div>
+</header>
+
+<section id="context">
+  <div class="eyebrow">Context</div>
+  <h2>The business and the problem.</h2>
+  <p class="lead" style="font-size:16.5px">R&amp;DTI work is document-heavy and evidence-critical: client records arrive as timesheets, invoices, lab notebooks and project reports; claims live or die on contemporaneous substantiation; and every engagement repeats the same triage → extract → cross-reference → draft cycle. Exactly the shape of work per-seat AI tools meter badly — high volume, all day, across sensitive client data that should never sit in a third-party cloud.</p>
+</section>
+
+<section id="deployed">
+  <div class="eyebrow">What runs on the box</div>
+  <h2>Three workloads, one harness.</h2>
+  <div class="grid g3">
+    <div class="card"><div class="k">Evidence capture</div><p>Client records are ingested and graphed into the knowledge graph — entities, projects, activities and expenditures cross-referenced automatically, with gaps flagged for a human.</p></div>
+    <div class="card"><div class="k">Document intelligence</div><p>Timesheets, invoices and technical reports are read, classified and reconciled by local models — no client document leaves the premises.</p></div>
+    <div class="card"><div class="k">Agent workflows</div><p>Draft activity assessments, expenditure schedules and technical narratives are staged by agents overnight and presented for professional review — GREEN actions run, consequential steps wait for sign-off.</p></div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="eyebrow">Results</div>
+  <h2>The numbers.</h2>
+  <table>
+    <thead><tr><th>Metric</th><th>Before harness</th><th>On harness</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td>Analyst hours per claim (median)</td><td><span class="measure">MEASURE</span></td><td><span class="measure">MEASURE</span></td><td>Time records, matched claim complexity</td></tr>
+      <tr><td>Documents processed per week</td><td><span class="measure">MEASURE</span></td><td><span class="measure">MEASURE</span></td><td>Ledger counts</td></tr>
+      <tr><td>Variable SaaS / cloud AI spend (monthly)</td><td><span class="measure">MEASURE</span></td><td><span class="measure">MEASURE</span></td><td>Supplier bills, like-for-like scope</td></tr>
+      <tr><td>Turnaround, records-in to draft-out</td><td><span class="measure">MEASURE</span></td><td><span class="measure">MEASURE</span></td><td>Ledger timestamps</td></tr>
+      <tr><td>Tokens per repeated workflow run (trend)</td><td>—</td><td><span class="measure">MEASURE</span></td><td>Self-improving loop telemetry</td></tr>
+      <tr><td>Data egress events (default-deny boundary)</td><td>—</td><td><span class="measure">MEASURE</span></td><td>Egress broker log — consented bursts only</td></tr>
+    </tbody>
+  </table>
+  <p class="fig">Fig. 01 — measurement basis · all figures taken from the appliance's tamper-evident ledger and supplier bills; methodology below.</p>
+</section>
+
+<section id="method">
+  <div class="eyebrow">How we measure</div>
+  <h2>Methodology — the same one we'll apply to you.</h2>
+  <div class="grid g2">
+    <div class="card"><div class="k">Baseline first</div><p>Before-state figures come from time records and supplier bills over a defined baseline window, not memory. Where a clean baseline doesn't exist, we say so rather than estimate one.</p></div>
+    <div class="card"><div class="k">Ledger, not vibes</div><p>On-harness figures are read from the audit ledger — run counts, timestamps, token telemetry, egress events. The same evidence pack a client (or auditor) can demand.</p></div>
+    <div class="card"><div class="k">Like for like</div><p>Cost comparisons hold scope constant: the same workloads, the same period length, no mixing of one-off project costs into run-rate.</p></div>
+    <div class="card"><div class="k">What we don't claim</div><p>Local tokens aren't frontier tokens 1:1, and capacity isn't automatically productivity. We publish what was measured and let the numbers carry the argument.</p></div>
+  </div>
+</section>
+
+<div class="cta">
+  <div>
+    <h2>Want your numbers to look like this?</h2>
+    <p>The first step is a consult that baselines your current spend and hours — so when we claim a result, it's measured against your own bills.</p>
+  </div>
+  <a class="btn" href="/#enquire">Enquire today →</a>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <a href="/">Home</a><a href="/appliance.html">Appliance &amp; pricing</a><a href="/security.html">Security</a><a href="/sovereign-ai-melbourne.html">Sovereign AI</a><a href="/ai-rd-tax-incentive.html">R&amp;DTI</a><a href="/privacy.html">Privacy</a>
+  <div style="margin-top:12px">© Omniscient AI · Melbourne · vendor-neutral · Australian-sovereign</div>
+</div></footer>
+</body>
+</html>

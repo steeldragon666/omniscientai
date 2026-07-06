@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Architecture — Sovereign by Design, Not by Promise | Omniscient AI</title>
+<meta name="description" content="How the Omniscient sovereign AI appliance is secured: default-deny egress, agent action tiering, no inbound internet path, signed pull-only updates, no vendor standing access, and a tamper-evident audit ledger. The answers a CISO actually asks for.">
+<link rel="canonical" href="https://omniscientai.io/security.html">
+<meta property="og:title" content="Security Architecture — Sovereign by Design | Omniscient AI">
+<meta property="og:description" content="Default-deny egress, action tiering, tamper-evident ledger, Essential Eight alignment. Each answer is a technical control that produces evidence — not a promise.">
+<meta property="og:image" content="https://omniscientai.io/assets/logo-horizontal-with-graphic.png">
+<meta property="og:url" content="https://omniscientai.io/security.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://omniscientai.io/security.html",
+      "name": "Security Architecture — Omniscient Sovereign AI Appliance",
+      "isPartOf": { "@id": "https://omniscientai.io/#website" },
+      "about": { "@id": "https://omniscientai.io/appliance.html#product" },
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can our data leave the appliance?", "acceptedAnswer": { "@type": "Answer", "text": "Not by default. There is no inbound internet path, and a single default-deny egress broker permits only two pinned destinations: consented burst to a frontier model and signed update pulls. Every exception is logged and human-approved, both paths can be disabled, and one switch (or a physical air-gap) makes the box an island." } },
+        { "@type": "Question", "name": "Can the AI go rogue once it is wired into our systems?", "acceptedAnswer": { "@type": "Answer", "text": "Agents cannot call tools directly. A policy broker classifies every requested action: GREEN read-and-prepare actions run immediately, BLUE consequential actions (money, personal data, sends, publishes, deletions) require human or dual approval, and RED out-of-policy actions are refused outright. Injected instructions are tainted and cannot escalate privileges." } },
+        { "@type": "Question", "name": "Is there a vendor backdoor?", "acceptedAnswer": { "@type": "Answer", "text": "No standing access exists. Support sessions are customer-initiated, time-boxed and recorded to the customer's own ledger. The customer holds the recovery keys; Omniscient's escrow share cannot decrypt alone. Customers can lock Omniscient out; they can never be locked out themselves." } },
+        { "@type": "Question", "name": "How is the appliance updated without an open port?", "acceptedAnswer": { "@type": "Answer", "text": "The appliance pulls signed updates — no push, no open inbound port — verifies signature and hash, and applies them as atomic swaps with automatic rollback, only in maintenance windows the customer approves. Compliance packs arrive through the same trusted path." } }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='46' cy='50' r='34' fill='%230F1115'/%3E%3Ccircle cx='78' cy='30' r='12' fill='%232F7BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F1115;--ink-2:#2A2F37;--ink-3:#5B6270;--blue:#2F7BFF;--blue-deep:#1C4FD6;--blue-glow:#7AA8FF;--blue-bg:#2F7BFF14;--paper:#FFFFFF;--paper-2:#F4F6F9;--line:#E4E7EC;--fb:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--fm:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--fm);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--blue)}
+.mono{font-family:var(--fm)}
+a{color:var(--blue-deep)}
+.pnav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+.pnav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+.pnav .brand{font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.pnav .brand b{color:var(--blue)}
+.pnav .lnk{margin-left:auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.pnav .lnk a{font-size:14px;color:var(--ink-2);text-decoration:none}
+.pnav .lnk a:hover{color:var(--blue-deep)}
+.pnav .pill{background:var(--ink);color:#fff !important;padding:8px 16px;border-radius:999px;font-weight:600}
+.phead{padding:84px 0 30px}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.04;letter-spacing:-.02em;margin-top:16px}
+h1 .b{color:var(--blue)}
+.lead{font-size:19px;color:var(--ink-2);max-width:62ch;margin-top:18px}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,3.6vw,36px);letter-spacing:-.015em;margin-top:12px}
+h3{font-size:18px;margin-bottom:6px}
+p{color:var(--ink-2)}
+.fig{font-family:var(--fm);font-size:11.5px;color:var(--ink-3);margin-top:14px}
+.grid{display:grid;gap:16px;margin-top:26px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}
+.card .k{font-family:var(--fm);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:10px}
+.card ul{margin:10px 0 0 18px;color:var(--ink-2)}
+.card li{margin-top:6px;font-size:15.5px}
+.tier{border-radius:12px;padding:16px 18px;border:1px solid var(--line);margin-top:12px}
+.tier .lab{font-family:var(--fm);font-size:12px;font-weight:700;letter-spacing:.12em}
+.tier.green{border-left:4px solid #1DB954}.tier.green .lab{color:#149A45}
+.tier.blue{border-left:4px solid var(--blue)}.tier.blue .lab{color:var(--blue-deep)}
+.tier.red{border-left:4px solid #E5484D}.tier.red .lab{color:#C6383D}
+.cta{background:var(--ink);color:#fff;border-radius:18px;padding:40px;margin:56px 0;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.cta h2{color:#fff;margin:0}
+.cta p{color:#B9C0CC;margin-top:8px;max-width:52ch}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px}
+footer{border-top:1px solid var(--line);padding:34px 0 46px;font-size:14px;color:var(--ink-3)}
+footer .cols{display:flex;flex-wrap:wrap;gap:14px 26px;margin-bottom:14px}
+footer a{color:var(--ink-2);text-decoration:none}
+footer a:hover{color:var(--blue-deep)}
+.note{border-left:3px solid var(--blue);background:var(--paper-2);border-radius:0 10px 10px 0;padding:14px 18px;font-size:15px;color:var(--ink-2);margin-top:22px}
+</style>
+</head>
+<body>
+<nav class="pnav"><div class="wrap">
+  <a class="brand" href="/">Omniscient<b>&nbsp;AI</b></a>
+  <div class="lnk">
+    <a href="/appliance.html">Appliance</a>
+    <a href="/security.html">Security</a>
+    <a href="/sovereign-ai-melbourne.html">Sovereign AI</a>
+    <a href="/ai-rd-tax-incentive.html">R&amp;DTI</a>
+    <a href="/assets/value-calculator.html">Value model</a>
+    <a class="pill" href="/#enquire">Enquire →</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<header class="phead">
+  <div class="eyebrow">Security architecture</div>
+  <h1>Sovereign by architecture.<br>Not by <span class="b">promise.</span></h1>
+  <p class="lead">Two controls do most of the work: a single default-deny way out of the box, and a policy broker that gates every action an agent can take. Everything else exists to make those two controls provable. This page is the briefing your CISO will ask for — published, not gated.</p>
+  <p class="fig">Fig. 01 — control model · egress + action tiering + evidence</p>
+</header>
+
+<section id="egress">
+  <div class="eyebrow">Control 01 · Network</div>
+  <h2>The only path out is default-deny.</h2>
+  <div class="grid g2">
+    <div class="card"><div class="k">No inbound, ever</div><p>There is no inbound internet path to the appliance. Nothing on the internet can initiate a connection to the box — not us, not anyone.</p></div>
+    <div class="card"><div class="k">One egress broker</div><p>All outbound traffic passes a single default-deny egress broker. Exactly two destinations can be allow-listed and pinned: <strong>consented burst</strong> (redacted, logged, zero-retention) and <strong>signed update pulls</strong>. All other egress is refused. Both paths can be disabled — one switch, or a physical air-gap, makes the box an island.</p></div>
+    <div class="card"><div class="k">Segmented inside</div><p>App VLAN (web UI, SSO), AI VLAN (local models, vector DB, knowledge graph) and an MFA-gated management VLAN are separated internally, so a compromise in one plane doesn't grant the others.</p></div>
+    <div class="card"><div class="k">Single-tenant by physics</div><p>Your models, your data, your graph — on hardware in your building, governed by Australian law. No co-tenants, no shared inference queues, no offshore processing by default.</p></div>
+  </div>
+</section>
+
+<section id="actions">
+  <div class="eyebrow">Control 02 · Agent governance</div>
+  <h2>Agents can't act unilaterally.</h2>
+  <p class="lead" style="font-size:16.5px">Agents never call tools directly. Every requested action passes a policy broker that assigns a risk class:</p>
+  <div class="tier green"><span class="lab">GREEN — runs immediately</span><p>Read &amp; prepare: research, drafts, staging, analysis. No side effects outside the box.</p></div>
+  <div class="tier blue"><span class="lab">BLUE — needs human or dual approval</span><p>Consequential: move money, touch personal data, send, publish, delete. Nothing in this class executes without sign-off.</p></div>
+  <div class="tier red"><span class="lab">RED — refused outright</span><p>Out of policy or unsafe — blocked regardless of what the model "decided". Injected instructions are tainted and cannot escalate.</p></div>
+</section>
+
+<section id="vendor">
+  <div class="eyebrow">Control 03 · Vendor access</div>
+  <h2>You can lock us out. You can never be locked out.</h2>
+  <div class="grid g3">
+    <div class="card"><div class="k">No standing access</div><p>Support is customer-initiated, time-boxed, and recorded to your own ledger. There is no persistent vendor session, tunnel or account.</p></div>
+    <div class="card"><div class="k">Keys stay with you</div><p>You hold the recovery keys. Omniscient's escrow share cannot decrypt alone — by design, not by policy.</p></div>
+    <div class="card"><div class="k">Updates without a backdoor</div><p>The box pulls signed updates — no push, no open port — verifies signature + hash, and applies them as atomic, auto-rolling-back swaps in windows you approve.</p></div>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="eyebrow">Proof, not promises</div>
+  <h2>Every control writes evidence.</h2>
+  <p class="lead" style="font-size:16.5px">All of it lands in a hash-chained, tamper-evident audit ledger: AI actions, approvals, admin actions, each burst and its consent record, every update and every support session. On demand, the box generates an auditor-ready evidence pack — data-residency attestation, access reports, model provenance, control status.</p>
+  <div class="grid g3">
+    <div class="card"><div class="k">Essential Eight</div><p>Patching, application control, MFA, least privilege, backups and logging aligned out of the box.</p></div>
+    <div class="card"><div class="k">Privacy Act 1988</div><p>Onshore data, no offshore disclosure by default, access/retention/deletion controls, automated-decision transparency — maintained as versioned, signed compliance updates.</p></div>
+    <div class="card"><div class="k">Sector overlays</div><p>APRA CPS 234, health records handling, government classification and defence-adjacent hardening on the Regulated tier.</p></div>
+  </div>
+  <div class="note"><strong>Telemetry:</strong> operational metrics only, opt-out, and never your content — proactive support without reading your business.</div>
+  <p class="fig">Fig. 02 — evidence chain · action → approval → ledger → auditor pack</p>
+</section>
+
+<div class="cta">
+  <div>
+    <h2>Bring your hardest questions.</h2>
+    <p>A sovereignty briefing walks your security team through the architecture against your own threat model — and shows the ledger doing it.</p>
+  </div>
+  <a class="btn" href="/#enquire">Book a sovereignty briefing →</a>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <a href="/">Home</a><a href="/appliance.html">Appliance &amp; pricing</a><a href="/security.html">Security architecture</a><a href="/sovereign-ai-melbourne.html">Sovereign AI Melbourne</a><a href="/ai-rd-tax-incentive.html">R&amp;D Tax Incentive</a><a href="/assets/value-calculator.html">Value model</a><a href="/privacy.html">Privacy</a>
+  </div>
+  <span>© Omniscient AI · Melbourne · vendor-neutral · Australian-sovereign · <a href="mailto:enquiries@omniscientai.io">enquiries@omniscientai.io</a></span>
+</div></footer>
+</body>
+</html>
