@@ -243,7 +243,7 @@
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="gatefoot">
           <button class="btn solid" type="submit" id="lf-submit"><span>Book meeting &amp; unlock →</span></button>
-          <span class="anno">Your details go only to enquiries@omniscientai.io — nowhere else.</span>
+          <span class="anno">Your details go only to info@omniscientai.io — nowhere else.</span>
         </div>
         <div id="gate-status" role="status"></div>
       </form>
@@ -306,7 +306,7 @@
 <footer>
   <div class="wrap foot-base">
     <span>© Omniscient AI · Melbourne · vendor-neutral · Australian-sovereign</span>
-    <span><a href="/">omniscientai.io</a> · <a href="mailto:enquiries@omniscientai.io">enquiries@omniscientai.io</a></span>
+    <span><a href="/">omniscientai.io</a> · <a href="mailto:info@omniscientai.io">info@omniscientai.io</a></span>
   </div>
 </footer>
 
@@ -315,7 +315,7 @@
 <script>
 (function(){
   "use strict";
-  var FORM_ENDPOINT="https://formsubmit.co/ajax/enquiries@omniscientai.io";
+  var FORM_ENDPOINT="https://formsubmit.co/ajax/info@omniscientai.io";
   var LEAD_KEY="oai_lead";
 
   // ---------- data ----------
@@ -615,7 +615,7 @@
     return fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(payload)});
   }
   function mailtoFallback(subject,body){
-    location.href="mailto:enquiries@omniscientai.io?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+    location.href="mailto:info@omniscientai.io?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
   }
 
   $("#leadform").addEventListener("submit",function(e){
