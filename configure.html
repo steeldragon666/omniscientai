@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configure Your Enterprise AI System — Omniscient AI Melbourne</title>
+<meta name="description" content="Build your private, on-premises enterprise AI deployment — choose workflows, connectors and appliance tier, with indicative AUD pricing. Book a meeting with Omniscient AI, Melbourne.">
+<link rel="canonical" href="https://omniscientai.io/configure.html">
+<meta property="og:title" content="Configure Your Enterprise AI System — Omniscient AI">
+<meta property="og:description" content="Choose your workflows, connectors and appliance tier — indicative AUD pricing for a sovereign, on-premises enterprise AI deployment.">
+<meta property="og:image" content="https://omniscientai.io/assets/logo-horizontal-with-graphic.png">
+<meta property="og:url" content="https://omniscientai.io/configure.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Omniscient AI">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='46' cy='50' r='34' fill='%230F1115'/%3E%3Ccircle cx='78' cy='30' r='12' fill='%232F7BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1115;--ink-2:#2A2F37;--ink-3:#5B6270;
+    --blue:#2F7BFF;--blue-deep:#1C4FD6;--blue-glow:#7AA8FF;--blue-bg:#2F7BFF14;
+    --paper:#FFFFFF;--paper-2:#F4F6F9;--line:#E4E7EC;
+    --auto:#178A5B;--auto-bg:#E8F5EE;--approve:#2F7BFF;--approve-bg:#2F7BFF14;--human:#C2452F;--human-bg:#FBEDEA;
+    --fb:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --fm:"JetBrains Mono",ui-monospace,Consolas,monospace;
+    --s1:0 1px 2px rgb(15 17 21/.06),0 1px 1px rgb(15 17 21/.04);
+    --ease:cubic-bezier(.2,.9,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:104px}
+  body{background:var(--paper);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.55}
+  ::selection{background:var(--blue);color:#fff}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative}
+  .eyebrow{font-family:var(--fm);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--blue)}
+  .anno{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  h1{font-weight:800;letter-spacing:-.03em;line-height:1.02;font-size:clamp(36px,5.4vw,68px)}
+  h1 .b{color:var(--blue)}
+  .lead{font-size:clamp(16px,1.5vw,18px);color:var(--ink-3);line-height:1.6;max-width:58ch}
+
+  /* nav (mirrors main site) */
+  #nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width:min(1180px,calc(100% - 32px));height:58px;display:flex;align-items:center;background:var(--ink);border-radius:999px;padding:0 10px 0 22px;box-shadow:0 12px 32px rgb(15 17 21/.18)}
+  .navwrap{display:flex;align-items:center;gap:26px;width:100%}
+  .navbrand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:-.01em;text-decoration:none;color:#fff}
+  .navbrand .disc{width:20px;height:20px;border-radius:50%;background:#fff;position:relative;flex:none}
+  .navbrand .disc::after{content:"";position:absolute;right:-4px;top:-2px;width:9px;height:9px;border-radius:50%;background:var(--blue)}
+  .navbrand b{color:var(--blue-glow);font-weight:800}
+  .navlinks{margin-left:auto;display:flex;align-items:center;gap:22px}
+  .navlinks a:not(.pill){font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#C6CDD6;text-decoration:none;transition:color 160ms var(--ease)}
+  .navlinks a:not(.pill):hover{color:#fff}
+  .navlinks .pill{background:var(--blue);color:#fff;border-radius:999px;padding:11px 22px;font-family:var(--fm);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+  @media(max-width:700px){.navlinks a.hidesm{display:none}}
+
+  /* buttons (site signature) */
+  .btn{position:relative;display:inline-flex;align-items:center;gap:9px;overflow:hidden;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:6px 6px 6px 0;padding:14px 26px;font-family:var(--fb);font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;transition:color 200ms var(--ease),transform 200ms var(--ease)}
+  .btn::before{content:"";position:absolute;inset:0;background:var(--blue);clip-path:inset(0 100% 0 0);transition:clip-path 200ms var(--ease)}
+  .btn>*{position:relative;z-index:1}
+  .btn:hover{color:#fff;border-color:var(--blue)}
+  .btn:hover::before{clip-path:inset(0 0 0 0)}
+  .btn:active{transform:translateY(1px)}
+  .btn.solid{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn.solid::before{background:var(--ink)}
+  .btn.solid:hover{border-color:var(--ink)}
+  .btn[disabled]{opacity:.55;pointer-events:none}
+
+  /* hero */
+  header.hero{padding:150px 0 34px}
+  .hero-meta{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+
+  /* gate */
+  #gate{padding:26px 0 60px}
+  .gatecard{background:var(--paper);border:1px solid var(--line);border-radius:10px 10px 10px 0;box-shadow:0 18px 44px -24px rgb(15 17 21/.25);padding:30px;max-width:680px}
+  .gatecard h2{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .gatecard .sub{color:var(--ink-3);font-size:14.5px;margin:8px 0 22px;line-height:1.55}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.frow{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .field label{font-family:var(--fm);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .field input,.field textarea{border:1.5px solid var(--line);border-radius:6px 6px 6px 0;padding:12px 14px;font-family:var(--fb);font-size:15px;color:var(--ink);background:var(--paper);transition:border-color 150ms var(--ease)}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--blue)}
+  .field textarea{resize:vertical;min-height:74px}
+  .gatefoot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+  .gatefoot .anno{text-transform:none;letter-spacing:.04em}
+  #gate-status{font-family:var(--fm);font-size:12px;margin-top:12px;color:var(--auto);display:none}
+  #gate-status.err{color:var(--human)}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+
+  /* locked overlay */
+  #config-zone{position:relative}
+  #config-zone.locked #configurator{filter:blur(7px);pointer-events:none;user-select:none}
+  #lockveil{position:absolute;inset:0;z-index:5;display:flex;align-items:flex-start;justify-content:center;padding-top:110px;background:linear-gradient(180deg,rgb(255 255 255/.55),rgb(255 255 255/.88));}
+  #config-zone:not(.locked) #lockveil{display:none}
+  .lockmsg{background:var(--ink);color:#fff;border-radius:10px 10px 10px 0;padding:22px 30px;text-align:center;box-shadow:0 20px 50px -20px rgb(15 17 21/.5)}
+  .lockmsg .anno{color:#C6CDD6}
+  .lockmsg a{color:var(--blue-glow)}
+
+  /* configurator layout */
+  #configurator{padding:10px 0 100px}
+  .config{display:grid;grid-template-columns:1fr 330px;gap:32px;align-items:start}
+  @media(max-width:960px){.config{grid-template-columns:1fr}.rail{position:static!important}}
+  .catalog{min-width:0;display:flex;flex-direction:column;gap:44px}
+  .module-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+  .module-head h2{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .module-head .count{font-family:var(--fm);font-size:12px;color:var(--ink-3);margin-left:auto}
+  .module-sub{color:var(--ink-3);font-size:14.5px;margin-bottom:16px;max-width:70ch}
+  .idxnum{font-family:var(--fm);font-size:11px;color:var(--blue);letter-spacing:.1em}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:640px){.cards{grid-template-columns:1fr}}
+  .card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:8px 8px 8px 0;padding:15px 16px 13px;cursor:pointer;transition:border-color 160ms,box-shadow 160ms,transform 160ms;display:flex;flex-direction:column;gap:8px}
+  .card:hover{border-color:var(--blue-glow);box-shadow:var(--s1);transform:translateY(-1px)}
+  .card.on{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue),var(--s1)}
+  .card-top{display:flex;align-items:flex-start;gap:10px}
+  .check{flex:none;width:20px;height:20px;border-radius:5px 5px 5px 0;border:1.5px solid var(--ink-3);margin-top:1px;display:grid;place-items:center;transition:150ms;color:transparent;background:var(--paper)}
+  .card.on .check{background:var(--blue);border-color:var(--blue);color:#fff}
+  .check svg{width:12px;height:12px}
+  .card h3{font-size:15px;font-weight:700;letter-spacing:-.005em;flex:1;line-height:1.3}
+  .tier{flex:none;font-family:var(--fm);font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px}
+  .tier.auto{color:var(--auto);background:var(--auto-bg)}
+  .tier.approve{color:var(--approve);background:var(--approve-bg)}
+  .tier.human{color:var(--human);background:var(--human-bg)}
+  .blurb{color:var(--ink-3);font-size:13.5px;line-height:1.5}
+  .how{border-top:1px dashed var(--line);margin-top:2px;padding-top:9px;display:none;flex-direction:column;gap:5px}
+  .card.open .how{display:flex}
+  .how .row{display:flex;gap:8px;font-size:12px;line-height:1.45}
+  .how .k{font-family:var(--fm);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);flex:none;width:58px;padding-top:1px}
+  .how .v{color:var(--ink-2);flex:1}
+  .howtoggle{align-self:flex-start;background:none;border:none;color:var(--blue);font-family:var(--fm);font-size:10.5px;letter-spacing:.06em;cursor:pointer;padding:2px 0;text-transform:uppercase}
+  .howtoggle:hover{text-decoration:underline}
+
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13.5px;cursor:pointer;transition:140ms;user-select:none}
+  .chip:hover{border-color:var(--blue-glow)}
+  .chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+  .chip.req{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue-bg)}
+  .chip .rq{font-family:var(--fm);font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--blue)}
+  .chip.on .rq{color:#fff;opacity:.85}
+  .catnote{font-size:12.5px;color:var(--ink-3);margin:2px 0 12px;font-family:var(--fm)}
+
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:760px){.opts{grid-template-columns:1fr}}
+  .opt{background:var(--paper);border:1px solid var(--line);border-radius:8px 8px 8px 0;padding:16px;cursor:pointer;transition:160ms;display:flex;flex-direction:column;gap:7px}
+  .opt:hover{border-color:var(--blue-glow)}
+  .opt.on{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue),var(--s1)}
+  .opt .otitle{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .opt h3{font-size:16px;font-weight:700}
+  .opt .seats{font-family:var(--fm);font-size:11px;color:var(--ink-3)}
+  .opt .spec{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+  .opt .from{font-family:var(--fm);font-size:12.5px;color:var(--ink);margin-top:2px}
+  .opt .from b{color:var(--blue)}
+  .radio{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--ink-3);flex:none;display:grid;place-items:center}
+  .opt.on .radio{border-color:var(--blue)}
+  .opt.on .radio::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--blue)}
+
+  .section-lead{margin-bottom:14px}
+  .section-lead h2{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .section-lead p{color:var(--ink-3);font-size:14.5px;margin-top:5px;max-width:72ch}
+  hr.div{border:none;border-top:1px solid var(--line);margin:6px 0}
+
+  /* summary rail */
+  .rail{position:sticky;top:92px}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:10px 10px 10px 0;box-shadow:0 18px 44px -24px rgb(15 17 21/.28);overflow:hidden}
+  .panel-h{padding:16px 18px 12px;border-bottom:1px solid var(--line)}
+  .panel-h h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-top:2px}
+  .panel-b{padding:14px 18px 4px;display:flex;flex-direction:column;gap:11px;max-height:min(44vh,440px);overflow:auto}
+  .sumrow{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;align-items:baseline}
+  .sumrow .lbl{color:var(--ink-3)}
+  .sumrow .val{font-family:var(--fm);font-variant-numeric:tabular-nums;text-align:right;font-size:12.5px}
+  .sumrow .val b{color:var(--ink);font-weight:700}
+  .seatrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 0}
+  .stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .stepper button{width:32px;height:32px;border:none;background:var(--paper-2);color:var(--ink);font-size:17px;cursor:pointer;line-height:1}
+  .stepper button:hover{background:var(--blue-bg);color:var(--blue)}
+  .stepper input{width:46px;text-align:center;border:none;background:transparent;color:var(--ink);font-family:var(--fm);font-size:15px;-moz-appearance:textfield}
+  .stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .price{padding:14px 18px 16px;border-top:1px solid var(--line);background:var(--paper-2)}
+  .price .big{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .price .big .n{font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+  .price .sub{font-family:var(--fm);font-size:10.5px;color:var(--ink-3);margin-top:3px}
+  .price .split{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink-3);margin-top:9px}
+  .price .split .mono{font-family:var(--fm);color:var(--ink)}
+  .price .cta{width:100%;justify-content:center;margin-top:14px}
+  .ghostbtn{display:block;width:100%;margin-top:8px;background:none;border:1px solid var(--line);color:var(--ink-3);border-radius:6px 6px 6px 0;padding:10px;font-family:var(--fb);font-size:13px;cursor:pointer}
+  .ghostbtn:hover{color:var(--ink);border-color:var(--blue)}
+  .disclaim{font-size:11px;color:var(--ink-3);line-height:1.5;margin-top:11px}
+  #sum-missing{color:var(--human)}
+
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;box-shadow:0 20px 50px -20px rgb(15 17 21/.5);transition:240ms;pointer-events:none;z-index:60;max-width:min(90vw,560px);text-align:center}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  footer{background:var(--paper-2);border-top:1px solid var(--line);padding:26px 0;margin-top:40px}
+  .foot-base{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--fm);font-size:10.5px;letter-spacing:.08em;color:var(--ink-3)}
+  .foot-base a{color:var(--ink-3);text-decoration:none}
+  .foot-base a:hover{color:var(--blue)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="navwrap">
+    <a class="navbrand" href="/"><span class="disc"></span>Omniscient<b>&nbsp;AI</b></a>
+    <div class="navlinks">
+      <a href="/#method" class="hidesm">Method</a>
+      <a href="/#film" class="hidesm">Film</a>
+      <a href="/#sovereignty" class="hidesm">Sovereignty</a>
+      <a class="pill" href="#gate">Book a meeting →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span class="eyebrow">Configure · Enterprise AI · Melbourne</span>
+      <span class="anno">Indicative pricing · AUD ex GST</span>
+    </div>
+    <h1 style="margin-top:20px">Configure your <span class="b">second brain</span>.</h1>
+    <p class="lead" style="margin-top:16px">Choose the workflows your team runs, the systems they connect, and the appliance that powers it — sovereign, on your premises, priced in Australian dollars. Book a meeting below to unlock the configurator and request a fixed quote.</p>
+  </div>
+</header>
+
+<section id="gate">
+  <div class="wrap">
+    <div class="gatecard" id="gatecard">
+      <span class="eyebrow">Step 01 — Book a meeting</span>
+      <h2 style="margin-top:8px">Tell us who to talk to.</h2>
+      <p class="sub">Leave your details and we'll come back within one business day to lock in a time. Submitting unlocks the configurator below, so you can build and send us your ideal system — priced live in AUD.</p>
+      <form id="leadform" novalidate>
+        <div class="frow">
+          <div class="field"><label for="lf-name">Name *</label><input id="lf-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="lf-email">Work email *</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="lf-company">Company *</label><input id="lf-company" name="company" type="text" autocomplete="organization" required></div>
+          <div class="field"><label for="lf-phone">Phone</label><input id="lf-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="lf-note">What should AI do for your business? <span style="text-transform:none;letter-spacing:0">(optional)</span></label><textarea id="lf-note" name="note" placeholder="e.g. 40-person firm — drowning in email, want on-prem drafting + a client-history brain"></textarea></div>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="gatefoot">
+          <button class="btn solid" type="submit" id="lf-submit"><span>Book meeting &amp; unlock →</span></button>
+          <span class="anno">Your details go only to enquiries@omniscientai.io — nowhere else.</span>
+        </div>
+        <div id="gate-status" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="config-zone" class="locked">
+  <div id="lockveil">
+    <div class="lockmsg">
+      <span class="anno">Step 02 — locked</span>
+      <p style="margin-top:8px;font-weight:700">Book a meeting above to unlock the configurator.</p>
+      <p style="margin-top:6px;font-size:13px;color:#C6CDD6">30 seconds — name, email, company.</p>
+    </div>
+  </div>
+
+  <section id="configurator">
+    <div class="wrap">
+      <div class="config">
+        <main class="catalog" id="catalog"><!-- rendered by script --></main>
+
+        <aside class="rail">
+          <div class="panel">
+            <div class="panel-h">
+              <span class="eyebrow">Your deployment</span>
+              <h3 id="sum-tier-name">Department Pod</h3>
+            </div>
+            <div class="panel-b">
+              <div class="seatrow">
+                <span style="color:var(--ink-3);font-size:13.5px">People</span>
+                <span class="stepper">
+                  <button type="button" id="seat-dn" aria-label="Fewer people">–</button>
+                  <input id="seats" type="number" min="1" max="1000" value="12" inputmode="numeric" aria-label="Number of people"/>
+                  <button type="button" id="seat-up" aria-label="More people">+</button>
+                </span>
+              </div>
+              <hr class="div"/>
+              <div class="sumrow"><span class="lbl">Workflows</span><span class="val"><b id="sum-wf">0</b> / <span id="sum-wf-total">0</span></span></div>
+              <div class="sumrow"><span class="lbl">Connectors</span><span class="val"><b id="sum-cn">0</b> selected</span></div>
+              <div class="sumrow"><span class="lbl">Personalisation</span><span class="val" id="sum-ornith">RAG persona</span></div>
+              <div class="sumrow"><span class="lbl">Governance add-ons</span><span class="val"><b id="sum-gov">0</b></span></div>
+              <div class="sumrow"><span class="lbl">Deployment</span><span class="val" id="sum-deploy">On-prem</span></div>
+              <div id="sum-missing" class="disclaim"></div>
+            </div>
+            <div class="price">
+              <div class="big"><span style="color:var(--ink-3);font-size:13.5px">Indicative annual</span><span class="n" id="price-annual">A$0</span></div>
+              <div class="sub" id="price-perseat">— per person / year · AUD ex GST</div>
+              <div class="split"><span>One-time (appliance + onboarding)</span><span class="mono" id="price-onetime">A$0</span></div>
+              <button class="btn solid cta" id="cta" type="button"><span>Request a fixed quote →</span></button>
+              <button class="ghostbtn" id="copybtn" type="button">Copy this configuration</button>
+              <p class="disclaim">All prices in Australian dollars, excluding GST — indicative only; a fixed quote follows a short scoping call. Appliance can be purchased, financed, or bundled into the annual licence. Hardware runs on your premises or in a sovereign Australian datacentre.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap foot-base">
+    <span>© Omniscient AI · Melbourne · vendor-neutral · Australian-sovereign</span>
+    <span><a href="/">omniscientai.io</a> · <a href="mailto:enquiries@omniscientai.io">enquiries@omniscientai.io</a></span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+  var FORM_ENDPOINT="https://formsubmit.co/ajax/enquiries@omniscientai.io";
+  var LEAD_KEY="oai_lead";
+
+  // ---------- data ----------
+  var CONNECTORS=[
+    {id:"gmail",label:"Gmail"},{id:"outlook",label:"Outlook / Exchange"},{id:"gcal",label:"Google Calendar"},
+    {id:"teams",label:"Microsoft Teams"},{id:"zoom",label:"Zoom"},{id:"meet",label:"Google Meet"},
+    {id:"whatsapp",label:"WhatsApp Business"},{id:"slack",label:"Slack"},{id:"linkedin",label:"LinkedIn"},
+    {id:"instagram",label:"Instagram"},{id:"drive",label:"Google Drive"},{id:"sharepoint",label:"SharePoint / OneDrive"},
+    {id:"dropbox",label:"Dropbox"},{id:"imanage",label:"iManage"},{id:"netdocs",label:"NetDocuments"},
+    {id:"notion",label:"Notion"},{id:"canva",label:"Canva"},{id:"figma",label:"Figma"},
+    {id:"salesforce",label:"Salesforce"},{id:"hubspot",label:"HubSpot"},{id:"xero",label:"Xero"},
+    {id:"quickbooks",label:"QuickBooks"},{id:"stripe",label:"Stripe"},{id:"docusign",label:"DocuSign"},
+    {id:"capture",label:"Local file & audio capture"}
+  ];
+  var CLABEL={}; CONNECTORS.forEach(function(c){CLABEL[c.id]=c.label;});
+
+  var MODULES=[
+    {id:"comms",num:"01",name:"Communications",sub:"One calm queue across email, chat and social — drafted in each person's own voice, gated before anything sends.",items:[
+      {id:"queue",name:"Unified action queue",tier:"auto",blurb:"Every channel's asks collapse into one ranked “needs you” list; noise is auto-filed.",trigger:"Runs on a schedule (inbox heartbeat)",data:["gmail","outlook","teams","slack","whatsapp"],config:"Choose channels, VIP senders, and how often it sweeps."},
+      {id:"triage",name:"Email triage",tier:"auto",blurb:"Sorts the inbox into urgent / action / FYI / noise and pulls out commitments and deadlines as tasks.",trigger:"Inbox heartbeat every few minutes",data:["gmail","outlook"],config:"Per-account rules, priority senders, deadline sensitivity."},
+      {id:"replies",name:"Voice-grounded reply drafts",tier:"approve",blurb:"Drafts replies that sound like you, using the client and matter history — you approve or edit before it sends.",trigger:"When a message needing a reply arrives",data:["gmail","outlook"],config:"Signature, tone, which threads auto-draft, internal-only auto-send allow-list."},
+      {id:"stageupdate",name:"Stage-complete stakeholder update",tier:"approve",blurb:"When a deliverable is finished, it drafts the “this stage is done — here's what's next” note to the right partners and clients.",trigger:"Event: a work product is completed",data:["capture","gmail","slack","teams"],config:"What counts as a “stage”, the stakeholder list, tone, auto vs approve."},
+      {id:"commit",name:"Commitment & deadline tracker",tier:"auto",blurb:"Turns “I'll send it Friday” into a tracked task with a reminder — in or out of the inbox.",trigger:"Event: on every message",data:["gmail","teams","slack"],config:"Which promises to track and how far ahead to remind."},
+      {id:"crosschan",name:"Cross-channel capture",tier:"auto",blurb:"Decisions and action items from WhatsApp, Teams and Slack threads, filed to the right matter.",trigger:"Event: thread activity",data:["whatsapp","teams","slack"],config:"Which channels, what gets filed vs kept private."},
+      {id:"bdradar",name:"BD engagement radar",tier:"approve",blurb:"Watches target accounts for a reason to reach out — a role change, a raise, a post — and drafts a timely, personal note.",trigger:"Scheduled monitoring",data:["linkedin"],config:"Target list, trigger types, compliance guardrails."},
+      {id:"socialin",name:"Social inbound → CRM",tier:"approve",blurb:"Inbound DMs become tracked leads with a drafted first response.",trigger:"Event: new inbound message",data:["instagram","linkedin"],config:"Which inboxes, lead routing."},
+      {id:"contentwork",name:"Content from your work",tier:"approve",blurb:"Turns a win or an insight into an on-brand post draft — compliance-checked first.",trigger:"On demand",data:["canva","linkedin"],config:"Brand rules, approval chain."}
+    ]},
+    {id:"sales",num:"02",name:"Clients & Sales",sub:"Walk into every meeting briefed, leave with the follow-ups drafted, and never let a relationship go cold.",items:[
+      {id:"prep",name:"Meeting prep pack",tier:"auto",blurb:"A one-page brief before every external meeting: who they are, your firm's full history with them, open items and a suggested agenda.",trigger:"Scheduled from your calendar, before the meeting",data:["gcal","outlook","gmail"],config:"Lead time, which meetings, depth, deliver in-app or by email."},
+      {id:"followup",name:"Post-meeting follow-ups",tier:"approve",blurb:"From the meeting transcript: minutes, decisions, action items, and drafted follow-up emails — plus a CRM update.",trigger:"When the meeting ends and the transcript is ready",data:["capture","gcal","gmail"],config:"Capture method (on-device / platform), default CC, auto vs approve."},
+      {id:"decay",name:"Relationship decay alerts",tier:"approve",blurb:"“You haven't spoken to this client in 45 days” — with a genuine reason to reconnect and a drafted message.",trigger:"Scheduled scan of last-contact dates",data:["gmail","gcal","salesforce"],config:"Decay threshold per relationship tier, whose book, tone."},
+      {id:"proposal",name:"Proposal auto-draft",tier:"approve",blurb:"Assembles a proposal from your templates, this client's history and the scope — ready for you to refine.",trigger:"On demand",data:["drive","imanage"],config:"Template set, pricing rules."},
+      {id:"pipeline",name:"Pipeline hygiene",tier:"approve",blurb:"Flags stale deals and missing next steps, and drafts the nudge.",trigger:"Scheduled",data:["salesforce","hubspot"],config:"Stages, staleness thresholds."},
+      {id:"conflict",name:"Conflict & intake check",tier:"human",blurb:"Before you take on a client or matter, scans the firm's whole memory for conflicts and existing relationships.",trigger:"On demand at intake",data:["salesforce"],config:"Conflict rules, who signs off."},
+      {id:"crmenrich",name:"CRM auto-enrich",tier:"auto",blurb:"Keeps the CRM current from real activity — no more manual logging.",trigger:"Continuous",data:["gmail","gcal","salesforce","hubspot"],config:"Fields to maintain, sources of truth."}
+    ]},
+    {id:"delivery",num:"03",name:"Delivery & Work Product",sub:"Draft from your firm's best prior work, track every obligation, and know a matter's true status without asking.",items:[
+      {id:"firstdraft",name:"First draft from precedent",tier:"approve",blurb:"Drafts a document or section grounded in the firm's best previous work and this matter's facts.",trigger:"On demand",data:["imanage","netdocs","drive"],config:"Precedent library, house style."},
+      {id:"research",name:"Deep research memo",tier:"approve",blurb:"An overnight, fully-cited pass across the institutional brain (and approved external sources).",trigger:"On demand — runs on the central engine",data:["drive"],config:"Sources allowed, citation format."},
+      {id:"qa",name:"QA & consistency pass",tier:"auto",blurb:"Flags missing sections, risky language and drift from the firm standard. It flags — it never silently edits.",trigger:"Event: a draft is saved",data:["imanage","drive"],config:"Rulebook, severity thresholds."},
+      {id:"progress",name:"Auto-progress & deviation",tier:"auto",blurb:"Infers % complete, next steps, blockers and any drift from the goal — straight from the work itself. This is what powers the manager view.",trigger:"Continuous, from work products",data:["capture"],config:"Which goals/matters, roll-up scope, deviation sensitivity."},
+      {id:"obligation",name:"Obligation & deadline tracker",tier:"approve",blurb:"Extracts dates and obligations from documents and email, tracks them, reminds you, and drafts the filing.",trigger:"Scheduled",data:["drive","gcal"],config:"Obligation types, reminder lead times."},
+      {id:"assembly",name:"Document assembly",tier:"approve",blurb:"Bundles a matter's documents into a finished deliverable or bible.",trigger:"On demand",data:["imanage","drive"],config:"Bundle templates, ordering rules."}
+    ]},
+    {id:"mgmt",num:"04",name:"Management & Oversight",sub:"See the whole team's progress each day — work product and task status, never their private messages.",items:[
+      {id:"brief",name:"Daily department brief",tier:"auto",blurb:"One skimmable page: each person's goal progress, blockers and deviations. Work signals only — never their comms.",trigger:"Scheduled each morning",data:[],config:"Roll-up scope, who receives it, cut-off time."},
+      {id:"blocker",name:"Blocker & enabler map",tier:"auto",blurb:"Which tasks are blocking others across the team — the dependency view of the hive mind.",trigger:"Continuous",data:[],config:"Which goals to map."},
+      {id:"goals",name:"Goal & mission tracking",tier:"auto",blurb:"Live progress of every objective, the tasks feeding it, and an early flag when one is at risk.",trigger:"Continuous",data:[],config:"Goal hierarchy, at-risk thresholds."},
+      {id:"approvals",name:"Approval queue",tier:"approve",blurb:"Every drafted email, post and proposal in one place — approve, edit or reject with one tap, on mobile.",trigger:"Event: anything staged to send",data:[],config:"Approver roles, escalation, mobile push."},
+      {id:"capacity",name:"Capacity & utilisation",tier:"auto",blurb:"Who's overloaded and who's free, from real work signals.",trigger:"Continuous",data:["capture"],config:"Team scope, workload weighting."},
+      {id:"reports",name:"Auto client / matter reports",tier:"approve",blurb:"Status reports drafted from the matter's own activity.",trigger:"Scheduled",data:["salesforce"],config:"Report cadence, recipients, template."},
+      {id:"selfreview",name:"Weekly self-review",tier:"auto",blurb:"A private “here's what you shipped, what's stuck, what's due” for each person.",trigger:"Scheduled weekly",data:[],config:"Day, contents."}
+    ]},
+    {id:"brain",num:"05",name:"Knowledge — the Second Brain",sub:"Ask the firm anything, and never lose what a departing person knew.",items:[
+      {id:"ask",name:"Ask the brain",tier:"auto",blurb:"A cited, plain-language answer across everything the firm has ever produced.",trigger:"On demand",data:[],config:"Access scopes per role."},
+      {id:"dossier",name:"Entity dossiers",tier:"auto",blurb:"Everything the firm knows about a person, company or matter, on one page.",trigger:"On demand",data:[],config:"Entity types, visibility."},
+      {id:"seenbefore",name:"“We've seen this before” alerts",tier:"auto",blurb:"Surfaces prior dealings with a counterparty or issue while you work.",trigger:"Event, mid-workflow",data:[],config:"Sensitivity, which entities."},
+      {id:"successor",name:"Successor pack",tier:"human",blurb:"One action produces a departing person's full handover — live matters, obligations, the contact graph and their trained persona — for their replacement.",trigger:"On demand, governed",data:[],config:"Who can generate, retention & consent rules."},
+      {id:"onboard",name:"Onboarding accelerator",tier:"auto",blurb:"A new joiner inherits the role's knowledge and relationships in days, not months.",trigger:"On demand",data:[],config:"Role templates, access ramp."},
+      {id:"graph",name:"Institutional knowledge graph",tier:"auto",blurb:"The live, navigable map of every document, person and matter — and how they connect.",trigger:"Always on",data:[],config:"Clustering, visibility scopes."}
+    ]}
+  ];
+
+  var GOV=[
+    {id:"walls",name:"Ethical / conflict walls",blurb:"Enforce information barriers between teams and matters."},
+    {id:"retention",name:"Retention & legal hold",blurb:"Policy-driven retention, deletion and hold."},
+    {id:"evidence",name:"R&D / compliance evidence",blurb:"Contemporaneous, timestamped records for tax and audit."}
+  ];
+  var GOV_CORE=["Autonomy tiers & approval spine","Audit trail & evidence store","Privacy scopes & redaction","Per-user sealed credential vault"];
+
+  var TIERS=[
+    {id:"pod",name:"Department Pod",seats:"5–15 people",spec:"Compact appliance brain + AI-capable laptops running each person's harness at the edge. Optional central GPU task engine.",from:17000,lic:2400},
+    {id:"firm",name:"Firm Appliance",seats:"25–100 people",spec:"Multi-GPU server + fast vault. Central task engine serves the whole firm; edge devices optional.",from:45000,lic:1900},
+    {id:"rack",name:"Sovereign Rack",seats:"100–500+ people",spec:"Multi-GPU rack, high-availability storage, separate training and inference pools. Firm-wide or multi-office.",from:180000,lic:1500}
+  ];
+  var DEPLOY=[
+    {id:"onprem",name:"On-prem appliance",blurb:"The box lives in your building. Maximum sovereignty; capex replaces subscription spend."},
+    {id:"sovcloud",name:"Sovereign-cloud tenancy",blurb:"Private, single-tenant deployment in a sovereign Australian datacentre. Lower capex, faster rollout — still isolated."},
+    {id:"byo",name:"Bring-your-own hardware",blurb:"You supply the hardware; we license the software and support it."}
+  ];
+
+  // ---------- state ----------
+  var st={wf:{},cn:{},gov:{},tier:"pod",deploy:"onprem",ornithLora:false,seats:12};
+  var lead=null;
+
+  // ---------- helpers ----------
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var el=function(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+  var CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+  var money=function(n){return "A$"+Math.round(n).toLocaleString("en-AU");};
+  var TIERLBL={auto:"Automatic",approve:"You approve",human:"Human only"};
+  function toast(msg){var t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove("show");},3200);}
+
+  var totalWf=0;MODULES.forEach(function(m){totalWf+=m.items.length;});
+
+  // ---------- render catalog ----------
+  var cat=$("#catalog");
+  MODULES.forEach(function(m){
+    var sec=el("section","module");sec.id="mod-"+m.id;
+    var head=el("div","module-head");
+    head.appendChild(el("span","idxnum",m.num+" /"));
+    head.appendChild(el("h2",null,m.name));
+    var cnt=el("span","count","0/"+m.items.length);cnt.id="cnt-"+m.id;head.appendChild(cnt);
+    sec.appendChild(head);
+    sec.appendChild(el("p","module-sub",m.sub));
+    var grid=el("div","cards");
+    m.items.forEach(function(it){
+      var card=el("div","card");card.tabIndex=0;
+      var top=el("div","card-top");
+      top.appendChild(el("span","check",CHK));
+      top.appendChild(el("h3",null,it.name));
+      top.appendChild(el("span","tier "+it.tier,TIERLBL[it.tier]));
+      card.appendChild(top);
+      card.appendChild(el("p","blurb",it.blurb));
+      var tog=el("button","howtoggle","How it works ↓");tog.type="button";
+      card.appendChild(tog);
+      var how=el("div","how");
+      var dataTxt=it.data.length?it.data.map(function(d){return CLABEL[d]||d;}).join(" · "):"Institutional brain (no external connector)";
+      [["Trigger",it.trigger],["Data",dataTxt],["Control",TIERLBL[it.tier]+" — "+it.config]].forEach(function(kv){
+        var r=el("div","row");r.appendChild(el("span","k",kv[0]));r.appendChild(el("span","v",kv[1]));how.appendChild(r);
+      });
+      card.appendChild(how);
+      tog.addEventListener("click",function(e){e.stopPropagation();var open=card.classList.toggle("open");tog.innerHTML=open?"Hide ↑":"How it works ↓";});
+      card.addEventListener("click",function(){toggleWf(it,card,m.id);});
+      card.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();toggleWf(it,card,m.id);}});
+      grid.appendChild(card);
+    });
+    sec.appendChild(grid);
+    cat.appendChild(sec);
+  });
+
+  // connectors
+  var cs=el("section","module");
+  var csl=el("div","section-lead");csl.appendChild(el("h2",null,"Connectors"));
+  csl.appendChild(el("p",null,"Choose what each person connects. Every connection is authorised per employee and sealed in a per-user vault on your appliance. Connectors your selected workflows need are marked <b>Needed</b>."));
+  cs.appendChild(csl);
+  cs.appendChild(el("p","catnote","Select the sources your firm uses."));
+  var chipwrap=el("div","chips");
+  CONNECTORS.forEach(function(c){
+    var chip=el("span","chip");chip.dataset.id=c.id;
+    chip.appendChild(el("span",null,c.label));
+    chip.appendChild(el("span","rq",""));
+    chip.addEventListener("click",function(){st.cn[c.id]=!st.cn[c.id];chip.classList.toggle("on",!!st.cn[c.id]);update();});
+    chipwrap.appendChild(chip);
+  });
+  cs.appendChild(chipwrap);
+  cat.appendChild(cs);
+
+  // personalisation
+  var os=el("section","module");
+  var osl=el("div","section-lead");osl.appendChild(el("h2",null,"Personalisation"));
+  osl.appendChild(el("p",null,"How closely each person's harness is tuned to them."));os.appendChild(osl);
+  var oopts=el("div","opts");
+  [{id:"rag",name:"RAG persona",spec:"Grounded in each person's records and voice from day one. Fast, fully explainable. Included.",tag:"Included"},
+   {id:"lora",name:"Personal fine-tune (LoRA)",spec:"A density-gated personal fine-tune per employee, trained on-appliance and refined over time. Highest fidelity.",tag:"+ A$600 per person / yr"}
+  ].forEach(function(o){
+    var opt=el("div","opt"+(o.id==="rag"?" on":""));opt.dataset.id=o.id;
+    var t=el("div","otitle");t.appendChild(el("h3",null,o.name));t.appendChild(el("span","radio"));opt.appendChild(t);
+    opt.appendChild(el("div","spec",o.spec));
+    opt.appendChild(el("div","from",o.tag));
+    opt.addEventListener("click",function(){st.ornithLora=(o.id==="lora");oopts.querySelectorAll(".opt").forEach(function(x){x.classList.toggle("on",x.dataset.id===o.id);});update();});
+    oopts.appendChild(opt);
+  });
+  os.appendChild(oopts);
+  cat.appendChild(os);
+
+  // governance
+  var gs=el("section","module");
+  var gsl=el("div","section-lead");gsl.appendChild(el("h2",null,"Governance &amp; compliance"));
+  gsl.appendChild(el("p",null,"The controls that make this safe to run. Core protections are always included; add the ones your regulator or clients require."));
+  gs.appendChild(gsl);
+  gs.appendChild(el("p","catnote","Always included: "+GOV_CORE.join(" · ")));
+  var gg=el("div","cards");
+  GOV.forEach(function(g){
+    var card=el("div","card");card.tabIndex=0;
+    var top=el("div","card-top");top.appendChild(el("span","check",CHK));top.appendChild(el("h3",null,g.name));
+    top.appendChild(el("span","tier approve","+ A$150 pp/yr"));card.appendChild(top);
+    card.appendChild(el("p","blurb",g.blurb));
+    card.addEventListener("click",function(){st.gov[g.id]=!st.gov[g.id];card.classList.toggle("on",!!st.gov[g.id]);update();});
+    card.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();card.click();}});
+    gg.appendChild(card);
+  });
+  gs.appendChild(gg);
+  cat.appendChild(gs);
+
+  // appliance tiers
+  var as=el("section","module");
+  var asl=el("div","section-lead");asl.appendChild(el("h2",null,"Appliance &amp; capacity"));
+  asl.appendChild(el("p",null,"The hardware that runs it all — sized to your headcount. Set your people count in the summary; we'll suggest a tier."));as.appendChild(asl);
+  var aopts=el("div","opts");
+  TIERS.forEach(function(t){
+    var opt=el("div","opt"+(t.id==="pod"?" on":""));opt.dataset.tier=t.id;
+    var head=el("div","otitle");head.appendChild(el("h3",null,t.name));head.appendChild(el("span","radio"));opt.appendChild(head);
+    opt.appendChild(el("div","seats",t.seats));
+    opt.appendChild(el("div","spec",t.spec));
+    opt.appendChild(el("div","from","Appliance from <b>"+money(t.from)+"</b> · licence "+money(t.lic)+" / person / yr"));
+    opt.addEventListener("click",function(){setTier(t.id);});
+    aopts.appendChild(opt);
+  });
+  as.appendChild(aopts);
+  cat.appendChild(as);
+
+  // deployment
+  var ds=el("section","module");
+  var dsl=el("div","section-lead");dsl.appendChild(el("h2",null,"Deployment model"));ds.appendChild(dsl);
+  var dopts=el("div","opts");
+  DEPLOY.forEach(function(d){
+    var opt=el("div","opt"+(d.id==="onprem"?" on":""));opt.dataset.deploy=d.id;
+    var head=el("div","otitle");head.appendChild(el("h3",null,d.name));head.appendChild(el("span","radio"));opt.appendChild(head);
+    opt.appendChild(el("div","spec",d.blurb));
+    opt.addEventListener("click",function(){st.deploy=d.id;dopts.querySelectorAll(".opt").forEach(function(x){x.classList.toggle("on",x.dataset.deploy===d.id);});update();});
+    dopts.appendChild(opt);
+  });
+  ds.appendChild(dopts);
+  cat.appendChild(ds);
+
+  // ---------- interactions ----------
+  function toggleWf(it,card,mod){
+    st.wf[it.id]=st.wf[it.id]?null:{name:it.name,mod:mod,data:it.data,tier:it.tier};
+    card.classList.toggle("on",!!st.wf[it.id]);
+    update();
+  }
+  function setTier(id){
+    st.tier=id;
+    document.querySelectorAll(".opt[data-tier]").forEach(function(x){x.classList.toggle("on",x.dataset.tier===id);});
+    update();
+  }
+  var seatsInput=$("#seats");
+  function suggestTier(n){var t=n<=20?"pod":n<=120?"firm":"rack";if(t!==st.tier)setTier(t);}
+  seatsInput.addEventListener("input",function(){var n=parseInt(seatsInput.value||"0",10);if(isNaN(n))n=0;st.seats=n;suggestTier(n);update();});
+  $("#seat-up").addEventListener("click",function(){seatsInput.value=Math.min(1000,(parseInt(seatsInput.value||"0",10)||0)+1);seatsInput.dispatchEvent(new Event("input"));});
+  $("#seat-dn").addEventListener("click",function(){seatsInput.value=Math.max(1,(parseInt(seatsInput.value||"0",10)||0)-1);seatsInput.dispatchEvent(new Event("input"));});
+
+  // ---------- summary + AUD pricing ----------
+  function update(){
+    MODULES.forEach(function(m){
+      var n=0;m.items.forEach(function(it){if(st.wf[it.id])n++;});
+      $("#cnt-"+m.id).textContent=n+"/"+m.items.length;
+    });
+    var wfKeys=Object.keys(st.wf).filter(function(k){return st.wf[k];});
+    var req={};wfKeys.forEach(function(k){(st.wf[k].data||[]).forEach(function(d){req[d]=true;});});
+    var cnCount=0;
+    document.querySelectorAll(".chip[data-id]").forEach(function(chip){
+      var id=chip.dataset.id,isReq=!!req[id];
+      chip.classList.toggle("req",isReq&&!st.cn[id]);
+      $(".rq",chip).textContent=isReq&&!st.cn[id]?"Needed":"";
+      if(st.cn[id])cnCount++;
+    });
+    var missing=Object.keys(req).filter(function(d){return !st.cn[d];});
+    $("#sum-missing").textContent=missing.length?(missing.length+" connector"+(missing.length>1?"s":"")+" your workflows need "+(missing.length>1?"aren't":"isn't")+" selected: "+missing.slice(0,4).map(function(d){return CLABEL[d];}).join(", ")+(missing.length>4?"…":"")):"";
+    var govCount=Object.keys(st.gov).filter(function(k){return st.gov[k];}).length;
+    $("#sum-wf").textContent=wfKeys.length;$("#sum-wf-total").textContent=totalWf;
+    $("#sum-cn").textContent=cnCount;$("#sum-gov").textContent=govCount;
+    $("#sum-ornith").textContent=st.ornithLora?"LoRA fine-tune":"RAG persona";
+    var tierObj=TIERS.filter(function(t){return t.id===st.tier;})[0];
+    $("#sum-tier-name").textContent=tierObj.name;
+    $("#sum-deploy").textContent=DEPLOY.filter(function(d){return d.id===st.deploy;})[0].name;
+    var seats=Math.max(1,st.seats||1);
+    var perSeat=tierObj.lic+(st.ornithLora?600:0)+govCount*150;
+    var annual=seats*perSeat;
+    var onboarding=Math.max(15000,seats*2000);
+    var oneTime=(st.deploy==="byo"?0:tierObj.from)+onboarding;
+    $("#price-annual").textContent=money(annual);
+    $("#price-perseat").textContent=money(perSeat)+" per person / year · "+seats+" people · AUD ex GST";
+    $("#price-onetime").textContent=money(oneTime);
+  }
+
+  // ---------- config summary text ----------
+  function configText(){
+    var wfKeys=Object.keys(st.wf).filter(function(k){return st.wf[k];});
+    var byMod={};wfKeys.forEach(function(k){var w=st.wf[k];(byMod[w.mod]=byMod[w.mod]||[]).push(w.name);});
+    var lines=["OMNISCIENT AI — DEPLOYMENT CONFIGURATION",""];
+    if(lead){lines.push("Prepared for: "+lead.name+" · "+lead.company+" · "+lead.email+(lead.phone?" · "+lead.phone:""));lines.push("");}
+    lines.push("People: "+st.seats);
+    lines.push("Appliance: "+TIERS.filter(function(t){return t.id===st.tier;})[0].name);
+    lines.push("Deployment: "+DEPLOY.filter(function(d){return d.id===st.deploy;})[0].name);
+    lines.push("Personalisation: "+(st.ornithLora?"LoRA fine-tune":"RAG persona"));
+    lines.push("");
+    MODULES.forEach(function(m){if(byMod[m.id]){lines.push(m.name+":");byMod[m.id].forEach(function(n){lines.push("  • "+n);});}});
+    var gov=Object.keys(st.gov).filter(function(k){return st.gov[k];});
+    if(gov.length){lines.push("");lines.push("Governance add-ons:");gov.forEach(function(g){lines.push("  • "+GOV.filter(function(x){return x.id===g;})[0].name);});}
+    var cn=CONNECTORS.filter(function(c){return st.cn[c.id];}).map(function(c){return c.label;});
+    lines.push("");lines.push("Connectors: "+(cn.length?cn.join(", "):"—"));
+    lines.push("");lines.push("Indicative annual: "+$("#price-annual").textContent+"  ("+$("#price-perseat").textContent+")");
+    lines.push("One-time (appliance + onboarding): "+$("#price-onetime").textContent);
+    lines.push("");lines.push("All amounts AUD ex GST. Indicative — final quote follows a scoping call.");
+    return lines.join("\n");
+  }
+
+  // ---------- lead gate ----------
+  var zone=$("#config-zone");
+  function unlock(){zone.classList.remove("locked");}
+  try{var saved=localStorage.getItem(LEAD_KEY);if(saved){lead=JSON.parse(saved);unlock();}}catch(e){}
+
+  function sendForm(payload){
+    return fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(payload)});
+  }
+  function mailtoFallback(subject,body){
+    location.href="mailto:enquiries@omniscientai.io?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  }
+
+  $("#leadform").addEventListener("submit",function(e){
+    e.preventDefault();
+    var f=e.target;
+    if(f._honey&&f._honey.value)return;
+    var name=$("#lf-name").value.trim(),email=$("#lf-email").value.trim(),company=$("#lf-company").value.trim(),
+        phone=$("#lf-phone").value.trim(),note=$("#lf-note").value.trim();
+    var status=$("#gate-status");
+    if(!name||!email||!company||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      status.style.display="block";status.className="err";status.textContent="Please fill in name, a valid work email, and company.";return;
+    }
+    lead={name:name,email:email,company:company,phone:phone};
+    try{localStorage.setItem(LEAD_KEY,JSON.stringify(lead));}catch(err){}
+    var btn=$("#lf-submit");btn.disabled=true;
+    var payload={_subject:"Meeting request — "+company,_template:"table",name:name,email:email,company:company,phone:phone||"—",message:note||"—",source:"omniscientai.io/configure"};
+    sendForm(payload).then(function(r){return r.ok?r.json():Promise.reject(r);}).then(function(){
+      status.style.display="block";status.className="";status.textContent="✓ Meeting request sent — we'll come back within one business day. The configurator is unlocked below.";
+      unlock();toast("Unlocked — build your system below.");
+      document.getElementById("configurator").scrollIntoView({behavior:"smooth"});
+    }).catch(function(){
+      // still unlock; hand the lead to email as fallback
+      unlock();
+      status.style.display="block";status.className="";status.textContent="✓ Configurator unlocked. Our form service didn't respond, so your email app will open to send the meeting request instead.";
+      mailtoFallback("Meeting request — "+company,"Name: "+name+"\nEmail: "+email+"\nCompany: "+company+"\nPhone: "+(phone||"—")+"\n\n"+(note||""));
+    }).finally(function(){btn.disabled=false;});
+  });
+
+  // ---------- quote request ----------
+  $("#cta").addEventListener("click",function(){
+    var txt=configText();
+    if(!lead){toast("Book a meeting above first — then request your quote.");document.getElementById("gate").scrollIntoView({behavior:"smooth"});return;}
+    var btn=$("#cta");btn.disabled=true;
+    var payload={_subject:"Quote request — "+lead.company,_template:"table",name:lead.name,email:lead.email,company:lead.company,phone:lead.phone||"—",configuration:txt,source:"omniscientai.io/configure"};
+    sendForm(payload).then(function(r){return r.ok?r.json():Promise.reject(r);}).then(function(){
+      toast("Quote request sent — we'll reply to "+lead.email+" with a fixed quote.");
+    }).catch(function(){
+      toast("Opening your email app to send the quote request…");
+      mailtoFallback("Quote request — "+lead.company,txt);
+    }).finally(function(){btn.disabled=false;});
+  });
+
+  $("#copybtn").addEventListener("click",function(){
+    var txt=configText();
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){toast("Configuration copied to clipboard.");},function(){toast("Copy failed — select and copy manually.");});}
+    else{toast("Clipboard unavailable in this browser.");}
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
