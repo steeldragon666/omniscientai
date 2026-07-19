@@ -200,8 +200,10 @@
   .scrollhint i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--blue);animation:shint 1.8s var(--ease) infinite}
   @keyframes shint{60%{top:100%}100%{top:100%}}
   #net{width:100%;aspect-ratio:1/1;display:block}
+  .hero-object{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);height:104%;mix-blend-mode:multiply;pointer-events:none;z-index:1;-webkit-mask-image:radial-gradient(ellipse 72% 68% at 50% 52%,#000 58%,transparent 90%);mask-image:radial-gradient(ellipse 72% 68% at 50% 52%,#000 58%,transparent 90%)}
+  @media (prefers-reduced-motion:reduce){.hero-object{display:none}}
   .fig{display:flex;justify-content:space-between;gap:14px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px;flex-wrap:wrap}
-  .hero-art .fig{background:rgba(255,255,255,.7)}
+  .hero-art .fig{background:rgba(255,255,255,.7);position:relative;z-index:2}
 
   /* ===== POSITIONING ===== */
   #positioning .inner{max-width:820px;margin:0 auto}
@@ -454,8 +456,9 @@
 <header id="hero">
   <div class="hero-art" data-boot="2">
     <canvas id="net" aria-label="Omniscient AI connectome — live network illustration"></canvas>
+    <video class="hero-object" src="assets/second-brain-object.mp4" poster="assets/second-brain-object-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The second brain — rotating Omniscient AI sculpture"></video>
     <div class="fig">
-      <span class="anno">Fig. 01 — the connectome · live</span>
+      <span class="anno">Fig. 01 — the second brain · object &amp; connectome</span>
       <span class="anno" id="net-coord">x 000 · y 000</span>
     </div>
   </div>
