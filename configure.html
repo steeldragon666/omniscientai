@@ -388,9 +388,9 @@
   var GOV_CORE=["Autonomy tiers & approval spine","Audit trail & evidence store","Privacy scopes & redaction","Per-user sealed credential vault"];
 
   var TIERS=[
-    {id:"pod",name:"Department Pod",seats:"5–15 people",spec:"Compact appliance brain + AI-capable laptops running each person's harness at the edge. Optional central GPU task engine.",from:17000,lic:2400},
-    {id:"firm",name:"Firm Appliance",seats:"25–100 people",spec:"Multi-GPU server + fast vault. Central task engine serves the whole firm; edge devices optional.",from:45000,lic:1900},
-    {id:"rack",name:"Sovereign Rack",seats:"100–500+ people",spec:"Multi-GPU rack, high-availability storage, separate training and inference pools. Firm-wide or multi-office.",from:180000,lic:1500}
+    {id:"pod",name:"Department Pod",seats:"5–15 people",spec:"Compact appliance brain + AI-capable laptops running each person's harness at the edge. Optional central GPU task engine.",from:24500,lic:3400},
+    {id:"firm",name:"Firm Appliance",seats:"25–100 people",spec:"Multi-GPU server + fast vault. Central task engine serves the whole firm; edge devices optional.",from:65000,lic:2700},
+    {id:"rack",name:"Sovereign Rack",seats:"100–500+ people",spec:"Multi-GPU rack, high-availability storage, separate training and inference pools. Firm-wide or multi-office.",from:260000,lic:2150}
   ];
   var DEPLOY=[
     {id:"onprem",name:"On-prem appliance",blurb:"The box lives in your building. Maximum sovereignty; capex replaces subscription spend."},
@@ -471,7 +471,7 @@
   osl.appendChild(el("p",null,"How closely each person's harness is tuned to them."));os.appendChild(osl);
   var oopts=el("div","opts");
   [{id:"rag",name:"RAG persona",spec:"Grounded in each person's records and voice from day one. Fast, fully explainable. Included.",tag:"Included"},
-   {id:"lora",name:"Personal fine-tune (LoRA)",spec:"A density-gated personal fine-tune per employee, trained on-appliance and refined over time. Highest fidelity.",tag:"+ A$600 per person / yr"}
+   {id:"lora",name:"Personal fine-tune (LoRA)",spec:"A density-gated personal fine-tune per employee, trained on-appliance and refined over time. Highest fidelity.",tag:"+ A$850 per person / yr"}
   ].forEach(function(o){
     var opt=el("div","opt"+(o.id==="rag"?" on":""));opt.dataset.id=o.id;
     var t=el("div","otitle");t.appendChild(el("h3",null,o.name));t.appendChild(el("span","radio"));opt.appendChild(t);
@@ -493,7 +493,7 @@
   GOV.forEach(function(g){
     var card=el("div","card");card.tabIndex=0;
     var top=el("div","card-top");top.appendChild(el("span","check",CHK));top.appendChild(el("h3",null,g.name));
-    top.appendChild(el("span","tier approve","+ A$150 pp/yr"));card.appendChild(top);
+    top.appendChild(el("span","tier approve","+ A$220 pp/yr"));card.appendChild(top);
     card.appendChild(el("p","blurb",g.blurb));
     card.addEventListener("click",function(){st.gov[g.id]=!st.gov[g.id];card.classList.toggle("on",!!st.gov[g.id]);update();});
     card.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();card.click();}});
@@ -575,9 +575,9 @@
     $("#sum-tier-name").textContent=tierObj.name;
     $("#sum-deploy").textContent=DEPLOY.filter(function(d){return d.id===st.deploy;})[0].name;
     var seats=Math.max(1,st.seats||1);
-    var perSeat=tierObj.lic+(st.ornithLora?600:0)+govCount*150;
+    var perSeat=tierObj.lic+(st.ornithLora?850:0)+govCount*220;
     var annual=seats*perSeat;
-    var onboarding=Math.max(15000,seats*2000);
+    var onboarding=Math.max(21500,seats*2900);
     var oneTime=(st.deploy==="byo"?0:tierObj.from)+onboarding;
     $("#price-annual").textContent=money(annual);
     $("#price-perseat").textContent=money(perSeat)+" per person / year · "+seats+" people · AUD ex GST";
