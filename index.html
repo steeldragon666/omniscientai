@@ -2380,7 +2380,7 @@
         phone: val("phone").slice(0,40) || null,
         interest: interest ? interest.value : "adoption",
         message: val("message").slice(0,4000),
-        source: location.origin + location.pathname + "#enquire",
+        source: (location.origin + location.pathname + location.search).slice(0, 280) + "#enquire",
         user_agent: String(navigator.userAgent || "").slice(0,400),
         website: ""
       };
