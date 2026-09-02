@@ -2362,7 +2362,13 @@
     // campaign deep link: /#assessment lands on the offer with it preselected
     function hashPick(){ if (location.hash === "#assessment"){ var r = document.getElementById("int-assessment"); if (r) r.checked = true; } }
     hashPick(); addEventListener("hashchange", hashPick);
-    function done(){ card.classList.add("done"); card.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"}); }
+    function done(){
+      card.classList.add("done"); card.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"});
+      // conversion signals for ad platforms, only if their tags are installed on the page
+      var picked = form.querySelector('input[name="interest"]:checked'), label = picked ? picked.value : "adoption";
+      try { if (window.fbq) fbq("track", "Lead", {content_name: label, content_category: "enquiry"}); } catch (e) {}
+      try { if (window.gtag) gtag("event", "generate_lead", {event_category: "enquiry", event_label: label}); } catch (e) {}
+    }
     function fail(){
       btn.disabled = false; btnLabel.textContent = "Send enquiry →";
       status.innerHTML = 'That didn\'t go through. Please email us directly: <a href="mailto:info@omniscientai.io">info@omniscientai.io</a>';
