@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Enterprise AI Consultants Melbourne — Omniscient AI</title>
-<meta name="description" content="Melbourne's vendor-neutral enterprise AI specialists. Working AI solutions built on your premises — sovereign, private, fixed-cost. Solutions, not seminars.">
+<meta name="description" content="Melbourne's vendor-neutral enterprise AI specialists. Sovereign, on-premises AI solutions; our own owned, operated and housed inference cluster; manufacturing facility overhauls on one hypervisor. Solutions, not seminars.">
 <link rel="canonical" href="https://omniscientai.io/">
 <meta name="geo.region" content="AU-VIC">
 <meta name="geo.placename" content="Melbourne">
 <meta name="ICBM" content="-37.8136, 144.9631">
 <meta property="og:title" content="Enterprise AI Consultants Melbourne — Omniscient AI">
-<meta property="og:description" content="Melbourne's vendor-neutral enterprise AI specialists. Working AI solutions built on your premises — sovereign, private, fixed-cost. Solutions, not seminars.">
+<meta property="og:description" content="Melbourne's vendor-neutral enterprise AI specialists. Sovereign, on-premises AI solutions; our own owned, operated and housed inference cluster; manufacturing facility overhauls on one hypervisor. Solutions, not seminars.">
 <meta property="og:image" content="https://omniscientai.io/assets/logo-horizontal-with-graphic.png">
 <meta property="og:image:alt" content="Omniscient AI — enterprise AI consultants, Melbourne">
 <meta property="og:url" content="https://omniscientai.io/">
@@ -42,7 +42,7 @@
         { "@type": "State", "name": "Victoria" },
         { "@type": "Country", "name": "Australia" }
       ],
-      "knowsAbout": ["Enterprise AI adoption", "On-premises AI deployment", "Sovereign AI", "AI strategy consulting", "AI workflow automation", "Private LLM deployment"]
+      "knowsAbout": ["Enterprise AI adoption", "On-premises AI deployment", "Sovereign AI", "AI strategy consulting", "AI workflow automation", "Private LLM deployment", "Private AI inference infrastructure", "Sovereign inference hosting", "AI model training and simulation", "Manufacturing facility AI integration", "Industrial automation integration", "Natural-language PLC diagnostics", "Additive manufacturing integration"]
     },
     {
       "@type": "WebSite",
@@ -51,6 +51,26 @@
       "name": "Omniscient AI — Enterprise AI Consultants Melbourne",
       "publisher": { "@id": "https://omniscientai.io/#org" },
       "inLanguage": "en-AU"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://omniscientai.io/#cluster",
+      "name": "Sovereign AI inference capacity — Cluster 01",
+      "serviceType": "Private AI inference, simulation and model training on infrastructure owned, operated and housed at Omniscient AI's own facility",
+      "description": "Dedicated, default-deny AI compute for regulated industries and privacy-first companies. 550 GB of accelerator memory and 1 TB of system memory, owned and operated by Omniscient AI in Victoria, Australia — never a shared data centre or public cloud.",
+      "provider": { "@id": "https://omniscientai.io/#org" },
+      "areaServed": { "@type": "Country", "name": "Australia" },
+      "url": "https://omniscientai.io/#cluster"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://omniscientai.io/#floor",
+      "name": "Manufacturing facility overhaul — integrated AI super-spaces",
+      "serviceType": "Integration of robots, cranes, forklifts, conveyors, additive cells and PLCs onto a common communication hypervisor with natural-language control",
+      "description": "Omniscient AI overhauls manufacturing facilities of any type into fully integrated, AI-native super-spaces: every machine speaks one language, and fault finding, PLC diagnostics and picking and packing orders are handled by speaking to the controllers.",
+      "provider": { "@id": "https://omniscientai.io/#org" },
+      "areaServed": { "@type": "Country", "name": "Australia" },
+      "url": "https://omniscientai.io/#floor"
     },
     {
       "@type": "VideoObject",
@@ -403,6 +423,146 @@
   #bigmark text{fill:none;stroke:rgba(15,17,21,.28);stroke-width:1.4;transition:fill 260ms var(--ease)}
   #bigmark:hover text{fill:var(--ink);stroke:var(--ink)}
 
+  /* ===== HERO announcement chip ===== */
+  .hero-news{margin-bottom:22px}
+  .news{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;font-family:var(--fm);font-size:11px;letter-spacing:.06em;color:var(--ink-2);text-decoration:none;background:var(--paper);transition:border-color 160ms var(--ease),color 160ms var(--ease);max-width:100%}
+  .news:hover{border-color:var(--blue);color:var(--ink)}
+  .news .tag{background:var(--blue);color:#fff;border-radius:999px;padding:4px 9px;font-weight:700;letter-spacing:.12em;font-size:9.5px;flex:none}
+  .news .dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:npulse 2s var(--ease) infinite;flex:none}
+  .news .arr{color:var(--blue);transition:transform 160ms var(--ease);flex:none}
+  .news:hover .arr{transform:translateX(3px)}
+  @media(max-width:520px){.news{font-size:10px;letter-spacing:.03em;white-space:normal;line-height:1.4}}
+  /* nine nav links — tighten, then shed the low-priority ones */
+  @media(max-width:1180px){.navlinks{gap:15px}}
+  @media(max-width:1040px){.navlinks a.lo{display:none}}
+
+  /* ===== FLOOR (facility overhaul — speak to the floor) ===== */
+  #floor{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fl-grid{display:grid;grid-template-columns:7fr 5fr;gap:44px;align-items:start;margin-top:14px}
+  @media(max-width:960px){.fl-grid{grid-template-columns:1fr}}
+  #fl-panel{position:relative;display:grid;grid-template-columns:56% 44%;height:470px;border-radius:8px;background:var(--ink);overflow:hidden;margin-top:22px}
+  @media(max-width:640px){#fl-panel{grid-template-columns:1fr;height:auto}}
+  #fl-map{position:relative;border-right:1px solid #262c35;display:flex;flex-direction:column}
+  @media(max-width:640px){#fl-map{border-right:none;border-bottom:1px solid #262c35}}
+  #fl-svg{width:100%;flex:1;min-height:0;display:block}
+  @media(max-width:640px){#fl-svg{aspect-ratio:460/480;flex:none;max-height:420px;margin:0 auto}}
+  .fl-blk rect,.fl-blk circle.body{fill:#161a20;stroke:#39404b;stroke-width:1.4;transition:stroke 200ms var(--ease),fill 200ms var(--ease)}
+  .fl-blk rect.hatch{fill:url(#fl-hatch);stroke:none;pointer-events:none}
+  .fl-blk rect.lbl,.fl-hub rect.lbl{fill:#0F1115;stroke:none}
+  .fl-blk line.rail{stroke:#39404b;stroke-width:1}
+  .fl-blk text{font-family:var(--fm);font-size:9px;letter-spacing:.12em;fill:#8E97A4;transition:fill 200ms var(--ease)}
+  .fl-blk .led{fill:#39404b;transition:fill 200ms var(--ease)}
+  .fl-blk.hot rect:not(.hatch):not(.lbl),.fl-blk.hot circle.body{stroke:var(--blue);fill:#2F7BFF1A}
+  .fl-blk.hot text{fill:#fff}
+  .fl-blk.hot .led{fill:var(--blue-glow)}
+  #fl-trolley rect{fill:#39404b;stroke:none;transition:fill 200ms var(--ease)}
+  #fl-trolley{transition:transform 900ms var(--ease)}
+  .fl-blk.hot #fl-trolley rect{fill:var(--blue-glow)}
+  .fl-wire{stroke:#39404b;stroke-width:1;stroke-dasharray:3 5;opacity:.75}
+  .fl-wire2{stroke:var(--blue);stroke-width:1.6;stroke-dasharray:var(--len,300);stroke-dashoffset:var(--len,300);opacity:0;transition:stroke-dashoffset 420ms var(--ease),opacity 120ms var(--ease)}
+  .fl-wire2.hot{stroke-dashoffset:0;opacity:1}
+  .fl-hub circle.ring{fill:none;stroke:var(--blue);stroke-width:1.6}
+  .fl-hub circle.core{fill:#fff}
+  .fl-hub circle.sat{fill:var(--blue)}
+  .fl-hub text{font-family:var(--fm);font-size:9px;letter-spacing:.14em;fill:#fff;font-weight:700}
+  .fl-hub.busy circle.ring{animation:flring 1s var(--ease) infinite}
+  @keyframes flring{0%,100%{stroke-opacity:1}50%{stroke-opacity:.3}}
+  #fl-hud{padding:0 14px 12px;font-family:var(--fm);font-size:10px;letter-spacing:.1em;color:#8E97A4;font-variant-numeric:tabular-nums;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  #fl-hud b{color:var(--blue-glow);font-weight:600}
+  #fl-con{display:flex;flex-direction:column;min-height:0;padding:16px 18px 14px}
+  .fl-mic{display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid #262c35}
+  .fl-bars{display:flex;align-items:center;gap:2px;height:22px;flex:1;min-width:0;overflow:hidden}
+  .fl-bars i{display:block;width:3px;height:3px;border-radius:2px;background:#39404b;transition:height 90ms linear,background 200ms var(--ease)}
+  .fl-mic.live .fl-bars i{background:var(--blue-glow)}
+  .fl-state{font-family:var(--fm);font-size:9.5px;letter-spacing:.14em;color:#8E97A4;white-space:nowrap;flex:none}
+  .fl-mic.live .fl-state{color:var(--blue-glow)}
+  #fl-log{flex:1;min-height:0;overflow:hidden;padding-top:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;font-family:var(--fm);font-size:10.5px;line-height:1.45;color:#AEB6C2}
+  @media(max-width:640px){#fl-con{min-height:380px}#fl-log{flex:none}}
+  .fl-ln{opacity:0;transform:translateY(6px);transition:opacity 180ms var(--ease),transform 180ms var(--ease);overflow-wrap:anywhere}
+  .fl-ln.on{opacity:1;transform:none}
+  .fl-ln.heard{color:#fff;font-weight:600}
+  .fl-ln.heard::before{content:"❝ ";color:var(--blue-glow)}
+  .fl-ln.cmd{color:#E7ECF3;padding-left:14px;text-indent:-14px}
+  .fl-ln.cmd::before{content:"→ ";color:var(--blue-glow)}
+  .fl-ln.ack{color:#8E97A4;padding-left:16px}
+  .fl-ln.ack::before{content:"ACK · ";color:#1EA97C}
+  .fl-ln.gate{color:#E8A23A;padding-left:16px}
+  .fl-ln.ok{color:#1EA97C;padding-left:16px}
+  .fl-ln.ans{margin-top:4px;padding:9px 11px;border-left:2px solid var(--blue);background:#161a20;color:#fff;font-family:var(--fb);font-size:12.5px;line-height:1.5}
+  .fl-ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .fl-ctl .replay{margin-left:auto}
+  .fl-pts{display:flex;flex-direction:column;gap:14px;margin-top:22px}
+  .fl-pt{border:1px solid var(--line);border-radius:8px;padding:22px 24px;background:var(--paper);transition:border-color 200ms var(--ease)}
+  .fl-pt:hover{border-color:var(--blue)}
+  .fl-pt .idx{font-family:var(--fm);font-size:11px;color:var(--blue);letter-spacing:.16em}
+  .fl-pt h3{font-size:20px;letter-spacing:-.015em;margin:8px 0 6px}
+  .fl-pt p{font-size:14px;color:var(--ink-3);line-height:1.6}
+  .fl-ctas{display:flex;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap}
+
+  /* ===== CLUSTER (announcement — owned, operated, housed) ===== */
+  #cluster{background:var(--ink);color:var(--paper)}
+  #cluster .lead{color:#AEB6C2}
+  .cl-grid{display:grid;grid-template-columns:6fr 6fr;gap:44px;align-items:start;margin-top:14px}
+  @media(max-width:960px){.cl-grid{grid-template-columns:1fr}}
+  #cl-rack{position:relative;border:1px solid #262c35;border-radius:8px;background:#161a20;overflow:hidden}
+  #cl-svg{width:100%;height:auto;display:block}
+  .cl-gpu rect{fill:#1b2027;stroke:#2a313b;stroke-width:1.2;transition:fill 260ms var(--ease),stroke 260ms var(--ease)}
+  .cl-gpu line{stroke:#2a313b;stroke-width:1;transition:stroke 260ms var(--ease)}
+  .cl-gpu .led{fill:#39404b;transition:fill 200ms var(--ease)}
+  .cl-gpu text{font-family:var(--fm);font-size:8px;letter-spacing:.12em;fill:#5B6270;transition:fill 200ms var(--ease)}
+  .cl-gpu.lit rect{fill:#2F7BFF22;stroke:var(--blue)}
+  .cl-gpu.lit line{stroke:#2F7BFF66}
+  .cl-gpu.lit .led{fill:var(--blue-glow)}
+  .cl-gpu.lit text{fill:#C6CDD6}
+  .cl-dimm{fill:#1b2027;stroke:#2a313b;stroke-width:1;transition:fill 160ms var(--ease),stroke 160ms var(--ease)}
+  .cl-dimm.lit{fill:#2F7BFF55;stroke:var(--blue)}
+  .cl-hud{position:absolute;font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;color:#8E97A4;font-variant-numeric:tabular-nums;text-transform:uppercase;pointer-events:none}
+  .cl-hud b{color:#fff;font-weight:700}
+  .cl-hud.tl{left:16px;top:14px}.cl-hud.tr{right:16px;top:14px;text-align:right}
+  .cl-hud.bl{left:16px;bottom:14px}.cl-hud.br{right:16px;bottom:14px;text-align:right}
+  .cl-hud .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--blue);margin-right:7px;animation:npulse 2s var(--ease) infinite;vertical-align:middle}
+  @media(max-width:560px){.cl-hud.tr,.cl-hud.br{display:none}.cl-hud{font-size:9.5px}#cl-rack{padding:18px 0 26px}}
+  .cl-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+  .cl-spec{border:1px solid #262c35;border-radius:8px;padding:18px 20px;background:#161a20;transition:border-color 200ms var(--ease)}
+  .cl-spec:hover{border-color:var(--blue)}
+  .cl-spec .v{font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+  .cl-spec .v small{font-size:.42em;font-weight:700;color:var(--blue-glow);margin-left:4px;letter-spacing:0}
+  .cl-spec .k{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8E97A4;margin-top:8px;line-height:1.5}
+  .cl-work{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .cl-work span{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:1px solid #39404b;border-radius:999px;padding:5px 12px;color:#E7ECF3}
+  .cl-work span b{color:var(--blue-glow);margin-right:6px;font-weight:600}
+  .cl-h{font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-glow)}
+  .cl-laws{display:flex;flex-direction:column;margin-top:12px;border-top:1px solid #262c35}
+  .law{display:grid;grid-template-columns:122px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #262c35;font-size:13.5px;line-height:1.5;color:#AEB6C2}
+  .law .d{font-family:var(--fm);font-size:10px;letter-spacing:.12em;color:var(--blue-glow);padding-top:3px;white-space:nowrap}
+  .law b{color:#fff;font-weight:700}
+  @media(max-width:480px){.law{grid-template-columns:1fr;gap:4px}}
+  .cl-note{font-family:var(--fm);font-size:10px;letter-spacing:.04em;color:#7E8794;margin-top:10px;line-height:1.6}
+  .cl-for{font-size:14.5px;line-height:1.6;color:#AEB6C2;margin-top:10px}
+  .cl-for b{color:#fff}
+  .cl-matrix-wrap{margin-top:52px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #262c35;border-radius:8px;background:#161a20}
+  .cl-matrix{width:100%;min-width:680px;border-collapse:collapse;font-size:13.5px;line-height:1.45}
+  .cl-matrix th,.cl-matrix td{padding:13px 18px;text-align:left;vertical-align:top;border-bottom:1px solid #262c35}
+  .cl-matrix tr:last-child td{border-bottom:none}
+  .cl-matrix th{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8E97A4;font-weight:600;border-bottom:1px solid #39404b}
+  .cl-matrix td:first-child{font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8E97A4;white-space:nowrap}
+  .cl-matrix td{color:#AEB6C2}
+  .cl-matrix .us{color:#fff;font-weight:600;background:#2F7BFF14;border-left:2px solid var(--blue)}
+  .cl-matrix th.us{color:var(--blue-glow)}
+  .cl-close{margin-top:44px;font-size:clamp(17px,1.9vw,22px);color:#E7ECF3;max-width:60ch;line-height:1.55}
+  .cl-close b{color:var(--blue-glow)}
+  .cl-ctas{display:flex;align-items:center;gap:14px;margin-top:28px;flex-wrap:wrap}
+  #cluster .btn{background:transparent;color:#fff;border-color:#fff}
+  #cluster .btn.solid{background:var(--blue);border-color:var(--blue)}
+  #cluster .btn.solid::before{background:#fff}
+  #cluster .btn.solid:hover{color:var(--ink);border-color:#fff}
+  #cluster .fig .anno{color:#7E8794}
+  #cluster .fig{border-top-color:#262c35}
+  /* proof grid grows to three tiles */
+  .proof-grid{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:1000px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:860px){.proof-grid{grid-template-columns:1fr}}
+
   /* ===== boot choreography ===== */
   [data-boot]{opacity:0;transform:translateY(12px);transition:opacity 220ms var(--ease),transform 220ms var(--ease)}
   .booted [data-boot]{opacity:1;transform:none}
@@ -440,11 +600,13 @@
     <a class="navbrand" href="#hero" data-cursor="HOME"><span class="disc"></span>Omniscient<b>&nbsp;AI</b></a>
     <div class="navlinks">
       <a href="#method">Method</a>
-      <a href="#pulse">Pulse</a>
-      <a href="#film">Film</a>
+      <a href="#floor">Facilities</a>
+      <a href="#pulse" class="lo">Pulse</a>
+      <a href="#film" class="lo">Film</a>
       <a href="#sovereignty">Sovereignty</a>
+      <a href="#cluster">Cluster</a>
       <a href="#shift">The shift</a>
-      <a href="#proof">Proof</a>
+      <a href="#proof" class="lo">Proof</a>
       <a href="configure.html">Configure</a>
       <span id="pct">000%</span>
       <span class="mag"><a class="pill" href="#enquire" data-cursor="GO">Enquire →</a></span>
@@ -464,6 +626,7 @@
   </div>
   <div class="wrap">
     <div class="hero-copy">
+      <div class="hero-news" data-boot="1"><a class="news" href="#cluster" data-cursor="NEW"><span class="tag">New</span><span class="dot"></span><span>Our first sovereign inference cluster is live — owned, operated and housed at our facility · 550 GB VRAM</span><span class="arr">→</span></a></div>
       <div class="hero-meta" data-boot="2">
         <span class="eyebrow">Enterprise AI adoption</span>
         <span class="anno">37.8136°S&nbsp;&nbsp;144.9631°E · Melbourne</span>
@@ -474,7 +637,7 @@
         <span class="ln"><span class="ln-i ghostline">Not the slide deck.</span></span>
       </h1>
       <div class="hero-sub">
-        <p class="lead" data-boot="4">Melbourne's specialists in enterprise AI transformation, working with businesses across Australia. We drive real value, keep your data private, and turn variable cloud bills into a fixed cost — while lifting output in every department. Working systems your teams use every day.</p>
+        <p class="lead" data-boot="4">Melbourne's specialists in enterprise AI transformation, working with businesses across Australia. We drive real value, keep your data private, and turn variable cloud bills into a fixed cost — while lifting output in every department, from the front office to the factory floor. Working systems your teams use every day.</p>
         <div class="hero-ctas" data-boot="5">
           <span class="mag"><a class="btn solid" href="#enquire" data-cursor="GO"><span>Enquire today →</span></a></span>
           <a class="btn ghost u" href="#method">See the method →</a>
@@ -489,8 +652,8 @@
 </header>
 
 <div class="band" aria-hidden="true"><div class="in2">
-  <span>Solutions, not seminars</span><b>·</b><span>Your data stays in the building</span><b>·</b><span>Variable → fixed cost</span><b>·</b><span>We eat our own cooking</span><b>·</b><span>Melbourne · Australia</span><b>·</b>
-  <span>Solutions, not seminars</span><b>·</b><span>Your data stays in the building</span><b>·</b><span>Variable → fixed cost</span><b>·</b><span>We eat our own cooking</span><b>·</b><span>Melbourne · Australia</span><b>·</b>
+  <span>Solutions, not seminars</span><b>·</b><span>Your data stays in the building</span><b>·</b><span>Variable → fixed cost</span><b>·</b><span>Cluster 01 · owned · operated · housed</span><b>·</b><span>550 GB VRAM on Australian soil</span><b>·</b><span>Every machine, one language</span><b>·</b><span>We eat our own cooking</span><b>·</b><span>Melbourne · Australia</span><b>·</b>
+  <span>Solutions, not seminars</span><b>·</b><span>Your data stays in the building</span><b>·</b><span>Variable → fixed cost</span><b>·</b><span>Cluster 01 · owned · operated · housed</span><b>·</b><span>550 GB VRAM on Australian soil</span><b>·</b><span>Every machine, one language</span><b>·</b><span>We eat our own cooking</span><b>·</b><span>Melbourne · Australia</span><b>·</b>
 </div></div>
 
 <!-- ============ POSITIONING ============ -->
@@ -612,9 +775,151 @@
   </div>
 </section>
 
+<!-- ============ FLOOR (facility overhauls) ============ -->
+<section id="floor">
+  <div class="gnum" aria-hidden="true">04</div>
+  <div class="wrap">
+    <div class="eyebrow rv">Facility overhauls · super-spaces</div>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Your whole floor. <span class="b">One language.</span></span></span></h2>
+    <p class="lead rv" style="margin-top:18px">We overhaul manufacturing facilities of any type into fully integrated, AI-native super-spaces. Robots, cranes, forklifts, conveyors, additive cells, legacy PLCs — every machine you own joins one common communication hypervisor, so it all speaks the same language and answers to yours.</p>
+    <div class="fl-grid">
+      <div class="rv">
+        <div class="tabrow" id="fl-cmds" role="group" aria-label="Example spoken commands"></div>
+        <div id="fl-panel">
+          <div id="fl-map">
+            <svg id="fl-svg" viewBox="0 0 460 480" xmlns="http://www.w3.org/2000/svg" aria-label="Illustrative floor map — every machine wired to one hypervisor">
+              <defs>
+                <pattern id="fl-hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="6" stroke="#39404b" stroke-width="1"/></pattern>
+              </defs>
+              <g aria-hidden="true">
+                <line class="fl-wire" x1="230" y1="236" x2="84" y2="72"/>
+                <line class="fl-wire" x1="230" y1="236" x2="84" y2="200"/>
+                <line class="fl-wire" x1="230" y1="236" x2="84" y2="328"/>
+                <line class="fl-wire" x1="230" y1="236" x2="230" y2="50"/>
+                <line class="fl-wire" x1="230" y1="236" x2="230" y2="424"/>
+                <line class="fl-wire" x1="230" y1="236" x2="376" y2="62"/>
+                <line class="fl-wire" x1="230" y1="236" x2="376" y2="138"/>
+                <line class="fl-wire" x1="230" y1="236" x2="376" y2="224"/>
+                <line class="fl-wire" x1="230" y1="236" x2="376" y2="326"/>
+              </g>
+              <g aria-hidden="true">
+                <line class="fl-wire2" data-m="cella" x1="230" y1="236" x2="84" y2="72"/>
+                <line class="fl-wire2" data-m="cellb" x1="230" y1="236" x2="84" y2="200"/>
+                <line class="fl-wire2" data-m="add" x1="230" y1="236" x2="84" y2="328"/>
+                <line class="fl-wire2" data-m="crane" x1="230" y1="236" x2="230" y2="50"/>
+                <line class="fl-wire2" data-m="line" x1="230" y1="236" x2="230" y2="424"/>
+                <line class="fl-wire2" data-m="fk1" x1="230" y1="236" x2="376" y2="62"/>
+                <line class="fl-wire2" data-m="fk2" x1="230" y1="236" x2="376" y2="138"/>
+                <line class="fl-wire2" data-m="pack" x1="230" y1="236" x2="376" y2="224"/>
+                <line class="fl-wire2" data-m="dock" x1="230" y1="236" x2="376" y2="326"/>
+              </g>
+              <g class="fl-blk" data-m="cella">
+                <rect x="24" y="40" width="120" height="64" rx="4"/>
+                <circle class="led" cx="36" cy="52" r="2.5"/>
+                <circle class="body" cx="48" cy="80" r="7"/><line class="rail" x1="48" y1="80" x2="66" y2="66"/><line class="rail" x1="66" y1="66" x2="80" y2="74"/>
+                <text x="136" y="80" text-anchor="end">ROBOT CELL A</text>
+              </g>
+              <g class="fl-blk" data-m="cellb">
+                <rect x="24" y="168" width="120" height="64" rx="4"/>
+                <circle class="led" cx="36" cy="180" r="2.5"/>
+                <circle class="body" cx="48" cy="208" r="7"/><line class="rail" x1="48" y1="208" x2="66" y2="194"/><line class="rail" x1="66" y1="194" x2="80" y2="202"/>
+                <text x="136" y="208" text-anchor="end">ROBOT CELL B</text>
+              </g>
+              <g class="fl-blk" data-m="add">
+                <rect x="24" y="296" width="120" height="64" rx="4"/>
+                <circle class="led" cx="36" cy="308" r="2.5"/>
+                <line class="rail" x1="40" y1="324" x2="68" y2="324"/><line class="rail" x1="40" y1="330" x2="68" y2="330"/><line class="rail" x1="40" y1="336" x2="68" y2="336"/>
+                <text x="136" y="334" text-anchor="end">ADDITIVE CELL</text>
+              </g>
+              <g class="fl-blk" data-m="crane">
+                <line class="rail" x1="160" y1="30" x2="300" y2="30"/><line class="rail" x1="160" y1="70" x2="300" y2="70"/>
+                <rect x="160" y="36" width="140" height="28" rx="4"/>
+                <line class="rail" x1="196" y1="64" x2="196" y2="70"/><line class="rail" x1="264" y1="64" x2="264" y2="70"/>
+                <g id="fl-trolley"><rect x="188" y="42" width="16" height="16" rx="2"/></g>
+                <circle class="led" cx="170" cy="50" r="2.5"/>
+                <rect class="lbl" x="158" y="76" width="144" height="16" rx="3"/>
+                <text x="230" y="87" text-anchor="middle">GANTRY CRANE · BAY 2 → 4</text>
+              </g>
+              <g class="fl-blk" data-m="line">
+                <rect x="160" y="400" width="140" height="48" rx="4"/>
+                <circle class="led" cx="170" cy="412" r="2.5"/>
+                <circle class="body" cx="184" cy="424" r="7"/><circle class="body" cx="207" cy="424" r="7"/><circle class="body" cx="230" cy="424" r="7"/><circle class="body" cx="253" cy="424" r="7"/><circle class="body" cx="276" cy="424" r="7"/>
+                <text x="230" y="468" text-anchor="middle">LINE 3 · PLC 7 · CONVEYOR 3</text>
+              </g>
+              <g class="fl-blk" data-m="fk1">
+                <rect x="316" y="40" width="120" height="44" rx="4"/>
+                <circle class="led" cx="328" cy="52" r="2.5"/>
+                <text x="376" y="66" text-anchor="middle">FORKLIFT 1</text>
+              </g>
+              <g class="fl-blk" data-m="fk2">
+                <rect x="316" y="116" width="120" height="44" rx="4"/>
+                <circle class="led" cx="328" cy="128" r="2.5"/>
+                <text x="376" y="142" text-anchor="middle">FORKLIFT 2</text>
+              </g>
+              <g class="fl-blk" data-m="pack">
+                <rect x="316" y="196" width="120" height="56" rx="4"/>
+                <circle class="led" cx="328" cy="208" r="2.5"/>
+                <text x="376" y="228" text-anchor="middle">PACK STATION</text>
+              </g>
+              <g class="fl-blk" data-m="dock">
+                <rect x="316" y="290" width="120" height="72" rx="4"/>
+                <rect class="hatch" x="322" y="338" width="108" height="18" rx="2"/>
+                <circle class="led" cx="328" cy="302" r="2.5"/>
+                <text x="376" y="324" text-anchor="middle">DOCK 2</text>
+              </g>
+              <g class="fl-hub" id="fl-hub">
+                <circle class="ring" cx="230" cy="236" r="30"/>
+                <circle class="core" cx="230" cy="236" r="12"/>
+                <circle class="sat" cx="242" cy="224" r="5"/>
+                <rect class="lbl" x="190" y="276" width="80" height="16" rx="3"/>
+                <text x="230" y="287" text-anchor="middle">HYPERVISOR</text>
+              </g>
+            </svg>
+            <div id="fl-hud"><span>PROTOCOLS <b>6</b> · MACHINES <b>10</b> · INTERLOCKS <b>CERTIFIED</b></span><span>MOTION · <b>HUMAN-APPROVED</b></span></div>
+          </div>
+          <div id="fl-con">
+            <div class="fl-mic" id="fl-mic"><span class="fl-bars" aria-hidden="true"></span><span class="fl-state">READY</span></div>
+            <div id="fl-log" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="fig"><span class="anno">Fig. 04 — the floor hypervisor · illustrative</span><span class="anno">Machines, protocols and responses are illustrative. Safety-rated functions stay on their certified controllers.</span></div>
+        <div class="fl-ctl"><span class="anno" style="text-transform:none;letter-spacing:.04em">Pick a command above. Spoken on a real floor — clicked here.</span><button class="replay" id="fl-replay" type="button" data-cursor="AGAIN">↺ Replay</button></div>
+      </div>
+      <div>
+        <div class="fl-pts">
+          <div class="fl-pt rv" data-cursor="01">
+            <div class="idx">01 / INTEGRATE</div>
+            <h3>Any machine. Any vendor. Any vintage.</h3>
+            <p>Modbus, OPC UA, PROFINET, EtherNet/IP, CANopen, ROS 2, proprietary serial — bridged into one hypervisor that holds a single live model of your plant. Nothing gets ripped out to join, and additive cells schedule like any other machine.</p>
+          </div>
+          <div class="fl-pt rv" data-cursor="02">
+            <div class="idx">02 / SPEAK</div>
+            <h3>Say it out loud. The floor does it.</h3>
+            <p>Natural-language fault finding, PLC diagnostics, picking and packing orders, dispatching forklifts and cranes — spoken to our controllers in plain English from the floor or the office, and answered in plain English.</p>
+          </div>
+          <div class="fl-pt rv" data-cursor="03">
+            <div class="idx">03 / SAFE</div>
+            <h3>Interlocks stay certified.</h3>
+            <p>Your safety PLCs, e-stops and light curtains keep their rated authority. The hypervisor orchestrates above them and never bypasses an interlock — and anything that moves can sit behind a human approval gate.</p>
+          </div>
+          <div class="fl-pt rv" data-cursor="04">
+            <div class="idx">04 / SOVEREIGN</div>
+            <h3>Runs behind your walls.</h3>
+            <p>On your premises, on our cluster, or both — the same default-deny boundary and the same fixed cost. Your production data never becomes someone else's training set.</p>
+          </div>
+        </div>
+        <div class="fl-ctas rv">
+          <span class="mag"><a class="btn solid" href="mailto:info@omniscientai.io?subject=Enquiry%20—%20Facility%20overhaul" data-cursor="GO"><span>Overhaul my facility →</span></a></span>
+          <a class="btn ghost u" href="#cluster">See the cluster behind it →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PULSE ============ -->
 <section id="pulse">
-  <div class="gnum" aria-hidden="true">04</div>
+  <div class="gnum" aria-hidden="true">05</div>
   <div class="wrap">
     <div class="eyebrow rv">Omniscient Pulse</div>
     <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">The enterprise that <span class="b">reports itself.</span></span></span></h2>
@@ -654,7 +959,7 @@
           </div>
           <div class="bfoot"><span class="cur">Delivered 07:00 · nobody wrote it</span><button class="replay" id="brief-replay" type="button" data-cursor="AGAIN">↺ Replay</button></div>
         </div>
-        <div class="fig"><span class="anno">Fig. 04 — a Pulse morning brief · illustrative</span><span class="anno">Pulse sees what flows through the box — the more work runs on it, the more complete the picture.</span></div>
+        <div class="fig"><span class="anno">Fig. 05 — a Pulse morning brief · illustrative</span><span class="anno">Pulse sees what flows through the box — the more work runs on it, the more complete the picture.</span></div>
       </div>
     </div>
   </div>
@@ -671,7 +976,7 @@
           <canvas id="braincv" aria-label="Illustrative knowledge graph growing as work happens"></canvas>
           <div id="brainhud">ENTITIES <b id="bn">0</b> · LINKS <b id="be">0</b></div>
         </div>
-        <div class="fig"><span class="anno">Fig. 05 — the knowledge graph · illustrative</span><span class="anno">Grows as a byproduct of work — no data entry.</span></div>
+        <div class="fig"><span class="anno">Fig. 06 — the knowledge graph · illustrative</span><span class="anno">Grows as a byproduct of work — no data entry.</span></div>
       </div>
       <div class="rv">
         <p class="lead" style="font-size:16px">Every file, email, decision and agent output graphs into a living network of entities and relationships your AI can traverse — institutional memory that <b style="color:var(--ink)">endures when people leave</b>, split by department under your access boundaries.</p>
@@ -704,7 +1009,7 @@
       </video>
       <button class="filmplay" id="filmplay" type="button" aria-label="Play the film" data-cursor="PLAY">▶</button>
     </div>
-    <div class="fig"><span class="anno">Fig. 06 — the second brain, explained</span><span class="anno">60s · sound on</span></div>
+    <div class="fig"><span class="anno">Fig. 07 — the second brain, explained</span><span class="anno">60s · sound on</span></div>
   </div>
 </section>
 
@@ -739,11 +1044,93 @@
       </svg>
       <div id="sov-hud">EGRESS: <b id="sov-count">0</b> · <span id="sov-mode">DEFAULT DENY</span></div>
     </div>
-    <div class="fig"><span class="anno">Fig. 06 — egress model</span><span class="anno">A visual model of the egress policy — not live telemetry.</span></div>
+    <div class="fig"><span class="anno">Fig. 08 — egress model</span><span class="anno">A visual model of the egress policy — not live telemetry.</span></div>
     <div class="sov-ctl rv">
       <div class="switch" id="sov-switch" role="switch" aria-checked="false" tabindex="0" data-cursor="FLIP">
         <span class="track"></span><span class="lab">Simulate a typical cloud tool</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLUSTER (announcement, dark) ============ -->
+<section id="cluster" class="dark">
+  <div class="gnum" aria-hidden="true">06</div>
+  <div class="wrap">
+    <div class="eyebrow rv" style="color:var(--blue-glow)">Announcement · September 2026</div>
+    <h2 class="rv" style="margin-top:16px;color:#fff"><span class="ln"><span class="ln-i">Owned. Operated. <span class="b" style="color:var(--blue-glow)">Housed here.</span></span></span></h2>
+    <p class="lead rv" style="margin-top:18px">We've taken possession of our first AI inference cluster — completely owned, operated and housed at our own facility. Not a cage in a shared data centre. Not a public cloud running someone else's workloads beside yours. Ours, behind our own door, on Australian soil — and the first of many.</p>
+    <div class="cl-grid">
+      <div class="rv">
+        <div id="cl-rack">
+          <svg id="cl-svg" viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" aria-label="Schematic rack elevation of cluster 01 — eight accelerators and a full memory bank">
+            <rect x="4" y="46" width="10" height="212" rx="2" fill="#1b2027" stroke="#2a313b"/>
+            <rect x="506" y="46" width="10" height="212" rx="2" fill="#1b2027" stroke="#2a313b"/>
+            <rect x="14" y="36" width="492" height="232" rx="6" fill="none" stroke="#39404b" stroke-width="1.4"/>
+            <g class="cl-gpu"><rect x="40" y="56" width="40" height="130" rx="3"/><line x1="46" y1="84" x2="74" y2="84"/><line x1="46" y1="104" x2="74" y2="104"/><line x1="46" y1="124" x2="74" y2="124"/><line x1="46" y1="144" x2="74" y2="144"/><line x1="46" y1="164" x2="74" y2="164"/><circle class="led" cx="60" cy="68" r="3"/><text x="60" y="200" text-anchor="middle">GPU 01</text></g>
+            <g class="cl-gpu"><rect x="94" y="56" width="40" height="130" rx="3"/><line x1="100" y1="84" x2="128" y2="84"/><line x1="100" y1="104" x2="128" y2="104"/><line x1="100" y1="124" x2="128" y2="124"/><line x1="100" y1="144" x2="128" y2="144"/><line x1="100" y1="164" x2="128" y2="164"/><circle class="led" cx="114" cy="68" r="3"/><text x="114" y="200" text-anchor="middle">GPU 02</text></g>
+            <g class="cl-gpu"><rect x="148" y="56" width="40" height="130" rx="3"/><line x1="154" y1="84" x2="182" y2="84"/><line x1="154" y1="104" x2="182" y2="104"/><line x1="154" y1="124" x2="182" y2="124"/><line x1="154" y1="144" x2="182" y2="144"/><line x1="154" y1="164" x2="182" y2="164"/><circle class="led" cx="168" cy="68" r="3"/><text x="168" y="200" text-anchor="middle">GPU 03</text></g>
+            <g class="cl-gpu"><rect x="202" y="56" width="40" height="130" rx="3"/><line x1="208" y1="84" x2="236" y2="84"/><line x1="208" y1="104" x2="236" y2="104"/><line x1="208" y1="124" x2="236" y2="124"/><line x1="208" y1="144" x2="236" y2="144"/><line x1="208" y1="164" x2="236" y2="164"/><circle class="led" cx="222" cy="68" r="3"/><text x="222" y="200" text-anchor="middle">GPU 04</text></g>
+            <g class="cl-gpu"><rect x="256" y="56" width="40" height="130" rx="3"/><line x1="262" y1="84" x2="290" y2="84"/><line x1="262" y1="104" x2="290" y2="104"/><line x1="262" y1="124" x2="290" y2="124"/><line x1="262" y1="144" x2="290" y2="144"/><line x1="262" y1="164" x2="290" y2="164"/><circle class="led" cx="276" cy="68" r="3"/><text x="276" y="200" text-anchor="middle">GPU 05</text></g>
+            <g class="cl-gpu"><rect x="310" y="56" width="40" height="130" rx="3"/><line x1="316" y1="84" x2="344" y2="84"/><line x1="316" y1="104" x2="344" y2="104"/><line x1="316" y1="124" x2="344" y2="124"/><line x1="316" y1="144" x2="344" y2="144"/><line x1="316" y1="164" x2="344" y2="164"/><circle class="led" cx="330" cy="68" r="3"/><text x="330" y="200" text-anchor="middle">GPU 06</text></g>
+            <g class="cl-gpu"><rect x="364" y="56" width="40" height="130" rx="3"/><line x1="370" y1="84" x2="398" y2="84"/><line x1="370" y1="104" x2="398" y2="104"/><line x1="370" y1="124" x2="398" y2="124"/><line x1="370" y1="144" x2="398" y2="144"/><line x1="370" y1="164" x2="398" y2="164"/><circle class="led" cx="384" cy="68" r="3"/><text x="384" y="200" text-anchor="middle">GPU 07</text></g>
+            <g class="cl-gpu"><rect x="418" y="56" width="40" height="130" rx="3"/><line x1="424" y1="84" x2="452" y2="84"/><line x1="424" y1="104" x2="452" y2="104"/><line x1="424" y1="124" x2="452" y2="124"/><line x1="424" y1="144" x2="452" y2="144"/><line x1="424" y1="164" x2="452" y2="164"/><circle class="led" cx="438" cy="68" r="3"/><text x="438" y="200" text-anchor="middle">GPU 08</text></g>
+            <g id="cl-dimms">
+              <rect class="cl-dimm" x="40" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="67.5" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="95" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="122.5" y="214" width="22" height="30" rx="2"/>
+              <rect class="cl-dimm" x="150" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="177.5" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="205" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="232.5" y="214" width="22" height="30" rx="2"/>
+              <rect class="cl-dimm" x="260" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="287.5" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="315" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="342.5" y="214" width="22" height="30" rx="2"/>
+              <rect class="cl-dimm" x="370" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="397.5" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="425" y="214" width="22" height="30" rx="2"/><rect class="cl-dimm" x="452.5" y="214" width="22" height="30" rx="2"/>
+            </g>
+          </svg>
+          <div class="cl-hud tl"><span class="live"></span>Cluster 01 · 4RU · online</div>
+          <div class="cl-hud tr">Our facility · VIC · AU</div>
+          <div class="cl-hud bl">VRAM <b id="cl-vram">0</b> GB · System memory <b id="cl-ram">0.0</b> TB</div>
+          <div class="cl-hud br">Egress · default deny</div>
+        </div>
+        <div class="fig"><span class="anno">Fig. 09 — cluster 01 · rack elevation</span><span class="anno">Schematic, not a photograph. Counters show installed capacity.</span></div>
+        <div class="cl-specs">
+          <div class="cl-spec"><div class="v">550<small>GB</small></div><div class="k">VRAM · accelerators</div></div>
+          <div class="cl-spec"><div class="v">1<small>TB</small></div><div class="k">System memory</div></div>
+          <div class="cl-spec"><div class="v">01</div><div class="k">Cluster · the first of many</div></div>
+          <div class="cl-spec"><div class="v">AU</div><div class="k">Owned · operated · housed</div></div>
+        </div>
+        <div class="cl-work">
+          <span><b>+</b>Inference</span><span><b>+</b>Simulation</span><span><b>+</b>Model training</span><span><b>+</b>Fine-tuning</span><span><b>+</b>Private RAG</span><span><b>+</b>Dedicated tenancy</span>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="cl-h">Why now — the exposure is growing</div>
+        <p class="cl-for" style="margin-top:12px">Exposures under Australian law are widening every year, and <b>each of them gets simpler when the model, the data and the hardware sit in one Australian building, run by people you can ring.</b></p>
+        <div class="cl-laws">
+          <div class="law"><span class="d">NOW</span><span><b>Privacy Act 1988 — top-tier penalties.</b> The greater of $50M, three times the benefit gained, or 30% of adjusted turnover.</span></div>
+          <div class="law"><span class="d">SINCE 30 MAY 2025</span><span><b>Cyber Security Act 2024.</b> Mandatory reporting of ransomware payments.</span></div>
+          <div class="law"><span class="d">SINCE 10 JUN 2025</span><span><b>Statutory tort for serious invasions of privacy.</b> Individuals can now sue you directly.</span></div>
+          <div class="law"><span class="d">SINCE 1 JUL 2025</span><span><b>APRA CPS 230.</b> Material service providers and offshoring under formal scrutiny for banks, insurers and super funds.</span></div>
+          <div class="law"><span class="d">FROM 10 DEC 2026</span><span><b>Automated decision-making transparency.</b> Disclose the computer programs that make, or substantially assist, decisions about people.</span></div>
+          <div class="law"><span class="d">IN PROGRESS</span><span><b>Privacy Act tranche 2.</b> Proposed removal of the small-business exemption, a right to erasure and a "fair and reasonable" test for collection.</span></div>
+        </div>
+        <div class="cl-note">Summary only, not legal advice. Dates as enacted at 2 September 2026. Notifiable Data Breaches obligations continue to apply.</div>
+        <div class="cl-h" style="margin-top:34px">Built for</div>
+        <p class="cl-for"><b>Regulated industries and privacy-first companies.</b> Health, finance and superannuation, legal, government suppliers, defence-adjacent and critical-infrastructure operators — anyone whose data can't leave the country, or the building. Hyper-secure inference nodes for the work you can't put in a shared hall.</p>
+      </div>
+    </div>
+    <div class="cl-matrix-wrap rv">
+      <table class="cl-matrix" aria-label="Where your AI runs — public cloud, shared data centre, or Omniscient cluster 01">
+        <thead><tr><th>Where your AI runs</th><th>Public cloud</th><th>Shared data centre</th><th class="us">Omniscient cluster 01</th></tr></thead>
+        <tbody>
+          <tr><td>Hardware owned by</td><td>The provider</td><td>The provider, or a tenant</td><td class="us">Omniscient AI</td></tr>
+          <tr><td>Operated by</td><td>Provider staff, at scale</td><td>Provider staff plus your team</td><td class="us">Our engineers — the ones you can call</td></tr>
+          <tr><td>Lives in</td><td>Provider halls, in a region of their choosing</td><td>Shared halls, shared floor</td><td class="us">Our facility, Victoria</td></tr>
+          <tr><td>Beside your workload</td><td>Thousands of other tenants</td><td>Other tenants' cages</td><td class="us">Nobody. Dedicated.</td></tr>
+          <tr><td>Egress</td><td>Open by default</td><td>Depends on the build</td><td class="us">Default deny, logged exceptions</td></tr>
+          <tr><td>Counterparty</td><td>Provider's terms, often foreign-headquartered</td><td>Several parties</td><td class="us">One Australian company</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cl-close rv">This is cluster 01. We're building private, secure and confidential inference and training capacity that does not exist in Australia today. <b>Watch this space.</b></p>
+    <div class="cl-ctas rv">
+      <span class="mag"><a class="btn solid" href="mailto:info@omniscientai.io?subject=Enquiry%20—%20Sovereign%20inference%20capacity" data-cursor="GO"><span>Reserve private capacity →</span></a></span>
+      <span class="mag"><a class="btn" href="configure.html" data-cursor="GO"><span>Configure a deployment →</span></a></span>
     </div>
   </div>
 </section>
@@ -755,7 +1142,7 @@
 
 <!-- ============ THE SHIFT ============ -->
 <section id="shift">
-  <div class="gnum" aria-hidden="true">05</div>
+  <div class="gnum" aria-hidden="true">07</div>
   <div class="wrap">
     <div class="eyebrow rv">The shift</div>
     <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Variable spend → <span class="b">fixed cost.</span></span></span></h2>
@@ -792,7 +1179,7 @@
             <input type="range" id="ledger-range" min="0" max="100" value="0" step="1" aria-label="Slide from variable to fixed cost">
             <span class="rlab" style="color:var(--blue)">Fixed</span>
           </div>
-          <div class="foot-note">Fig. 07 — illustrative model. Typically around 50% lower; we measure against your actual bills first.</div>
+          <div class="foot-note">Fig. 10 — illustrative model. Typically around 50% lower; we measure against your actual bills first.</div>
         </div>
       </div>
     </div>
@@ -801,7 +1188,7 @@
 
 <!-- ============ PROOF (dark) ============ -->
 <section id="proof" class="dark">
-  <div class="gnum" aria-hidden="true">06</div>
+  <div class="gnum" aria-hidden="true">08</div>
   <div class="wrap">
     <div class="eyebrow rv" style="color:var(--blue-glow)">Proof</div>
     <h2 class="rv" style="margin-top:16px;color:#fff"><span class="ln"><span class="ln-i">We shipped it to <span class="b" style="color:var(--blue-glow)">ourselves</span> first.</span></span></h2>
@@ -817,6 +1204,11 @@
         <h3>An agentic company, every day</h3>
         <p>Our daily operations run on the same agent fleet, knowledge graph and automations we install for you — self-improving loops included. If it breaks, it breaks on us first.</p>
       </div>
+      <div class="ptile rv">
+        <div class="k">Our facility, Victoria</div>
+        <h3>Cluster 01 carries our own load first</h3>
+        <p>Our first owned, operated and housed inference cluster runs our companies' agent fleet, model training and simulations before a single client workload lands on it — 550 GB of VRAM behind our own door.</p>
+      </div>
     </div>
     <p class="proof-close rv">We're not consultants recommending tools we've never run. <b>We're operators handing you the system that runs our companies.</b></p>
   </div>
@@ -824,7 +1216,7 @@
 
 <!-- ============ OBJECTIONS ============ -->
 <section id="objections">
-  <div class="gnum" aria-hidden="true">07</div>
+  <div class="gnum" aria-hidden="true">09</div>
   <div class="wrap">
     <div class="eyebrow rv">Straight answers</div>
     <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">You're going to ask. <span class="b">Good.</span></span></span></h2>
@@ -845,6 +1237,14 @@
         <div class="q">How can you move faster than a big consultancy?</div>
         <div class="a">Because we built these systems for our own companies before offering them. The patterns are proven and the plumbing already exists, so we deploy from a running start instead of designing from a blank page.</div>
       </div>
+      <div class="qa rv">
+        <div class="q">Our data can't go in a shared data centre. Can it run on yours?</div>
+        <div class="a">Yes. Cluster 01 is owned, operated and housed at our own facility — dedicated capacity for inference, simulation and model training behind the same default-deny boundary, on Australian soil. For regulated and privacy-first organisations it's the middle path between building your own and trusting someone else's cloud.</div>
+      </div>
+      <div class="qa rv">
+        <div class="q">We run a factory, not an office. Does any of this apply?</div>
+        <div class="a">Especially. We overhaul manufacturing facilities of any type into fully integrated super-spaces — robots, cranes, forklifts, conveyors, additive cells and legacy PLCs on one common communication hypervisor. Fault finding, PLC diagnostics and picking and packing orders happen by speaking to our controllers; your safety-rated interlocks stay exactly where they are.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -854,7 +1254,7 @@
   <div class="wrap">
     <div class="eyebrow rv">Enquire</div>
     <h2 class="rv" style="margin-top:18px;font-size:clamp(48px,8.6vw,118px)"><span class="ln"><span class="ln-i">Need a solution,</span></span><span class="ln"><span class="ln-i">not a <span class="b">seminar?</span></span></span></h2>
-    <p class="lead rv" style="max-width:52ch">Enquire today if you need a solution, not a group training session. We'll consult with your teams, build the harness, and prove the value in numbers — on site in Melbourne or anywhere in Australia.</p>
+    <p class="lead rv" style="max-width:52ch">Enquire today if you need a solution, not a group training session. We'll consult with your teams, build the harness — or overhaul the whole floor — and prove the value in numbers, on site in Melbourne or anywhere in Australia. If your data can't leave the country, it can run on our cluster.</p>
     <span class="mag"><a class="btn solid rv" href="mailto:info@omniscientai.io?subject=Enquiry%20—%20Enterprise%20AI%20adoption" data-cursor="GO"><span>Enquire today →</span></a></span>
     <span class="mag"><a class="btn rv" href="configure.html" data-cursor="GO" style="margin-left:12px"><span>Configure your system →</span></a></span>
     <a class="mail rv" href="mailto:info@omniscientai.io">info@omniscientai.io</a>
@@ -866,13 +1266,15 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="navbrand" href="#hero"><span class="disc"></span>Omniscient<b>&nbsp;AI</b></a>
-        <p>Enterprise AI consultants in Melbourne, serving all of Australia. Working solutions, sovereign by design — your data stays in the building by default, your costs stay fixed.</p>
+        <p>Enterprise AI consultants in Melbourne, serving all of Australia. Working solutions, sovereign by design — your data stays in the building by default, your costs stay fixed. Now with our first owned, operated and housed inference cluster, and full manufacturing facility overhauls.</p>
       </div>
       <div class="foot-links">
         <div class="col">
           <span class="h">Site</span>
           <a class="u" href="#method">The method</a>
+          <a class="u" href="#floor">Facility overhauls</a>
           <a class="u" href="#sovereignty">Sovereignty</a>
+          <a class="u" href="#cluster">Cluster 01</a>
           <a class="u" href="#shift">The shift</a>
           <a class="u" href="#proof">Proof</a>
         </div>
@@ -1050,7 +1452,7 @@
     } else if (d.kind === "halftone") {
       ctx.fillStyle = C.paper; ctx.beginPath(); ctx.arc(0,0,r,0,7); ctx.fill();
       ctx.strokeStyle = C.ink; ctx.lineWidth = 1.6; ctx.stroke();
-      ctx.save(); ctx.beginPath(); ctx.arc(0,0,r-2,0,7); ctx.clip();
+      ctx.save(); ctx.beginPath(); ctx.arc(0,0,Math.max(0.1,r-2),0,7); ctx.clip();
       ctx.fillStyle = htPat; ctx.globalAlpha = .8; ctx.fillRect(-r,-r,r*2,r*2); ctx.restore();
     } else {
       ctx.fillStyle = C[d.col]; ctx.beginPath(); ctx.arc(0,0,r,0,7); ctx.fill();
@@ -1499,6 +1901,166 @@
     });
   }, {threshold:.4});
   lio.observe(document.getElementById("ledger-card"));
+
+  /* ---------- floor: speak to the floor ---------- */
+  (function(){
+    var panel = document.getElementById("fl-panel");
+    if (!panel) return;
+    var svg = document.getElementById("fl-svg"),
+        log = document.getElementById("fl-log"),
+        mic = document.getElementById("fl-mic"),
+        stateEl = mic.querySelector(".fl-state"),
+        barsEl = mic.querySelector(".fl-bars"),
+        hub = document.getElementById("fl-hub"),
+        chipsEl = document.getElementById("fl-cmds"),
+        replay = document.getElementById("fl-replay"),
+        trolley = document.getElementById("fl-trolley");
+    var bars = [];
+    for (var b0 = 0; b0 < 26; b0++){ var bi = document.createElement("i"); barsEl.appendChild(bi); bars.push(bi); }
+    var blocks = {}, hot = {};
+    [].slice.call(svg.querySelectorAll(".fl-blk")).forEach(function(b){ blocks[b.dataset.m] = b; });
+    [].slice.call(svg.querySelectorAll(".fl-wire2")).forEach(function(w){ hot[w.dataset.m] = w; w.style.setProperty("--len", w.getTotalLength()); });
+    // [type, text, machine-to-light, motion-flag]
+    var CMDS = [
+      { say:"Why did line 3 stop?", lines:[
+        ["cmd","PLC 7 · Modbus/TCP · read fault register","line"],
+        ["ack","F-041 drive overcurrent · 07:42:18"],
+        ["cmd","CONVEYOR 3 · OPC UA · vibration, last 60 min","line"],
+        ["ack","bearing 3B-2 above threshold since 07:31"],
+        ["cmd","CMMS · draft work order · check parts"],
+        ["ack","bearing in stock · bay 4 · WO-2291 drafted"],
+        ["ans","Line 3 tripped at 07:42 on a drive overcurrent. Vibration on conveyor 3B-2 climbed for 11 minutes first — the bearing is the likely cause. Work order drafted; the part is in bay 4."]
+      ]},
+      { say:"Pick order 4471 and stage it at dock 2", lines:[
+        ["cmd","WMS · order 4471 · 14 lines · 3 pallets"],
+        ["cmd","ROBOT CELL A · ROS 2 · pick list","cella"],
+        ["ack","picking · 14 / 14 located"],
+        ["cmd","PACK STATION · OPC UA · label + manifest","pack"],
+        ["ack","3 pallets wrapped · M-4471"],
+        ["cmd","FORKLIFT 2 · CANopen · route A17 → DOCK 2","fk2"],
+        ["gate","MOTION · awaiting approval"],
+        ["ok","APPROVED · moving · zone locked","dock"],
+        ["ans","Order 4471 is staged at dock 2 — three pallets, manifest sent to the carrier. Pickup in 14 minutes."]
+      ]},
+      { say:"Move the gantry crane to bay 4", lines:[
+        ["cmd","GANTRY CRANE · PROFINET · path check bay 2 → bay 4","crane"],
+        ["ack","zone clear · interlocks OK · load 1.8 t"],
+        ["gate","MOTION · awaiting supervisor approval"],
+        ["ok","APPROVED · traverse 38 s",null,"crane"],
+        ["ans","Crane is at bay 4 with the hook at 6.2 m. The zone stays locked while the load is on."]
+      ]},
+      { say:"Start the additive cell on job 88", lines:[
+        ["cmd","ADDITIVE CELL · OPC UA · load job 88 · 12 × bracket","add"],
+        ["ack","build plate ready · powder 71% · est. 3 h 40"],
+        ["cmd","ROBOT CELL B · ROS 2 · schedule depowder + handoff","cellb"],
+        ["ack","slot booked 11:20 · inspection notified"],
+        ["ans","Job 88 is printing — 12 units, about 3 hours 40. Cell B will depowder and hand to inspection when it's done."]
+      ]}
+    ];
+    var cur = 0, fgen = 0, timers = [], barTimer = null;
+    function later(fn, ms){ var my = fgen; timers.push(setTimeout(function(){ if (my === fgen) fn(); }, ms)); }
+    function micLive(on){
+      mic.classList.toggle("live", on);
+      if (barTimer){ clearInterval(barTimer); barTimer = null; }
+      if (on){
+        barTimer = setInterval(function(){
+          bars.forEach(function(b, i){ b.style.height = (3 + Math.random() * 17 * (0.35 + 0.65 * Math.sin(i / bars.length * Math.PI))) + "px"; });
+        }, 90);
+      } else bars.forEach(function(b){ b.style.height = "3px"; });
+    }
+    function clearAll(){
+      fgen++; timers.forEach(clearTimeout); timers = [];
+      log.innerHTML = "";
+      Object.keys(blocks).forEach(function(k){ blocks[k].classList.remove("hot"); if (hot[k]) hot[k].classList.remove("hot"); });
+      hub.classList.remove("busy"); micLive(false); stateEl.textContent = "READY";
+      if (trolley) trolley.style.transform = "";
+    }
+    function addLine(type, text){
+      var el = document.createElement("div");
+      el.className = "fl-ln " + type; el.textContent = text;
+      log.appendChild(el);
+      if (reduced) el.classList.add("on");
+      else requestAnimationFrame(function(){ requestAnimationFrame(function(){ el.classList.add("on"); }); });
+    }
+    function light(k){ if (blocks[k]) blocks[k].classList.add("hot"); if (hot[k]) hot[k].classList.add("hot"); }
+    function apply(l){
+      addLine(l[0], l[1]);
+      if (l[2]) light(l[2]);
+      if (l[3] === "crane" && trolley) trolley.style.transform = "translate(68px,0)";
+    }
+    function play(i){
+      clearAll(); cur = i;
+      [].slice.call(chipsEl.children).forEach(function(c, j){ c.classList.toggle("on", j === i); });
+      var c = CMDS[i];
+      if (reduced){ addLine("heard", c.say); c.lines.forEach(apply); stateEl.textContent = "DONE"; return; }
+      stateEl.textContent = "LISTENING"; micLive(true);
+      later(function(){ micLive(false); stateEl.textContent = "HEARD"; addLine("heard", c.say); hub.classList.add("busy"); }, 950);
+      var t = 950 + 420;
+      c.lines.forEach(function(l){
+        later(function(){
+          apply(l);
+          if (l[0] === "ans"){ hub.classList.remove("busy"); stateEl.textContent = "DONE"; }
+        }, t);
+        t += (l[0] === "ack" || l[0] === "ok") ? 330 : (l[0] === "gate" ? 720 : 430);
+      });
+    }
+    CMDS.forEach(function(c, i){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "tab" + (i === 0 ? " on" : ""); b.textContent = c.say;
+      b.setAttribute("data-cursor", "SAY");
+      b.addEventListener("click", function(){ play(i); });
+      chipsEl.appendChild(b);
+    });
+    replay.addEventListener("click", function(){ play(cur); });
+    if (reduced) play(0);
+    else {
+      var fio = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting){ play(0); fio.disconnect(); } });
+      }, {threshold:.3});
+      fio.observe(panel);
+    }
+  })();
+
+  /* ---------- cluster: rack ignition + capacity counters ---------- */
+  (function(){
+    var rack = document.getElementById("cl-rack");
+    if (!rack) return;
+    var gpus = [].slice.call(rack.querySelectorAll(".cl-gpu")),
+        dimms = [].slice.call(rack.querySelectorAll(".cl-dimm")),
+        vramEl = document.getElementById("cl-vram"),
+        ramEl = document.getElementById("cl-ram");
+    var VRAM = 550, RAM = 1.0;
+    function finish(){
+      gpus.forEach(function(g){ g.classList.add("lit"); });
+      dimms.forEach(function(d){ d.classList.add("lit"); });
+      vramEl.textContent = VRAM; ramEl.textContent = RAM.toFixed(1);
+    }
+    if (reduced){ finish(); return; }
+    var done = false;
+    var cio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (!e.isIntersecting || done) return; done = true; cio.disconnect(); run(); });
+    }, {threshold:.35});
+    cio.observe(rack);
+    function run(){
+      var t0 = null, D1 = 1500, D2 = 900, START2 = D1 * 0.55;
+      function step(ts){
+        if (!t0) t0 = ts;
+        var t = ts - t0;
+        var p1 = Math.min(1, t / D1), e1 = 1 - Math.pow(1 - p1, 3);
+        var litG = Math.min(gpus.length, Math.floor(e1 * gpus.length + 1e-6));
+        for (var i = 0; i < gpus.length; i++) gpus[i].classList.toggle("lit", i < litG);
+        vramEl.textContent = Math.round(e1 * VRAM);
+        if (t > START2){
+          var p2 = Math.min(1, (t - START2) / D2), e2 = 1 - Math.pow(1 - p2, 3);
+          var litD = Math.min(dimms.length, Math.floor(e2 * dimms.length + 1e-6));
+          for (var j = 0; j < dimms.length; j++) dimms[j].classList.toggle("lit", j < litD);
+          ramEl.textContent = (e2 * RAM).toFixed(1);
+        }
+        if (t < START2 + D2) requestAnimationFrame(step); else finish();
+      }
+      requestAnimationFrame(step);
+    }
+  })();
 })();
 
   /* ---------- film: click-to-play overlay ---------- */
