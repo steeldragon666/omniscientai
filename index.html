@@ -431,7 +431,7 @@
   .news .dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:npulse 2s var(--ease) infinite;flex:none}
   .news .arr{color:var(--blue);transition:transform 160ms var(--ease);flex:none}
   .news:hover .arr{transform:translateX(3px)}
-  @media(max-width:520px){.news{font-size:10px;letter-spacing:.03em;white-space:normal;line-height:1.4}}
+  @media(max-width:520px){.news{font-size:10px;letter-spacing:.03em;white-space:normal;line-height:1.4}.news .hs{display:none}}
   /* nine nav links — tighten, then shed the low-priority ones */
   @media(max-width:1180px){.navlinks{gap:15px}}
   @media(max-width:1040px){.navlinks a.lo{display:none}}
@@ -563,6 +563,23 @@
   @media(max-width:1000px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:860px){.proof-grid{grid-template-columns:1fr}}
 
+  /* ===== FILMS — hero clip + section loops (generated illustrations) ===== */
+  .hero-film{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .hero-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+  .hero-film::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.93) 38%,rgba(255,255,255,.62) 62%,rgba(255,255,255,.34) 100%),linear-gradient(180deg,rgba(255,255,255,.75) 0%,rgba(255,255,255,0) 28%,rgba(255,255,255,0) 68%,rgba(255,255,255,.96) 100%)}
+  #hero>.hero-art{z-index:1}
+  .secfilm{position:absolute;left:0;right:0;top:0;height:min(100%,980px);z-index:0;overflow:hidden;pointer-events:none}
+  .secfilm video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secfilm::after{content:"";position:absolute;inset:0}
+  .secfilm.ink video{opacity:.38}
+  .secfilm.ink::after{background:linear-gradient(180deg,#0F1115 0%,rgba(15,17,21,.35) 22%,rgba(15,17,21,.45) 70%,#0F1115 100%),linear-gradient(90deg,rgba(15,17,21,.55) 0%,rgba(15,17,21,0) 45%)}
+  .secfilm.paper video{opacity:.55}
+  .secfilm.paper::after{background:linear-gradient(180deg,#F4F6F9 0%,rgba(244,246,249,.8) 18%,rgba(244,246,249,.55) 55%,#F4F6F9 100%),linear-gradient(90deg,rgba(244,246,249,.85) 0%,rgba(244,246,249,.2) 60%)}
+  #sov-filmwrap{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  #sov-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+  #sov-filmwrap::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,17,21,.15) 0%,rgba(15,17,21,.65) 50%,#0F1115 78%)}
+  @media (prefers-reduced-motion:reduce){.hero-film,.secfilm,#sov-filmwrap{display:none}}
+
   /* ===== boot choreography ===== */
   [data-boot]{opacity:0;transform:translateY(12px);transition:opacity 220ms var(--ease),transform 220ms var(--ease)}
   .booted [data-boot]{opacity:1;transform:none}
@@ -616,6 +633,7 @@
 
 <!-- ============ HERO ============ -->
 <header id="hero">
+  <div class="hero-film" aria-hidden="true"><video data-bg src="assets/film-hero.mp4" poster="assets/film-hero-poster.jpg" muted loop playsinline preload="auto"></video></div>
   <div class="hero-art" data-boot="2">
     <canvas id="net" aria-label="Omniscient AI connectome — live network illustration"></canvas>
     <video class="hero-object" src="assets/second-brain-object.mp4" poster="assets/second-brain-object-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The second brain — rotating Omniscient AI sculpture"></video>
@@ -626,7 +644,7 @@
   </div>
   <div class="wrap">
     <div class="hero-copy">
-      <div class="hero-news" data-boot="1"><a class="news" href="#cluster" data-cursor="NEW"><span class="tag">New</span><span class="dot"></span><span>Our first sovereign inference cluster is live — owned, operated and housed at our facility · 550 GB VRAM</span><span class="arr">→</span></a></div>
+      <div class="hero-news" data-boot="1"><a class="news" href="#cluster" data-cursor="NEW"><span class="tag">New</span><span class="dot"></span><span>Our first sovereign inference cluster is live<span class="hs"> — owned, operated and housed at our facility · 550 GB VRAM</span></span><span class="arr">→</span></a></div>
       <div class="hero-meta" data-boot="2">
         <span class="eyebrow">Enterprise AI adoption</span>
         <span class="anno">37.8136°S&nbsp;&nbsp;144.9631°E · Melbourne</span>
@@ -645,6 +663,7 @@
       </div>
       <div class="hero-foot anno" data-boot="6">
         <span class="own">We eat our own cooking</span>
+        <span>Film — generated illustration</span>
         <span class="scrollhint">Scroll <i></i></span>
       </div>
     </div>
@@ -777,6 +796,7 @@
 
 <!-- ============ FLOOR (facility overhauls) ============ -->
 <section id="floor">
+  <div class="secfilm paper" aria-hidden="true"><video data-bg src="assets/film-floor.mp4" poster="assets/film-floor-poster.jpg" muted loop playsinline preload="none"></video></div>
   <div class="gnum" aria-hidden="true">04</div>
   <div class="wrap">
     <div class="eyebrow rv">Facility overhauls · super-spaces</div>
@@ -882,7 +902,7 @@
             <div id="fl-log" aria-live="polite"></div>
           </div>
         </div>
-        <div class="fig"><span class="anno">Fig. 04 — the floor hypervisor · illustrative</span><span class="anno">Machines, protocols and responses are illustrative. Safety-rated functions stay on their certified controllers.</span></div>
+        <div class="fig"><span class="anno">Fig. 04 — the floor hypervisor · illustrative</span><span class="anno">Machines, protocols and responses are illustrative; the background film is a generated illustration. Safety-rated functions stay on their certified controllers.</span></div>
         <div class="fl-ctl"><span class="anno" style="text-transform:none;letter-spacing:.04em">Pick a command above. Spoken on a real floor — clicked here.</span><button class="replay" id="fl-replay" type="button" data-cursor="AGAIN">↺ Replay</button></div>
       </div>
       <div>
@@ -1025,6 +1045,7 @@
     <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Your data stops <span class="b">at the line.</span></span></span></h2>
     <p class="lead rv" style="margin-top:18px">Cloud AI tools ship your business out of the building by design. Our systems run on your premises behind one default-deny boundary — nothing crosses without a logged, human-approved exception. Flip the switch and watch the difference.</p>
     <div id="sov-canvas" class="dark">
+      <div id="sov-filmwrap" aria-hidden="true"><video id="sov-film" data-bg src="assets/film-sovereignty.mp4" poster="assets/film-sovereignty-poster.jpg" muted loop playsinline preload="none"></video></div>
       <div class="sov-label l">Your building</div>
       <div class="sov-label r">The cloud</div>
       <div id="sov-line"></div>
@@ -1044,7 +1065,7 @@
       </svg>
       <div id="sov-hud">EGRESS: <b id="sov-count">0</b> · <span id="sov-mode">DEFAULT DENY</span></div>
     </div>
-    <div class="fig"><span class="anno">Fig. 08 — egress model</span><span class="anno">A visual model of the egress policy — not live telemetry.</span></div>
+    <div class="fig"><span class="anno">Fig. 08 — egress model</span><span class="anno">A visual model of the egress policy — not live telemetry. Background film is a generated illustration.</span></div>
     <div class="sov-ctl rv">
       <div class="switch" id="sov-switch" role="switch" aria-checked="false" tabindex="0" data-cursor="FLIP">
         <span class="track"></span><span class="lab">Simulate a typical cloud tool</span>
@@ -1055,6 +1076,7 @@
 
 <!-- ============ CLUSTER (announcement, dark) ============ -->
 <section id="cluster" class="dark">
+  <div class="secfilm ink" aria-hidden="true"><video data-bg src="assets/film-cluster.mp4" poster="assets/film-cluster-poster.jpg" muted loop playsinline preload="none"></video></div>
   <div class="gnum" aria-hidden="true">06</div>
   <div class="wrap">
     <div class="eyebrow rv" style="color:var(--blue-glow)">Announcement · September 2026</div>
@@ -1087,7 +1109,7 @@
           <div class="cl-hud bl">VRAM <b id="cl-vram">0</b> GB · System memory <b id="cl-ram">0.0</b> TB</div>
           <div class="cl-hud br">Egress · default deny</div>
         </div>
-        <div class="fig"><span class="anno">Fig. 09 — cluster 01 · rack elevation</span><span class="anno">Schematic, not a photograph. Counters show installed capacity.</span></div>
+        <div class="fig"><span class="anno">Fig. 09 — cluster 01 · rack elevation</span><span class="anno">Schematic, not a photograph; the background film is a generated illustration. Counters show installed capacity.</span></div>
         <div class="cl-specs">
           <div class="cl-spec"><div class="v">550<small>GB</small></div><div class="k">VRAM · accelerators</div></div>
           <div class="cl-spec"><div class="v">1<small>TB</small></div><div class="k">System memory</div></div>
@@ -2019,6 +2041,25 @@
       }, {threshold:.3});
       fio.observe(panel);
     }
+  })();
+
+
+  /* ---------- background films: play only when near the viewport ---------- */
+  (function(){
+    var vids = [].slice.call(document.querySelectorAll("video[data-bg]"));
+    if (!vids.length) return;
+    if (reduced){ vids.forEach(function(v){ v.pause(); }); return; }
+    var vio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting){
+          if (v.preload === "none") v.preload = "auto";
+          var p = v.play(); if (p && p.catch) p.catch(function(){});
+        } else v.pause();
+      });
+    }, {rootMargin:"320px 0px"});
+    vids.forEach(function(v){ vio.observe(v); });
+    document.addEventListener("visibilitychange", function(){ if (document.hidden) vids.forEach(function(v){ v.pause(); }); });
   })();
 
   /* ---------- cluster: rack ignition + capacity counters ---------- */
