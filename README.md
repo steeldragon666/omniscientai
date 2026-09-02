@@ -11,6 +11,7 @@ anywhere (currently GitHub Pages).
 
 ## Signature interactions (all hand-built, on the flat-geometric brand system)
 
+- **The opening sequence** — on a first visit the second brain assembles itself from scattered discs and dissolves into the facility corridor, then the hero boots (`assets/film-intro.mp4`, 720p variant for phones; skippable, session-once, never on deep links or reduced motion, watchdog-skipped if the film hasn't started within ~2 s).
 - **Connectome ignition** — the hero brain-network assembles on load and reacts to the cursor.
 - **The Harness Assembler** — pick a department, watch its scattered tasks assemble into one runnable harness.
 - **The Sovereignty Line** — a default-deny egress boundary you can flip to "typical cloud tool" and watch data leave the building.
@@ -20,9 +21,10 @@ anywhere (currently GitHub Pages).
 
 ## Content rules
 
+- Mobile: below 820px the nav collapses to a full-screen ink menu (`#menu`) — every section stays reachable.
 - Brand: `omniscient.DESIGN.md` system — white paper / near-black ink / electric-blue scalpel, Inter + JetBrains Mono, decisive 160–220ms ease-out motion, no gradients, no bounce.
 - Honesty: no fabricated clients, logos, testimonials or telemetry. All interactive models are labelled illustrative. The ~50% figure is always qualified ("typically").
-- Films: `assets/film-*.mp4` are Seedance 2.0 generations (Higgsfield) — the hero corridor, the GPU macro, the manufacturing floor and the data-room threshold. They are atmospheres, labelled "generated illustration" on the page, never presented as photographs of the real facility or cluster. Crossfade-looped and encoded H.264 (hero 1080p, loops 720p); they play only while near the viewport and are hidden under `prefers-reduced-motion`.
+- Films: `assets/film-*.mp4` are Seedance 2.0 generations (Higgsfield) — the opening sequence (reference-driven from the real sculpture film, `second-brain-object.mp4`), the hero corridor, the GPU macro, the manufacturing floor and the data-room threshold. They are atmospheres, labelled "generated illustration" on the page, never presented as photographs of the real facility or cluster. Crossfade-looped and encoded H.264 at 1080p; they play only while near the viewport and are hidden under `prefers-reduced-motion`.
 - Legal timeline in the Cluster section (Privacy Act penalties, statutory tort 10 Jun 2025, ADM transparency 10 Dec 2026, CPS 230 1 Jul 2025, ransomware reporting 30 May 2025) was verified at publication (2 Sep 2026) — re-check before quoting elsewhere.
 
 ## Structure

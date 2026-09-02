@@ -220,10 +220,8 @@
   .scrollhint i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--blue);animation:shint 1.8s var(--ease) infinite}
   @keyframes shint{60%{top:100%}100%{top:100%}}
   #net{width:100%;aspect-ratio:1/1;display:block}
-  .hero-object{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);height:104%;mix-blend-mode:multiply;pointer-events:none;z-index:1;-webkit-mask-image:radial-gradient(ellipse 72% 68% at 50% 52%,#000 58%,transparent 90%);mask-image:radial-gradient(ellipse 72% 68% at 50% 52%,#000 58%,transparent 90%)}
-  @media (prefers-reduced-motion:reduce){.hero-object{display:none}}
   .fig{display:flex;justify-content:space-between;gap:14px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px;flex-wrap:wrap}
-  .hero-art .fig{background:rgba(255,255,255,.7);position:relative;z-index:2}
+  .hero-art .fig{background:rgba(255,255,255,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);position:relative;z-index:2}
 
   /* ===== POSITIONING ===== */
   #positioning .inner{max-width:820px;margin:0 auto}
@@ -565,11 +563,11 @@
 
   /* ===== FILMS — hero clip + section loops (generated illustrations) ===== */
   .hero-film{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .hero-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
-  .hero-film::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.93) 38%,rgba(255,255,255,.62) 62%,rgba(255,255,255,.34) 100%),linear-gradient(180deg,rgba(255,255,255,.75) 0%,rgba(255,255,255,0) 28%,rgba(255,255,255,0) 68%,rgba(255,255,255,.96) 100%)}
+  .hero-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;transform:scale(1.08);will-change:transform}
+  .hero-film::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.93) 40%,rgba(255,255,255,.5) 64%,rgba(255,255,255,.18) 100%),linear-gradient(180deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 70%,rgba(255,255,255,.96) 100%)}
   #hero>.hero-art{z-index:1}
   .secfilm{position:absolute;left:0;right:0;top:0;height:min(100%,980px);z-index:0;overflow:hidden;pointer-events:none}
-  .secfilm video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .secfilm video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);will-change:transform}
   .secfilm::after{content:"";position:absolute;inset:0}
   .secfilm.ink video{opacity:.38}
   .secfilm.ink::after{background:linear-gradient(180deg,#0F1115 0%,rgba(15,17,21,.35) 22%,rgba(15,17,21,.45) 70%,#0F1115 100%),linear-gradient(90deg,rgba(15,17,21,.55) 0%,rgba(15,17,21,0) 45%)}
@@ -579,6 +577,41 @@
   #sov-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
   #sov-filmwrap::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,17,21,.15) 0%,rgba(15,17,21,.65) 50%,#0F1115 78%)}
   @media (prefers-reduced-motion:reduce){.hero-film,.secfilm,#sov-filmwrap{display:none}}
+
+  /* ===== INTRO — the second brain as the opening sequence ===== */
+  #intro{position:fixed;inset:0;z-index:200;background:var(--paper);display:none;overflow:hidden}
+  body.intro-on{overflow:hidden}
+  body.intro-on #intro{display:block}
+  #intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--paper)}
+  #intro .intro-ui{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:26px 30px 24px}
+  #intro .intro-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  #intro .navbrand{color:var(--ink)}
+  #intro .navbrand .disc{background:var(--ink)}
+  #intro .navbrand b{color:var(--blue)}
+  #intro .intro-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  #intro .readout{font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums;display:flex;flex-direction:column;gap:6px}
+  #intro .readout b{color:var(--ink);font-weight:600}
+  #intro .readout .line{width:180px;height:1px;background:var(--line);position:relative;overflow:hidden}
+  #intro .readout .line i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:0 50%;transition:transform 220ms var(--ease)}
+  #intro-skip{font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:11px 18px;cursor:pointer;transition:border-color 160ms var(--ease),color 160ms var(--ease)}
+  #intro-skip:hover{border-color:var(--blue);color:var(--blue-deep)}
+  #intro .intro-title{position:absolute;left:30px;bottom:96px;font-family:var(--fm);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+  #intro.out{transition:opacity 520ms var(--ease);opacity:0;pointer-events:none}
+  @media(max-width:520px){#intro .intro-ui{padding:20px 20px 18px}#intro .intro-title{left:20px}}
+
+  /* ===== mobile menu ===== */
+  .navmenu{display:none;font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:transparent;border:1px solid #39404b;border-radius:999px;padding:10px 16px;cursor:pointer;transition:border-color 160ms var(--ease)}
+  .navmenu:hover{border-color:#fff}
+  @media(max-width:820px){.navmenu{display:inline-flex;align-items:center;gap:8px}.navlinks{gap:8px}.navlinks .pill{padding:10px 16px}}
+  @media(max-width:520px){#nav{padding:0 8px 0 16px}#nav .navwrap{gap:10px}.navbrand{font-size:15px}.navlinks .pill{padding:9px 13px}.navlinks .pill .arr{display:none}}
+  #menu{position:fixed;inset:0;z-index:49;background:var(--ink);color:#fff;padding:100px 28px 32px;display:none;flex-direction:column;justify-content:space-between;overflow:auto}
+  #menu[data-open="1"]{display:flex}
+  body.menu-open{overflow:hidden}
+  #menu .mlinks{display:flex;flex-direction:column;gap:6px}
+  #menu .mlinks a{font-size:clamp(28px,7.5vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:#fff;text-decoration:none;display:flex;align-items:baseline;gap:14px;padding:6px 0;border-bottom:1px solid #262c35}
+  #menu .mlinks a .n{font-family:var(--fm);font-size:10px;letter-spacing:.16em;color:var(--blue-glow);font-weight:600;flex:none;width:28px}
+  #menu .mfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:32px;font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#7E8794}
+  #menu .mfoot a{color:#fff;text-decoration:none}
 
   /* ===== boot choreography ===== */
   [data-boot]{opacity:0;transform:translateY(12px);transition:opacity 220ms var(--ease),transform 220ms var(--ease)}
@@ -602,6 +635,20 @@
 </head>
 <body>
 
+<div id="intro" aria-hidden="true">
+  <video id="intro-film" src="assets/film-intro.mp4" poster="assets/film-intro-poster.jpg" muted playsinline preload="none"></video>
+  <div class="intro-ui">
+    <div class="intro-top">
+      <span class="navbrand"><span class="disc"></span>Omniscient<b>&nbsp;AI</b></span>
+      <span class="anno">37.8136°S&nbsp;&nbsp;144.9631°E · Melbourne</span>
+    </div>
+    <div class="intro-title">The second brain · opening sequence</div>
+    <div class="intro-foot">
+      <div class="readout"><span>Loading <b id="intro-pct">000%</b></span><span class="line"><i id="intro-line"></i></span></div>
+      <button id="intro-skip" type="button">Skip intro →</button>
+    </div>
+  </div>
+</div>
 <div id="armature" aria-hidden="true"><i style="left:25%"></i><i style="left:50%"></i><i style="left:75%"></i></div>
 <div id="progress" aria-hidden="true"></div>
 <div id="cur-dot" aria-hidden="true"></div>
@@ -626,19 +673,34 @@
       <a href="#proof" class="lo">Proof</a>
       <a href="configure.html">Configure</a>
       <span id="pct">000%</span>
-      <span class="mag"><a class="pill" href="#enquire" data-cursor="GO">Enquire →</a></span>
+      <button class="navmenu" id="navmenu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <span class="mag"><a class="pill" href="#enquire" data-cursor="GO">Enquire<span class="arr"> →</span></a></span>
     </div>
   </div>
 </nav>
+<div id="menu" data-open="0" role="dialog" aria-label="Site menu">
+  <nav class="mlinks">
+    <a href="#method"><span class="n">03</span>The method</a>
+    <a href="#floor"><span class="n">04</span>Facility overhauls</a>
+    <a href="#pulse"><span class="n">05</span>Pulse</a>
+    <a href="#film"><span class="n">—</span>The film</a>
+    <a href="#sovereignty"><span class="n">—</span>Sovereignty</a>
+    <a href="#cluster"><span class="n">06</span>Cluster 01</a>
+    <a href="#shift"><span class="n">07</span>The shift</a>
+    <a href="#proof"><span class="n">08</span>Proof</a>
+    <a href="configure.html"><span class="n">→</span>Configure</a>
+    <a href="#enquire"><span class="n">→</span>Enquire</a>
+  </nav>
+  <div class="mfoot"><a href="mailto:info@omniscientai.io">info@omniscientai.io</a><span>Melbourne · Australia</span></div>
+</div>
 
 <!-- ============ HERO ============ -->
 <header id="hero">
   <div class="hero-film" aria-hidden="true"><video data-bg src="assets/film-hero.mp4" poster="assets/film-hero-poster.jpg" muted loop playsinline preload="auto"></video></div>
   <div class="hero-art" data-boot="2">
     <canvas id="net" aria-label="Omniscient AI connectome — live network illustration"></canvas>
-    <video class="hero-object" src="assets/second-brain-object.mp4" poster="assets/second-brain-object-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The second brain — rotating Omniscient AI sculpture"></video>
     <div class="fig">
-      <span class="anno">Fig. 01 — the second brain · object &amp; connectome</span>
+      <span class="anno">Fig. 01 — the connectome · live</span>
       <span class="anno" id="net-coord">x 000 · y 000</span>
     </div>
   </div>
@@ -1332,8 +1394,70 @@
 
   /* ---------- boot choreography ---------- */
   function boot(){ document.body.classList.add("booted"); }
-  if (reduced) boot();
-  else Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(function(r){ setTimeout(r, 900); })]).then(function(){ requestAnimationFrame(boot); });
+  var fontsReady = Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(function(r){ setTimeout(r, 900); })]);
+
+  /* ---------- intro: the second brain opens the page, then hands off to the hero ---------- */
+  var introShown = (function(){
+    var intro = document.getElementById("intro"), film = document.getElementById("intro-film");
+    if (!intro || !film) return false;
+    var seen = false;
+    try { seen = sessionStorage.getItem("omni-intro") === "1"; } catch (e) {}
+    // never on reduced motion, deep links, repeat views this session, or without autoplay support
+    if (reduced || seen || location.hash || !("play" in film)) { intro.remove(); return false; }
+    document.body.classList.add("intro-on");
+    var pctEl = document.getElementById("intro-pct"), lineEl = document.getElementById("intro-line"), skip = document.getElementById("intro-skip");
+    var done = false, started = false, raf = 0;
+    function setPct(p){ p = Math.max(0, Math.min(1, p)); pctEl.textContent = String(Math.round(p * 100)).padStart(3, "0") + "%"; lineEl.style.transform = "scaleX(" + p + ")"; }
+    function tick(){
+      if (done) return;
+      var d = film.duration || 8, p = film.currentTime / d;
+      setPct(started ? 0.12 + 0.88 * p : 0.04);
+      raf = requestAnimationFrame(tick);
+    }
+    function finish(){
+      if (done) return; done = true;
+      try { sessionStorage.setItem("omni-intro", "1"); } catch (e) {}
+      cancelAnimationFrame(raf); setPct(1);
+      // start the hero film exactly as the intro dissolves so the corridor carries through
+      var hero = document.querySelector(".hero-film video");
+      if (hero) { try { hero.currentTime = 0; } catch (e) {} var hp = hero.play(); if (hp && hp.catch) hp.catch(function(){}); }
+      intro.classList.add("out");
+      requestAnimationFrame(boot);
+      setTimeout(function(){ document.body.classList.remove("intro-on"); intro.remove(); }, 560);
+    }
+    film.addEventListener("playing", function(){ started = true; }, {once:true});
+    film.addEventListener("ended", finish);
+    film.addEventListener("error", finish);
+    skip.addEventListener("click", finish);
+    document.addEventListener("keydown", function(e){ if (!done && (e.key === "Escape" || e.key === "Enter" || e.key === " ")) finish(); });
+    // watchdog: never hold the page hostage to a slow film
+    setTimeout(function(){ if (!started) finish(); }, 2200);
+    setTimeout(finish, 11000);
+    if (innerWidth <= 820) film.src = "assets/film-intro-720.mp4";
+    film.preload = "auto"; film.load();
+    var pp = film.play(); if (pp && pp.catch) pp.catch(function(){ finish(); });
+    raf = requestAnimationFrame(tick);
+    return true;
+  })();
+  if (!introShown) { if (reduced) boot(); else fontsReady.then(function(){ requestAnimationFrame(boot); }); }
+
+  /* ---------- mobile menu ---------- */
+  (function(){
+    var btn = document.getElementById("navmenu"), menu = document.getElementById("menu");
+    if (!btn || !menu) return;
+    function setOpen(on){
+      menu.setAttribute("data-open", on ? "1" : "0");
+      btn.setAttribute("aria-expanded", on ? "true" : "false");
+      btn.textContent = on ? "Close" : "Menu";
+      document.body.classList.toggle("menu-open", on);
+      if (on) { var first = menu.querySelector("a"); if (first) first.focus(); } else btn.focus();
+    }
+    btn.addEventListener("click", function(){ setOpen(menu.getAttribute("data-open") !== "1"); });
+    [].slice.call(menu.querySelectorAll("a")).forEach(function(a){ a.addEventListener("click", function(){ setOpen(false); }); });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape" && menu.getAttribute("data-open") === "1") setOpen(false); });
+    addEventListener("resize", function(){ if (innerWidth > 820 && menu.getAttribute("data-open") === "1") setOpen(false); });
+  })();
+
 
   /* ---------- nav + scroll progress + % readout ---------- */
   var nav = document.getElementById("nav"),
@@ -1352,6 +1476,27 @@
     });
   }
   addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* ---------- film parallax (desktop, motion allowed) ---------- */
+  (function(){
+    if (reduced || !finePointer) return;
+    var layers = [].slice.call(document.querySelectorAll(".hero-film video, .secfilm video"));
+    if (!layers.length) return;
+    var pending = false;
+    function place(){
+      pending = false;
+      var vh = innerHeight;
+      layers.forEach(function(v){
+        var r = v.parentElement.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        var mid = r.top + r.height / 2 - vh / 2;
+        var y = Math.max(-1, Math.min(1, mid / (vh + r.height))) * -36;
+        v.style.transform = "translate3d(0," + y.toFixed(1) + "px,0) scale(1.1)";
+      });
+    }
+    addEventListener("scroll", function(){ if (!pending){ pending = true; requestAnimationFrame(place); } }, {passive:true});
+    addEventListener("resize", place); place();
+  })();
 
   /* ---------- scroll reveals ---------- */
   var rv = [].slice.call(document.querySelectorAll(".rv"));
