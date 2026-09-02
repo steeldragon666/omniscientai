@@ -398,13 +398,75 @@
   .qa .q{font-size:16.5px;font-weight:700;letter-spacing:-.01em;color:var(--blue-deep)}
   .qa .a{font-size:14.5px;color:var(--ink-3);line-height:1.6;margin-top:9px}
 
-  /* ===== ENQUIRE ===== */
-  #enquire{text-align:center;padding:clamp(110px,14vw,180px) 0}
-  #enquire h2{font-size:clamp(44px,6.6vw,86px)}
-  #enquire .lead{margin:24px auto 0}
-  #enquire .btn{margin-top:40px;font-size:16px;padding:17px 34px}
-  #enquire .mail{display:block;margin-top:20px;font-family:var(--fm);font-size:12.5px;color:var(--ink-3);text-decoration:none;letter-spacing:.05em}
-  #enquire .mail:hover{color:var(--blue)}
+  /* ===== ASSESSMENT (campaign landing offer) ===== */
+  #assessment{padding-bottom:clamp(60px,7vw,100px)}
+  .as-grid{display:grid;grid-template-columns:6fr 6fr;gap:44px;align-items:start;margin-top:14px}
+  @media(max-width:900px){.as-grid{grid-template-columns:1fr}}
+  .as-card{border:1.5px solid var(--ink);border-radius:8px 8px 8px 0;background:var(--paper);box-shadow:var(--s1);overflow:hidden}
+  .as-card .ahead{display:flex;align-items:center;gap:10px;padding:13px 20px;border-bottom:1px solid var(--line);background:var(--ink);color:#fff;font-family:var(--fm);font-size:11px;font-weight:700;letter-spacing:.1em}
+  .as-card .ahead .r{margin-left:auto;color:var(--blue-glow);font-weight:600}
+  .as-card ol{list-style:none;padding:8px 20px 6px;counter-reset:as}
+  .as-card li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:16px 0;border-bottom:1px dashed var(--line);counter-increment:as}
+  .as-card li:last-child{border-bottom:none}
+  .as-card li::before{content:"0" counter(as);font-family:var(--fm);font-size:11px;color:var(--blue);letter-spacing:.14em;padding-top:4px;grid-row:1 / span 2}
+  .as-card li b,.as-card li span{grid-column:2}
+  .as-card li b{display:block;font-size:16.5px;letter-spacing:-.01em;color:var(--ink);margin-bottom:4px}
+  .as-card li span{font-size:14px;color:var(--ink-3);line-height:1.55}
+  .as-card .afoot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 20px;border-top:1px solid var(--line);background:var(--paper-2);font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .as-card .afoot b{color:var(--ink)}
+  .as-ctas{display:flex;align-items:center;gap:14px;margin-top:28px;flex-wrap:wrap}
+  .as-fine{font-family:var(--fm);font-size:10.5px;color:var(--ink-3);letter-spacing:.03em;line-height:1.6;margin-top:18px;max-width:52ch}
+
+  /* ===== ENQUIRE (form) ===== */
+  #enquire{padding:clamp(110px,14vw,180px) 0;background:var(--paper-2);border-top:1px solid var(--line)}
+  #enquire h2{font-size:clamp(44px,6.2vw,84px)}
+  .enq-grid{display:grid;grid-template-columns:5fr 7fr;gap:52px;align-items:start;margin-top:14px}
+  @media(max-width:960px){.enq-grid{grid-template-columns:1fr;gap:36px}}
+  #enquire .lead{margin-top:22px}
+  .enq-side{position:sticky;top:120px}
+  @media(max-width:960px){.enq-side{position:static}}
+  .enq-side .mail{display:inline-block;margin-top:22px;font-family:var(--fm);font-size:12.5px;color:var(--ink-2);text-decoration:none;letter-spacing:.05em}
+  .enq-side .mail:hover{color:var(--blue)}
+  .enq-points{margin-top:30px;display:flex;flex-direction:column;gap:12px}
+  .enq-points div{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--ink-3);line-height:1.55}
+  .enq-points div::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--blue);flex:none;margin-top:7px}
+  .enq-points b{color:var(--ink);font-weight:600}
+  #enqcard{border:1.5px solid var(--ink);border-radius:8px 8px 8px 0;background:var(--paper);overflow:hidden;box-shadow:var(--s1)}
+  #enqcard .ehead{display:flex;align-items:center;gap:10px;padding:13px 20px;border-bottom:1px solid var(--line);background:var(--paper-2)}
+  #enqcard .ehead .live{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:npulse 2s var(--ease) infinite}
+  #enqcard .ehead .t{font-family:var(--fm);font-size:11px;font-weight:700;letter-spacing:.1em}
+  #enqcard .ehead .r{margin-left:auto;font-family:var(--fm);font-size:9.5px;color:var(--ink-3);letter-spacing:.08em;text-align:right}
+  #enqform{padding:22px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+  @media(max-width:560px){#enqform{grid-template-columns:1fr}}
+  #enqform .full{grid-column:1 / -1}
+  #enqform label.f{display:flex;flex-direction:column;gap:7px}
+  #enqform .lab{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  #enqform .lab b{color:var(--blue);font-weight:600}
+  #enqform input[type=text],#enqform input[type=email],#enqform input[type=tel],#enqform textarea{font-family:var(--fb);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px 14px;width:100%;transition:border-color 160ms var(--ease),box-shadow 160ms var(--ease);-webkit-appearance:none;appearance:none}
+  #enqform textarea{min-height:128px;resize:vertical;line-height:1.5}
+  #enqform input:focus,#enqform textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-bg)}
+  #enqform input:user-invalid,#enqform textarea:user-invalid{border-color:#D94B4B}
+  .enq-int{display:flex;flex-wrap:wrap;gap:8px}
+  .enq-int input{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+  .enq-int label{font-family:var(--fm);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--paper);color:var(--ink-2);border-radius:999px;padding:9px 16px;cursor:pointer;transition:all 160ms var(--ease);user-select:none}
+  .enq-int label:hover{border-color:var(--blue);color:var(--blue-deep)}
+  .enq-int input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+  .enq-int input:focus-visible+label{outline:2px solid var(--blue);outline-offset:3px}
+  .enq-hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  .enq-foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+  .enq-foot .btn{padding:15px 28px}
+  .enq-foot .btn:disabled{opacity:.55;cursor:progress}
+  .enq-note{font-family:var(--fm);font-size:10px;color:var(--ink-3);letter-spacing:.03em;line-height:1.6}
+  #enq-status{font-size:13.5px;color:#D94B4B;line-height:1.5;min-height:0}
+  #enq-status a{color:var(--blue-deep)}
+  #enq-done{display:none;padding:34px 24px 30px}
+  #enq-done .mark{width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:18px}
+  #enq-done h3{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em;line-height:1.1}
+  #enq-done p{font-size:15px;color:var(--ink-3);line-height:1.6;margin-top:10px;max-width:46ch}
+  #enq-done p b{color:var(--ink)}
+  #enq-done .btn{margin-top:22px}
+  #enqcard.done #enqform{display:none}
+  #enqcard.done #enq-done{display:block}
 
   /* ===== FOOTER ===== */
   footer{background:var(--paper-2);border-top:1px solid var(--line);padding:48px 0 0}
@@ -688,6 +750,7 @@
     <a href="#cluster"><span class="n">06</span>Cluster 01</a>
     <a href="#shift"><span class="n">07</span>The shift</a>
     <a href="#proof"><span class="n">08</span>Proof</a>
+    <a href="#assessment"><span class="n">→</span>Free assessment</a>
     <a href="configure.html"><span class="n">→</span>Configure</a>
     <a href="#enquire"><span class="n">→</span>Enquire</a>
   </nav>
@@ -720,7 +783,7 @@
         <p class="lead" data-boot="4">Melbourne's specialists in enterprise AI transformation, working with businesses across Australia. We drive real value, keep your data private, and turn variable cloud bills into a fixed cost — while lifting output in every department, from the front office to the factory floor. Working systems your teams use every day.</p>
         <div class="hero-ctas" data-boot="5">
           <span class="mag"><a class="btn solid" href="#enquire" data-cursor="GO"><span>Enquire today →</span></a></span>
-          <a class="btn ghost u" href="#method">See the method →</a>
+          <a class="btn ghost u" href="#assessment">Free assessment &amp; quote →</a>
         </div>
       </div>
       <div class="hero-foot anno" data-boot="6">
@@ -991,7 +1054,7 @@
           </div>
         </div>
         <div class="fl-ctas rv">
-          <span class="mag"><a class="btn solid" href="mailto:info@omniscientai.io?subject=Enquiry%20—%20Facility%20overhaul" data-cursor="GO"><span>Overhaul my facility →</span></a></span>
+          <span class="mag"><a class="btn solid" href="#enquire" data-interest="facility" data-cursor="GO"><span>Overhaul my facility →</span></a></span>
           <a class="btn ghost u" href="#cluster">See the cluster behind it →</a>
         </div>
       </div>
@@ -1213,7 +1276,7 @@
     </div>
     <p class="cl-close rv">This is cluster 01. We're building private, secure and confidential inference and training capacity that does not exist in Australia today. <b>Watch this space.</b></p>
     <div class="cl-ctas rv">
-      <span class="mag"><a class="btn solid" href="mailto:info@omniscientai.io?subject=Enquiry%20—%20Sovereign%20inference%20capacity" data-cursor="GO"><span>Reserve private capacity →</span></a></span>
+      <span class="mag"><a class="btn solid" href="#enquire" data-interest="cluster" data-cursor="GO"><span>Reserve private capacity →</span></a></span>
       <span class="mag"><a class="btn" href="configure.html" data-cursor="GO"><span>Configure a deployment →</span></a></span>
     </div>
   </div>
@@ -1333,15 +1396,86 @@
   </div>
 </section>
 
+<!-- ============ ASSESSMENT (free assessment & quote) ============ -->
+<section id="assessment">
+  <div class="wrap">
+    <div class="eyebrow rv">Free assessment &amp; quote · manufacturing and enterprise</div>
+    <h2 class="rv" style="margin-top:16px"><span class="ln"><span class="ln-i">Free assessment. <span class="b">Fixed quote.</span></span></span></h2>
+    <div class="as-grid">
+      <div class="rv">
+        <p class="lead">For manufacturers and enterprise teams who want business-enhanced intelligence and not another workshop. We come to you — the floor or the departments — map where the hours and the risk actually go, size the system you'd need, and hand you a fixed-price quote. No obligation, no slide deck.</p>
+        <div class="as-ctas">
+          <span class="mag"><a class="btn solid" href="#enquire" data-interest="assessment" data-cursor="GO"><span>Claim the free assessment →</span></a></span>
+          <a class="btn ghost u" href="#floor">See a floor overhaul →</a>
+        </div>
+        <p class="as-fine">Assessment is free and yours to keep whether or not you proceed. Quotes are fixed-price and measured against your own numbers — the same ~50% variable-spend reduction we qualify everywhere else on this page.</p>
+      </div>
+      <div class="rv">
+        <div class="as-card">
+          <div class="ahead"><span>WHAT YOU GET</span><span class="r">HALF A DAY ON SITE · $0</span></div>
+          <ol>
+            <li><b>A map of your operation.</b><span>Machines, protocols and PLCs on the floor — or departments, workflows and the tools your people actually use. Where the hours go, where the exposure sits.</span></li>
+            <li><b>A sized system.</b><span>Which harness modules, what a floor hypervisor would need to bridge, and how much private inference capacity on Cluster 01 — or on your premises — the work would take.</span></li>
+            <li><b>A fixed-price quote and a value model.</b><span>Build cost, monthly fixed cost, and the measured baseline we'll prove the reduction against. Yours to keep.</span></li>
+          </ol>
+          <div class="afoot"><span>Melbourne on site · Australia-wide by arrangement</span><b>Reply within one business day</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ENQUIRE ============ -->
 <section id="enquire">
   <div class="wrap">
     <div class="eyebrow rv">Enquire</div>
-    <h2 class="rv" style="margin-top:18px;font-size:clamp(48px,8.6vw,118px)"><span class="ln"><span class="ln-i">Need a solution,</span></span><span class="ln"><span class="ln-i">not a <span class="b">seminar?</span></span></span></h2>
-    <p class="lead rv" style="max-width:52ch">Enquire today if you need a solution, not a group training session. We'll consult with your teams, build the harness — or overhaul the whole floor — and prove the value in numbers, on site in Melbourne or anywhere in Australia. If your data can't leave the country, it can run on our cluster.</p>
-    <span class="mag"><a class="btn solid rv" href="mailto:info@omniscientai.io?subject=Enquiry%20—%20Enterprise%20AI%20adoption" data-cursor="GO"><span>Enquire today →</span></a></span>
-    <span class="mag"><a class="btn rv" href="configure.html" data-cursor="GO" style="margin-left:12px"><span>Configure your system →</span></a></span>
-    <a class="mail rv" href="mailto:info@omniscientai.io">info@omniscientai.io</a>
+    <h2 class="rv" style="margin-top:18px"><span class="ln"><span class="ln-i">Need a solution,</span></span><span class="ln"><span class="ln-i">not a <span class="b">seminar?</span></span></span></h2>
+    <div class="enq-grid">
+      <div class="enq-side rv">
+        <p class="lead">Tell us what you're trying to get done. We'll consult with your teams, build the harness — or overhaul the whole floor — and prove the value in numbers, on site in Melbourne or anywhere in Australia.</p>
+        <div class="enq-points">
+          <div><span><b>A person replies</b> — from info@omniscientai.io, not a sequence.</span></div>
+          <div><span><b>Your details stay in Australia.</b> This form writes to our own Sydney-hosted database and nothing else.</span></div>
+          <div><span><b>If your data can't leave the country,</b> it can run on Cluster 01.</span></div>
+        </div>
+        <a class="mail" href="mailto:info@omniscientai.io">Prefer email? info@omniscientai.io</a>
+      </div>
+      <div class="rv">
+        <div id="enqcard">
+          <div class="ehead"><span class="live"></span><span class="t">ENQUIRY</span><span class="r">Sydney-hosted · insert-only · not shared</span></div>
+          <form id="enqform" novalidate autocomplete="on">
+            <div class="full">
+              <div class="lab" style="margin-bottom:9px">I'm interested in</div>
+              <div class="enq-int" role="radiogroup" aria-label="Interest">
+                <input type="radio" name="interest" id="int-assessment" value="assessment"><label for="int-assessment">Free assessment &amp; quote</label>
+                <input type="radio" name="interest" id="int-adoption" value="adoption" checked><label for="int-adoption">Enterprise AI adoption</label>
+                <input type="radio" name="interest" id="int-facility" value="facility"><label for="int-facility">Facility overhaul</label>
+                <input type="radio" name="interest" id="int-cluster" value="cluster"><label for="int-cluster">Private inference · Cluster 01</label>
+                <input type="radio" name="interest" id="int-configure" value="configure"><label for="int-configure">Configure a deployment</label>
+                <input type="radio" name="interest" id="int-other" value="other"><label for="int-other">Something else</label>
+              </div>
+            </div>
+            <label class="f"><span class="lab">Name <b>*</b></span><input type="text" name="name" required maxlength="120" autocomplete="name" placeholder="Your name"></label>
+            <label class="f"><span class="lab">Company</span><input type="text" name="company" maxlength="160" autocomplete="organization" placeholder="Organisation"></label>
+            <label class="f"><span class="lab">Work email <b>*</b></span><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="you@company.com.au"></label>
+            <label class="f"><span class="lab">Phone</span><input type="tel" name="phone" maxlength="40" autocomplete="tel" inputmode="tel" placeholder="Optional"></label>
+            <label class="f full"><span class="lab">What are you trying to get done? <b>*</b></span><textarea name="message" required maxlength="4000" placeholder="The work, the team, the constraint — a few lines is plenty."></textarea></label>
+            <div class="enq-hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="full enq-foot">
+              <span class="mag"><button class="btn solid" id="enq-submit" type="submit" data-cursor="SEND"><span>Send enquiry →</span></button></span>
+              <span class="enq-note">We use these details only to reply to you.<br>No mailing list, no resale, no third-party CRM.</span>
+            </div>
+            <div class="full" id="enq-status" role="alert" aria-live="polite"></div>
+          </form>
+          <div id="enq-done" aria-live="polite">
+            <div class="mark">✓</div>
+            <h3>Received.</h3>
+            <p>Thanks — a person will reply from <b>info@omniscientai.io</b>. If it's urgent, email us directly and mention the enquiry.</p>
+            <span class="mag"><a class="btn" href="configure.html" data-cursor="GO"><span>Configure a deployment meanwhile →</span></a></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1371,8 +1505,9 @@
         </div>
         <div class="col">
           <span class="h">Contact</span>
-          <a class="u" href="mailto:info@omniscientai.io">info@omniscientai.io</a>
+          <a class="u" href="#assessment">Free assessment &amp; quote</a>
           <a class="u" href="#enquire">Enquire →</a>
+          <a class="u" href="mailto:info@omniscientai.io">info@omniscientai.io</a>
         </div>
       </div>
     </div>
@@ -2205,6 +2340,63 @@
     }, {rootMargin:"320px 0px"});
     vids.forEach(function(v){ vio.observe(v); });
     document.addEventListener("visibilitychange", function(){ if (document.hidden) vids.forEach(function(v){ v.pause(); }); });
+  })();
+
+
+  /* ---------- enquiry form → our own Supabase (Sydney), insert-only; trigger emails info@ ---------- */
+  (function(){
+    var form = document.getElementById("enqform");
+    if (!form) return;
+    var ENDPOINT = "https://dvrmrrikqremrcvfrvew.supabase.co/rest/v1/enquiries";
+    var KEY = "sb_publishable_0665khNPBdtlBWJSYKIa1w_9iR9jIFH"; // publishable: insert-only under row-level security
+    var card = document.getElementById("enqcard"), status = document.getElementById("enq-status"),
+        btn = document.getElementById("enq-submit"), btnLabel = btn.querySelector("span");
+    // section CTAs preselect the interest
+    [].slice.call(document.querySelectorAll("a[data-interest]")).forEach(function(a){
+      a.addEventListener("click", function(){
+        var r = form.querySelector('input[name="interest"][value="' + a.getAttribute("data-interest") + '"]');
+        if (r) r.checked = true;
+      });
+    });
+    function val(n){ var el = form.elements[n]; return el ? String(el.value || "").trim() : ""; }
+    // campaign deep link: /#assessment lands on the offer with it preselected
+    function hashPick(){ if (location.hash === "#assessment"){ var r = document.getElementById("int-assessment"); if (r) r.checked = true; } }
+    hashPick(); addEventListener("hashchange", hashPick);
+    function done(){ card.classList.add("done"); card.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"}); }
+    function fail(){
+      btn.disabled = false; btnLabel.textContent = "Send enquiry →";
+      status.innerHTML = 'That didn\'t go through. Please email us directly: <a href="mailto:info@omniscientai.io">info@omniscientai.io</a>';
+    }
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      status.textContent = "";
+      if (!form.checkValidity()){ form.reportValidity(); return; }
+      if (val("website")) { done(); return; } // honeypot: bots see success, nothing is sent
+      var interest = form.querySelector('input[name="interest"]:checked');
+      var payload = {
+        name: val("name").slice(0,120),
+        company: val("company").slice(0,160) || null,
+        email: val("email").slice(0,254),
+        phone: val("phone").slice(0,40) || null,
+        interest: interest ? interest.value : "adoption",
+        message: val("message").slice(0,4000),
+        source: location.origin + location.pathname + "#enquire",
+        user_agent: String(navigator.userAgent || "").slice(0,400),
+        website: ""
+      };
+      btn.disabled = true; btnLabel.textContent = "Sending…";
+      var ctrl = ("AbortController" in window) ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function(){ ctrl.abort(); }, 15000) : null;
+      fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "apikey": KEY, "Authorization": "Bearer " + KEY, "Content-Type": "application/json", "Prefer": "return=minimal" },
+        body: JSON.stringify(payload),
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function(res){
+        if (timer) clearTimeout(timer);
+        if (res.status === 201 || res.ok) done(); else fail();
+      }).catch(function(){ if (timer) clearTimeout(timer); fail(); });
+    });
   })();
 
   /* ---------- cluster: rack ignition + capacity counters ---------- */

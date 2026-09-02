@@ -19,6 +19,10 @@ anywhere (currently GitHub Pages).
 - **Speak to the Floor** — the facility-overhaul demo: pick a spoken command, watch the hypervisor light up the machines on a floor map, bridge their protocols and answer in plain English (motion gated behind approval).
 - **Cluster 01 ignition** — the announcement rack elevation lights its eight accelerators and memory bank while the VRAM / system-memory counters climb.
 
+## Enquiry form
+
+`#enquire` posts straight to our own Supabase project (`omniscientai`, Sydney) — table `public.enquiries`, insert-only for the public under row-level security, publishable key in the page. A `before insert` trigger (`notify_enquiry()`) emails info@omniscientai.io through Resend using a key held in Supabase Vault (`resend_api_key`); sender/recipient live in `public.site_settings`. Honeypot field `website` (CHECK-constrained empty), 3-per-10-minutes email rate limit, 15 s client timeout with a mailto fallback. `/#assessment` is the campaign landing (free assessment & quote) and preselects that interest.
+
 ## Content rules
 
 - Mobile: below 820px the nav collapses to a full-screen ink menu (`#menu`) — every section stays reachable.
